@@ -201,6 +201,12 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:jedi#completions_enabled = 0
 
 " All these mappings work only for python code:
+" Go to definition
+let g:jedi#goto_command = ',d'
+" Find ocurrences
+let g:jedi#usages_command = ',o'
+" Find assignments
+let g:jedi#goto_assignments_command = ',a'
 " Go to definition in new tab
 nmap ,D :tab split<CR>:tabm -1<CR>:call jedi#goto()<CR>
 
@@ -216,3 +222,7 @@ nmap ,D :tab split<CR>:tabm -1<CR>:call jedi#goto()<CR>
 " da" ===> Delete everything inside and outside quotes of type "
 " di" ==> Delete everything inside quotes of type "
 " g+Ctrl A ==> Make a list and increment it
+" cd %:p:h ==> cd changes directory; % is current file;
+"              p gives path; h gives the head of the full path
+" lcd %:p:h ==> changes directory for only current file
+
