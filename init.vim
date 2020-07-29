@@ -34,6 +34,8 @@ Plug 'nvie/vim-flake8'
 Plug 'tpope/vim-surround'
 " NerdTree
 Plug 'preservim/nerdtree'
+" Git command line
+Plug 'tpope/vim-fugitive'
 " Replace <q> </q> to ' ', with simple key presses
 " Plug 'tpope/vim-surround'
 
