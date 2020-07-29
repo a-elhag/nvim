@@ -209,20 +209,3 @@ let g:jedi#usages_command = ',o'
 let g:jedi#goto_assignments_command = ',a'
 " Go to definition in new tab
 nmap ,D :tab split<CR>:tabm -1<CR>:call jedi#goto()<CR>
-
-" Functions
-" :r !python [tab] ==> Gets the output of the shell into file
-" :w !python ==> takes current file and throws it into python
-" q[a] ==> Starts recording a macro into 'a', stop it with 'q'
-" @[a] ==> Plays the macro
-" :reg ==> Shows registers (yanked stuff)
-" Ctrl + R + * ==> Paste into command line
-" f<character> ==> To go to the next character, a god send this one is
-" 1 + Ctrl G ==> Full path of the current file
-" da" ===> Delete everything inside and outside quotes of type "
-" di" ==> Delete everything inside quotes of type "
-" g+Ctrl A ==> Make a list and increment it
-" cd %:p:h ==> cd changes directory; % is current file;
-"              p gives path; h gives the head of the full path
-" lcd %:p:h ==> changes directory for only current file
-" `. ==> Works like <c-o> but for more minute changes within the doc
