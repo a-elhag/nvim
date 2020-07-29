@@ -225,4 +225,4 @@ nmap ,D :tab split<CR>:tabm -1<CR>:call jedi#goto()<CR>
 " cd %:p:h ==> cd changes directory; % is current file;
 "              p gives path; h gives the head of the full path
 " lcd %:p:h ==> changes directory for only current file
-
+" `. ==> Works like <c-o> but for more minute changes within the doc
