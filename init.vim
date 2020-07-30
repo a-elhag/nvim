@@ -50,6 +50,8 @@ Plug 'Shougo/context_filetype.vim'
 Plug 'gcmt/taboo.vim'
 " Smooth Scrolling
 Plug 'psliwka/vim-smoothie'
+" Rainbow parenthesises
+Plug 'luochen1990/rainbow'
 
 " -------------
 " Looks
@@ -212,5 +214,5 @@ let g:jedi#goto_assignments_command = ',a'
 " Go to definition in new tab
 nmap ,D :tab split<CR>:tabm -1<CR>:call jedi#goto()<CR>
 
-"
-"
+" Rainbow Parenthesises (luochen1990/rainbow)
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
