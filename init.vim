@@ -52,6 +52,9 @@ Plug 'gcmt/taboo.vim'
 Plug 'psliwka/vim-smoothie'
 " Rainbow parenthesises
 Plug 'luochen1990/rainbow'
+" Ranger file browser
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
 
 " -------------
 " Looks
@@ -73,6 +76,8 @@ Plug 'guns/xterm-color-table.vim'
 Plug 'lilydjwg/colorizer'
 " HighlightedYank
 Plug 'machakann/vim-highlightedyank'
+" Theme
+Plug 'kyoz/purify', { 'rtp': 'vim' } " rtp means repository to use (subdirectory)
 
 " ----------------
 "  Will do
@@ -165,8 +170,10 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 let g:impact_transbg=1
 colorscheme PaperColor
+" colorscheme onedark
 set cursorline
 let g:rainbow_active = 1
+hi Normal guibg=NONE ctermbg=NONE
 
 " pep8
 au BufNewFile,BufRead *.py
