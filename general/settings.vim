@@ -35,15 +35,6 @@ set backspace=indent,eol,start " backspace over everything in insert mode
 " Show history
 set history=50
 
-" 256 colors 
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1 
-set termguicolors
-let g:impact_transbg=1
-colorscheme PaperColor
-" colorscheme onedark
-let g:rainbow_active = 1
-hi Normal guibg=NONE ctermbg=NONE
-
 " Learn more about these commands
 " set hidden
 

@@ -78,6 +78,8 @@ Plug 'lilydjwg/colorizer'
 Plug 'machakann/vim-highlightedyank'
 " Theme
 Plug 'kyoz/purify', { 'rtp': 'vim' } " rtp means repository to use (subdirectory)
+" Theme
+Plug 'joshdick/onedark.vim'
 
 " ----------------
 "  Will do

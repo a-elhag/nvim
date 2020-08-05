@@ -1,10 +1,11 @@
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/keys/mappings.vim
+source $HOME/.config/nvim/themes/onedark.vim
+source $HOME/.config/nvim/themes/papercolor.vim
 
 " Startup Time (at the beginning)
 " --startuptime log.txt
-
 
 " pep8
 au BufNewFile,BufRead *.py
