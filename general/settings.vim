@@ -6,7 +6,7 @@ set nowrap                              " Display long lines as just one line
 set encoding=utf-8                      " The encoding displayed
 set fileencoding=utf-8                  " The encoding written to file
 set pumheight=10                        " Makes popup menu smaller
-set cmdheight=2                         " More space for displaying messages
+" set cmdheight=2                         " More space for displaying messages
 set ruler         			            " Show the cursor position all the time
 set iskeyword+=-                      	" treat dash separated words as a word text object"
 set mouse=a                             " Enable your mouse

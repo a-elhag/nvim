@@ -24,7 +24,6 @@ set guioptions-=e
 set sessionoptions+=tabpages,globals
 
 " Nerd Tree
-" nmap <F6> :NERDTreeToggle<CR> 
 nmap gk :NERDTreeToggle<CR> 
 
 " enable line numbers
