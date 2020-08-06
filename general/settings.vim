@@ -36,8 +36,6 @@ set backspace=indent,eol,start " backspace over everything in insert mode
 set history=50
 
 " Learn more about these commands
-" set hidden
-
 " set hidden                              " Required to keep multiple buffers open multiple buffers
 " set conceallevel=0                      " So that I can see `` in markdown files
 " set smartindent                         " Makes indenting smart

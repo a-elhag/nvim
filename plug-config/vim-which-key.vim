@@ -33,16 +33,21 @@ let g:which_key_map.f = {
       \ 'name' : '+terminal' ,
       \ ';' : [':FloatermNew --wintype=popup --height=6'        , 'terminal'],
       \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
-      \ 'g' : [':FloatermNew lazygit'                           , 'git'],
-      \ 'd' : [':FloatermNew lazydocker'                        , 'docker'],
-      \ 'N' : [':FloatermNew nnn'                               , 'nnn'],
+      \ 'g' : [':FloatermNew tig'                               , 'git'],
       \ 'p' : [':FloatermNew python'                            , 'python'],
       \ 'i' : [':FloatermNew ipython'                           , 'ipython'],
       \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
       \ 't' : [':FloatermToggle'                                , 'toggle'],
       \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
-      \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
       \ }
+
+" for python
+let g:which_key_map.p = {
+      \ 'name' : '+python' ,
+      \ 'r' : [':Semshi rename'                       , 'rename all'],
+      \ 'b' : [':RainbowToggle'                       , 'rainbow'],
+      \ }
+
 
 " s is for search
 let g:which_key_map.s = {
