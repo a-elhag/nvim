@@ -53,8 +53,15 @@ Plug 'psliwka/vim-smoothie'
 " Rainbow parenthesises
 Plug 'luochen1990/rainbow'
 " Ranger file browser
-Plug 'francoiscabrol/ranger.vim'
-Plug 'rbgrouleff/bclose.vim'
+Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+" Fuzzy Finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
+" EMACS (shh)
+Plug 'liuchengxu/vim-which-key'
+" Floaterm
+Plug 'voldikss/vim-floaterm'
 
 " -------------
 " Looks
@@ -85,9 +92,6 @@ Plug 'joshdick/onedark.vim'
 "  Will do
 " ---------------
 
-" Code and files fuzzy finder
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'junegunn/fzf.vim'
 " Jupyter Console
 " Plug 'jupyter-vim/jupyter-vim'
 " Class/module browser

@@ -2,7 +2,11 @@ source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/themes/onedark.vim
-source $HOME/.config/nvim/themes/papercolor.vim
+source $HOME/.config/nvim/plug-config/floaterm.vim
+source $HOME/.config/nvim/plug-config/fzf.vim
+source $HOME/.config/nvim/plug-config/nerdtree.vim
+source $HOME/.config/nvim/plug-config/rnvimr.vim
+source $HOME/.config/nvim/plug-config/vim-which-key.vim
 
 " Startup Time (at the beginning)
 " --startuptime log.txt
@@ -16,21 +20,10 @@ au BufNewFile,BufRead *.py
 
 let g:python3_host_prog = '/usr/bin/python3'
 
-" Disable Netrw
-let g:loaded_netrw       = 1
-let g:loaded_netrwPlugin = 1
-
 " Taboo (rename tabs)
 set guioptions-=e
 set sessionoptions+=tabpages,globals
 
-" Nerd Tree
-nmap gk :NERDTreeToggle<CR> 
-
-" enable line numbers
-let NERDTreeShowLineNumbers=1 
-" make sure relative line numbers are used
-autocmd FileType nerdtree setlocal relativenumber 
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1

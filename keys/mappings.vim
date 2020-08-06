@@ -30,13 +30,9 @@ inoremap <A-j> <esc><C-w>J
 inoremap <A-k> <esc><C-w>K
 inoremap <A-l> <esc><C-w>L
 
-" tab navigation mappings
-nnoremap g<C-k> :TabooOpen 
-nnoremap g<C-j> :tabm 
-
 " Better tabbing
-vnoremap < <gv
-vnoremap > >gv
+" vnoremap < <gv
+" vnoremap > >gv
 
 " TAB in general mode will move to text buffer
 " nnoremap <TAB> :bnext<CR>
