@@ -6,7 +6,8 @@ vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
 let g:which_key_map =  {}
 " Define a separator
 let g:which_key_sep = '→'
-" set timeoutlen=100
+" default is timeoutlen=1000
+set timeoutlen=100
 
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
@@ -27,11 +28,20 @@ let g:which_key_map['n'] = [ ':NERDTreeToggle'            , 'nerd tree' ]
 let g:which_key_map['r'] = [ ':RnvimrToggle'              , 'ranger' ]
 let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
 
-let g:which_key_map.t = {
-      \ 'name' : '+tab' ,
-      \ 'c' : [':tabclose'      , 'close'],
-      \ 'o' : [':TabooOpen '     , 'open'],
-      \ 'r' : [':TabooRename'   , 'rename'],
+" f is for floaterterm
+let g:which_key_map.f = {
+      \ 'name' : '+terminal' ,
+      \ ';' : [':FloatermNew --wintype=popup --height=6'        , 'terminal'],
+      \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
+      \ 'g' : [':FloatermNew lazygit'                           , 'git'],
+      \ 'd' : [':FloatermNew lazydocker'                        , 'docker'],
+      \ 'N' : [':FloatermNew nnn'                               , 'nnn'],
+      \ 'p' : [':FloatermNew python'                            , 'python'],
+      \ 'i' : [':FloatermNew ipython'                           , 'ipython'],
+      \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
+      \ 't' : [':FloatermToggle'                                , 'toggle'],
+      \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
+      \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
       \ }
 
 " s is for search
@@ -63,20 +73,16 @@ let g:which_key_map.s = {
       \ 'z' : [':FZF'          , 'FZF'],
       \ }
 
-" f is for floaterterm
-let g:which_key_map.f = {
-      \ 'name' : '+terminal' ,
-      \ ';' : [':FloatermNew --wintype=popup --height=6'        , 'terminal'],
-      \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
-      \ 'g' : [':FloatermNew lazygit'                           , 'git'],
-      \ 'd' : [':FloatermNew lazydocker'                        , 'docker'],
-      \ 'N' : [':FloatermNew nnn'                               , 'nnn'],
-      \ 'p' : [':FloatermNew python'                            , 'python'],
-      \ 'i' : [':FloatermNew ipython'                           , 'ipython'],
-      \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
-      \ 't' : [':FloatermToggle'                                , 'toggle'],
-      \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
-      \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
+" To do with tabs
+let g:which_key_map.t = {
+      \ 'name' : '+tab' ,
+      \ 'c' : [':tabclose'      , 'close'],
       \ }
+
+nnoremap <silent> <leader>to :TabooOpen 
+let g:which_key_map.t.o = 'open'
+nnoremap <silent> <leader>tr :TabooRename 
+let g:which_key_map.t.r = 'rename'
+
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")
