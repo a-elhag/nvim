@@ -24,12 +24,10 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " Single mappings
-let g:which_key_map['n'] = [ ':NERDTreeToggle'            , 'nerd tree' ]
-let g:which_key_map['r'] = [ ':RnvimrToggle'              , 'ranger' ]
 let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
 
 nnoremap <silent> <leader>a :noh <CR>
-let g:which_key_map.a = 'rename'
+let g:which_key_map.a = 'noh'
 
 " f is for floaterterm
 let g:which_key_map.t = {
@@ -39,7 +37,7 @@ let g:which_key_map.t = {
       \ 'g' : [':FloatermNew tig'                               , 'git'],
       \ 'p' : [':FloatermNew python'                            , 'python'],
       \ 'i' : [':FloatermNew ipython'                           , 'ipython'],
-      \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
+      \ 'r' : [':RnvimrToggle'                                  , 'ranger'],
       \ 't' : [':FloatermToggle'                                , 'toggle'],
       \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
       \ }
@@ -95,9 +93,9 @@ let g:which_key_map.w = {
       \ }
 
 nnoremap <silent> <leader>wo :TabooOpen 
-let g:which_key_map.w.o = 'open'
+let g:which_key_map.w.o = 'tab open'
 nnoremap <silent> <leader>wr :TabooRename 
-let g:which_key_map.w.r = 'rename'
+let g:which_key_map.w.r = 'tab rename'
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")

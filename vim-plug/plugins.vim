@@ -32,8 +32,6 @@ Plug 'nvie/vim-flake8'
 " -------------
 " Surround
 Plug 'tpope/vim-surround'
-" NerdTree
-Plug 'preservim/nerdtree'
 " Git command line
 Plug 'tpope/vim-fugitive'
 " Replace <q> </q> to ' ', with simple key presses
@@ -62,6 +60,8 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'voldikss/vim-floaterm'
 " Choosing windows
 Plug 't9md/vim-choosewin'
+" Ranger
+Plug 'kevinhwang91/rnvimr'
 
 " -------------
 " Looks
@@ -85,8 +85,8 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'kyoz/purify', { 'rtp': 'vim' } " rtp means repository to use (subdirectory)
 " Theme
 Plug 'joshdick/onedark.vim'
-" Better Hex Color Code
-Plug 'RRethy/vim-hexokinase'
+" Color 
+Plug 'lilydjwg/colorizer'
 
 " ----------------
 "  Will do
