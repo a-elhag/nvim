@@ -28,8 +28,11 @@ let g:which_key_map['n'] = [ ':NERDTreeToggle'            , 'nerd tree' ]
 let g:which_key_map['r'] = [ ':RnvimrToggle'              , 'ranger' ]
 let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
 
+nnoremap <silent> <leader>a :noh <CR>
+let g:which_key_map.a = 'rename'
+
 " f is for floaterterm
-let g:which_key_map.f = {
+let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
       \ ';' : [':FloatermNew --wintype=popup --height=6'        , 'terminal'],
       \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
@@ -79,15 +82,22 @@ let g:which_key_map.s = {
       \ }
 
 " To do with tabs
-let g:which_key_map.t = {
-      \ 'name' : '+tab' ,
-      \ 'c' : [':tabclose'      , 'close'],
+let g:which_key_map.w = {
+      \ 'name' : '+windows' ,
+      \ 'c' : [':tabclose'									    , 'close'],
+      \ 'h' : ['<C-w>H'                                         , 'move left'],
+      \ 'j' : ['<C-w>J'                                         , 'move down'],
+      \ 'k' : ['<C-w>K'                                         , 'move up'],
+      \ 'l' : ['<C-w>L'                                         , 'move right'],
+      \ 'w' : [':ChooseWin'                                     , 'choose win'],
+      \ 's' : [':ChooseWinSwap'                                 , 'swap win'],
+      \ 't' : [':ChooseWinSwapStay'                             , 'swap stay win'],
       \ }
 
-nnoremap <silent> <leader>to :TabooOpen 
-let g:which_key_map.t.o = 'open'
-nnoremap <silent> <leader>tr :TabooRename 
-let g:which_key_map.t.r = 'rename'
+nnoremap <silent> <leader>wo :TabooOpen 
+let g:which_key_map.w.o = 'open'
+nnoremap <silent> <leader>wr :TabooRename 
+let g:which_key_map.w.r = 'rename'
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")

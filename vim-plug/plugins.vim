@@ -52,8 +52,6 @@ Plug 'gcmt/taboo.vim'
 Plug 'psliwka/vim-smoothie'
 " Rainbow parenthesises
 Plug 'luochen1990/rainbow'
-" Ranger file browser
-Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 " Fuzzy Finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -62,6 +60,8 @@ Plug 'airblade/vim-rooter'
 Plug 'liuchengxu/vim-which-key'
 " Floaterm
 Plug 'voldikss/vim-floaterm'
+" Choosing windows
+Plug 't9md/vim-choosewin'
 
 " -------------
 " Looks
@@ -79,14 +79,14 @@ Plug 'xolox/vim-colorscheme-switcher'
 Plug 'xolox/vim-misc'
 " Show Color Table :XtermColorTable
 Plug 'guns/xterm-color-table.vim'
-" Paint css colors with the real color
-Plug 'lilydjwg/colorizer'
 " HighlightedYank
 Plug 'machakann/vim-highlightedyank'
 " Theme
 Plug 'kyoz/purify', { 'rtp': 'vim' } " rtp means repository to use (subdirectory)
 " Theme
 Plug 'joshdick/onedark.vim'
+" Better Hex Color Code
+Plug 'RRethy/vim-hexokinase'
 
 " ----------------
 "  Will do
