@@ -24,7 +24,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " Single mappings
-let g:which_key_map['v'] = [ '<C-W>v'                     , 'split right']
+let g:which_key_map['q'] = [ ':q'                     , 'quit']
 
 nnoremap <silent> <leader>a :noh <CR>
 let g:which_key_map.a = 'noh'
@@ -82,12 +82,13 @@ let g:which_key_map.s = {
 " Opening full on stuff
 let g:which_key_map.o = {
       \ 'name' : '+shortcuts' ,
-      \ 'd' : [':new| te'														  , 'term down'],
-      \ 'r' : [':vnew| te'												          , 'term right'],
-      \ 'h' : [':tabnew |:lcd /home/linux5mon/Projects/Help |:TabooRename Help'   , 'help'],
-      \ 'v' : [':tabnew |e $MYVIMRC |:lcd %:p:h |:TabooRename VIMRC'                          , 'vimrc'],
+      \ 'd' : [':new|te'														           , 'term down'],
+      \ 'r' : [':vnew|te'												                   , 'term right'],
+      \ 'i' : ['iipython -i '															   , 'ipython'],
+      \ 'q' : ['iexit <CR><ESC>:q'															   , 'quit'],
+      \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/Help|:TabooRename Help'              , 'help'],
+      \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
       \ }
-
 
 " To do with tabs
 let g:which_key_map.w = {
