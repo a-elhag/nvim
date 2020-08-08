@@ -1,5 +1,5 @@
 " Ignore Fault rifle.conf file
-let g:rnvimr_vanilla = 1
+" let g:rnvimr_vanilla = 1
 
 " Make Ranger replace Netrw and be the file explorer
 let g:rnvimr_enable_ex = 1

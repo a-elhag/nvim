@@ -79,6 +79,16 @@ let g:which_key_map.s = {
       \ 'z' : [':FZF'          , 'FZF'],
       \ }
 
+" Opening full on stuff
+let g:which_key_map.o = {
+      \ 'name' : '+shortcuts' ,
+      \ 'd' : [':new| te'														  , 'term down'],
+      \ 'r' : [':vnew| te'												          , 'term right'],
+      \ 'h' : [':tabnew |:lcd /home/linux5mon/Projects/Help |:TabooRename Help'   , 'help'],
+      \ 'v' : [':tabnew |e $MYVIMRC |:lcd %:p:h |:TabooRename VIMRC'                          , 'vimrc'],
+      \ }
+
+
 " To do with tabs
 let g:which_key_map.w = {
       \ 'name' : '+windows' ,

@@ -24,3 +24,7 @@ let g:jedi#usages_command = ',o'
 let g:jedi#goto_assignments_command = ',a'
 " Go to definition in new tab
 nmap ,D :tab split<CR>:tabm -1<CR>:call jedi#goto()<CR>
+
+
+"Rainbow
+let g:rainbow_active = 1

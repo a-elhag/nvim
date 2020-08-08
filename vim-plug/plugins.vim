@@ -53,7 +53,7 @@ Plug 'luochen1990/rainbow'
 " Fuzzy Finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'airblade/vim-rooter'
+" Plug 'airblade/vim-rooter'
 " EMACS (shh)
 Plug 'liuchengxu/vim-which-key'
 " Floaterm
