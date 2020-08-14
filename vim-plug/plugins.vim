@@ -62,6 +62,8 @@ Plug 'voldikss/vim-floaterm'
 Plug 't9md/vim-choosewin'
 " Ranger
 Plug 'kevinhwang91/rnvimr'
+" Easy Motion
+Plug 'easymotion/vim-easymotion'
 
 " -------------
 " Looks
