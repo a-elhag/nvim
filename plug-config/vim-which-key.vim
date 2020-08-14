@@ -24,12 +24,30 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " =================================================
-" This has to be first
-call which_key#register('<Space>', 'g:which_key_map')
-nmap <silent> <Leader><SPACE>x :bp<CR>
-let g:which_key_map =  {
-	   \'x': ['bp', 'title' ]
-	   \}
+" EasyMotion
+let g:which_key_map[' '] = {
+      \ 'name' : '+easy' ,
+      \ 'f' : ['<plug>(easymotion-prefix)f' , 'find {char} to the right'],
+      \ 'F' : ['<plug>(easymotion-prefix)F' , 'find {char} to the left'],
+      \ 't' : ['<plug>(easymotion-prefix)t' , 'till before the {char} to the right'],
+      \ 'T' : ['<plug>(easymotion-prefix)T' , 'till after the {char} to the left'],
+      \ 'w' : ['<plug>(easymotion-prefix)w' , 'beginning of word forward'],
+      \ 'W' : ['<plug>(easymotion-prefix)W' , 'beginning of WORD forward'],
+      \ 'b' : ['<plug>(easymotion-prefix)b' , 'beginning of word backward'],
+      \ 'B' : ['<plug>(easymotion-prefix)B' , 'beginning of WORD backward'],
+      \ 'e' : ['<plug>(easymotion-prefix)e' , 'end of word forward'],
+      \ 'E' : ['<plug>(easymotion-prefix)E' , 'end of WORD forward'],
+      \ 'g' : {
+        \ 'name' : '+Backwards ' ,
+        \ 'e' : ['<plug>(easymotion-prefix)ge' , 'end of word backward'],
+        \ 'E' : ['<plug>(easymotion-prefix)gE' , 'end of WORD backward'],
+        \ },
+      \ 'j' : ['<plug>(easymotion-prefix)j' , 'line downward'],
+      \ 'k' : ['<plug>(easymotion-prefix)k' , 'line upward'],
+      \ 'n' : ['<plug>(easymotion-prefix)n' , 'jump to latest "/" or "?" forward'],
+      \ 'N' : ['<plug>(easymotion-prefix)N' , 'jump to latest "/" or "?" backward.'],
+      \ 's' : ['<plug>(easymotion-prefix)s' , 'find(search) {char} forward and backward.'],
+      \ }
 
 " Single mappings
 let g:which_key_map['q'] = [ ':q'                     , 'quit']
