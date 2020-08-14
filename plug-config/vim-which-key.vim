@@ -23,6 +23,14 @@ autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
+" =================================================
+" This has to be first
+call which_key#register('<Space>', 'g:which_key_map')
+nmap <silent> <Leader><SPACE>x :bp<CR>
+let g:which_key_map =  {
+	   \'x': ['bp', 'title' ]
+	   \}
+
 " Single mappings
 let g:which_key_map['q'] = [ ':q'                     , 'quit']
 
@@ -34,7 +42,8 @@ let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
       \ ';' : [':FloatermNew --wintype=popup --height=6'        , 'terminal'],
       \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
-      \ 'g' : [':FloatermNew tig'                               , 'git'],
+      \ 'g' : [':FloatermNew tig'                               , 'tig'],
+      \ 'l' : [':FloatermNew lazygit'                           , 'lazygit'],
       \ 'p' : [':FloatermNew python'                            , 'python'],
       \ 'i' : [':FloatermNew ipython'                           , 'ipython'],
       \ 'r' : [':RnvimrToggle'                                  , 'ranger'],
@@ -49,6 +58,9 @@ let g:which_key_map.p = {
       \ 'b' : [':RainbowToggle'                       , 'rainbow'],
       \ }
 
+" Go to definition in new tab
+nmap <leader>pg :tab split<CR>:tabm -1<CR>:call jedi#goto()<CR>
+let g:which_key_map.p.g = 'goto'
 
 " s is for search
 let g:which_key_map.s = {
@@ -89,6 +101,7 @@ let g:which_key_map.o = {
       \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/Help|:TabooRename Help'              , 'help'],
       \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
       \ }
+
 
 " To do with tabs
 let g:which_key_map.w = {
