@@ -4,6 +4,7 @@ map ZZ <Nop>
 
 " Terminal Shortcuts
 tnoremap <Esc> <C-\><C-n>
+tnoremap <c-y> <Esc>
 
 " Move between windows
 tnoremap <C-h> <C-\><C-n><C-w>h
