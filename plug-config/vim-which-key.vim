@@ -111,13 +111,13 @@ let g:which_key_map.s = {
 
 " Opening full on stuff
 let g:which_key_map.o = {
-      \ 'name' : '+shortcuts' ,
+      \ 'name' : '+open' ,
       \ 'd' : [':new|te'														           , 'term down'],
       \ 'r' : [':vnew|te'												                   , 'term right'],
-      \ 'i' : ['iipython -i '															   , 'ipython'],
-      \ 'q' : ['iexit <CR><ESC>:q'															   , 'quit'],
+      \ 'q' : ['iexit <CR><ESC>:q'														   , 'quit'],
       \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/Help|:TabooRename Help'              , 'help'],
       \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
+      \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename ZSH'			               , 'zsh'],
       \ }
 
 
