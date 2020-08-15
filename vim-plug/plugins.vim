@@ -64,6 +64,8 @@ Plug 't9md/vim-choosewin'
 Plug 'kevinhwang91/rnvimr'
 " Easy Motion
 Plug 'easymotion/vim-easymotion'
+" Register Viewer
+Plug 'junegunn/vim-peekaboo'
 
 " -------------
 " Looks
