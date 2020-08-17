@@ -7,7 +7,7 @@ let g:which_key_map =  {}
 " Define a separator
 let g:which_key_sep = '→'
 " default is timeoutlen=1000
-set timeoutlen=100
+set timeoutlen=200
 
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
@@ -60,14 +60,20 @@ let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
       \ ';' : [':FloatermNew --wintype=popup --height=6'        , 'terminal'],
       \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
-      \ 'g' : [':FloatermNew tig'                               , 'tig'],
-      \ 'l' : [':FloatermNew lazygit'                           , 'lazygit'],
+      \ 'g' : [':FloatermNew lazygit'                           , 'lazygit'],
       \ 'p' : [':FloatermNew python'                            , 'python'],
       \ 'i' : [':FloatermNew ipython'                           , 'ipython'],
       \ 'r' : [':RnvimrToggle'                                  , 'ranger'],
       \ 't' : [':FloatermToggle'                                , 'toggle'],
       \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
+      \ 'j' : [':new|te'		   					            , 'term down'],
+      \ 'l' : [':vnew|te'					                    , 'term right'],
       \ }
+
+" nnoremap <silent> <leader>wo :TabooOpen 
+" let g:which_key_map.w.o = 'tab open'
+" nnoremap <silent> <leader>wr :TabooRename 
+" let g:which_key_map.w.r = 'tab rename'
 
 " for python
 let g:which_key_map.p = {
@@ -112,12 +118,9 @@ let g:which_key_map.s = {
 " Opening full on stuff
 let g:which_key_map.o = {
       \ 'name' : '+open' ,
-      \ 'd' : [':new|te'														           , 'term down'],
-      \ 'r' : [':vnew|te'												                   , 'term right'],
-      \ 'q' : ['iexit <CR><ESC>:q'														   , 'quit'],
       \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/Help|:TabooRename Help'              , 'help'],
       \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
-      \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename ZSH'			               , 'zsh'],
+      \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename ZSH' 			               , 'zsh'],
       \ }
 
 
@@ -134,10 +137,6 @@ let g:which_key_map.w = {
       \ 't' : [':ChooseWinSwapStay'                             , 'swap stay win'],
       \ }
 
-nnoremap <silent> <leader>wo :TabooOpen 
-let g:which_key_map.w.o = 'tab open'
-nnoremap <silent> <leader>wr :TabooRename 
-let g:which_key_map.w.r = 'tab rename'
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")
