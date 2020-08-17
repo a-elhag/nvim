@@ -35,9 +35,18 @@ set backspace=indent,eol,start " backspace over everything in insert mode
 " Show history
 set history=500
 
-" save and restore folds when a file is closed and re-opened
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview 
+"FOLDS:
+augroup AutoSaveFolds
+  autocmd!
+  " view files are about 500 bytes
+  " bufleave but not bufwinleave captures closing 2nd tab
+  " nested is needed by bufwrite* (if triggered via other autocmd)
+  autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
+  autocmd BufWinEnter ?* silent! loadview
+augroup end
+     
+set viewoptions=folds,cursor
+set sessionoptions=folds
 
 " Learn more about these commands
 " set hidden                              " Required to keep multiple buffers open multiple buffers
