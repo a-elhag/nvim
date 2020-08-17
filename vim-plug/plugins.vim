@@ -13,9 +13,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Curses PYthon Variable and Kerne Explorer
 " in terminal ==> cpyvke | in terminal ==> cpyvke-launch-ipython
 Plug 'ipselium/cpyvke'
-" Ctrl-c to auto connect
-" F5 run the current buffer | F9 run the current line | F10 run the selected lines (visual mode)
-Plug 'ipselium/vim-cpyvke'
+Plug 'a-elhag/vim-cpyvke'
 " Semshi (Adds good highlighting and replacing)
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " Git/mercurial/others diff icons on the side of the file lines

@@ -83,16 +83,14 @@ let g:which_key_map.c = {
       \ 'f' : ['<Plug>(IPython-RunFile)'              , 'run file'],
       \ 'l' : ['<Plug>(IPython-RunLine)'              , 'run line'],
       \ 's' : ['<Plug>(IPython-RunLines)'             , 'run lines'],
+      \ 'd' : ['<Plug>(IPython-RunLineAsTopLevel)'    , 'dedent run line'],
+      \ 'e' : ['<Plug>(IPython-RunLineAsTopLevels)'   , 'dedent run lines'],
       \ }
 
 nmap <leader>cr :python3 run_command("reset -f")<CR>
 let g:which_key_map.c.r = 'reset'
-" nmap <leader>pd :python3 dedent_run_this_line()<CR>
-" let g:which_key_map.p.d = 'cpyvke dedent line and run'
-" nmap <leader>pe :python3 dedent_run_these_lines()<CR>
-" let g:which_key_map.p.e = 'cpyvke dedent lines and run'
-" nmap <leader>p :python3 if update_subchannel_msgs(force=True): vim_echo("IPython shell updated",'Operator')<CR>
-" let g:which_key_map.p.g = 'cpyvke update shell'
+nmap <leader>cu :python3 update_subchannel_msgs(force=True, startedin_vimipython=False)<CR>
+let g:which_key_map.c.u = 'update shell'
 
 " o ==> +open
 let g:which_key_map.o = {
