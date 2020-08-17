@@ -33,7 +33,7 @@ set shiftwidth=4
 set backspace=indent,eol,start " backspace over everything in insert mode
 
 " Show history
-set history=50
+set history=500
 
 " Learn more about these commands
 " set hidden                              " Required to keep multiple buffers open multiple buffers
