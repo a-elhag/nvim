@@ -1,9 +1,8 @@
 "[PlugInstall]
 call plug#begin('~/.config/nvim/plugged') 
 
-" -------------
 " Python
-" -------------
+
 " Curses PYthon Variable and Kerne Explorer
 " in terminal ==> cpyvke | in terminal ==> cpyvke-launch-ipython
 Plug 'ipselium/cpyvke'
@@ -27,9 +26,8 @@ Plug 'nvie/vim-flake8'
 " Python Error Checker 
 " Plug 'vim-syntastic/syntastic'
 
-" -------------
 " Tim Pope
-" -------------
+
 " Surround
 Plug 'tpope/vim-surround'
 " Git command line
@@ -37,9 +35,8 @@ Plug 'tpope/vim-fugitive'
 " Replace <q> </q> to ' ', with simple key presses
 " Plug 'tpope/vim-surround'
 
-" -------------
 " Misc
-" -------------
+
 " Better language packs
 Plug 'sheerun/vim-polyglot'
 " Completion from other opened files
@@ -65,9 +62,7 @@ Plug 'junegunn/vim-peekaboo'
 " Close Buffer without Closing Window
 Plug 'rbgrouleff/bclose.vim'
 
-" -------------
 " Windows
-" ------------
 
 " Choosing windows
 Plug 't9md/vim-choosewin'
@@ -76,9 +71,7 @@ Plug 'camspiers/animate.vim'
 " Smooth Scrolling
 Plug 'psliwka/vim-smoothie'
 
-" -------------
 " Looks
-" ------------
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -97,18 +90,12 @@ Plug 'machakann/vim-highlightedyank'
 " Color 
 Plug 'lilydjwg/colorizer'
 
-" -------------
 " Theme
-" ------------
 
-" Theme
 Plug 'kyoz/purify', { 'rtp': 'vim' } " rtp means repository to use (subdirectory)
-" Theme
 Plug 'joshdick/onedark.vim'
 
-" ----------------
 "  Will do
-" ---------------
 
 " Jupyter Console
 " Plug 'jupyter-vim/jupyter-vim'
