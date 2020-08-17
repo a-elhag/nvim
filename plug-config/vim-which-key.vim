@@ -55,25 +55,16 @@ let g:which_key_map['q'] = [ ':q'                     , 'quit']
 nnoremap <silent> <leader>a :noh<CR>
 let g:which_key_map.a = 'noh'
 
-" f is for floaterterm
-let g:which_key_map.t = {
-      \ 'name' : '+terminal' ,
-      \ ';' : [':FloatermNew --wintype=popup --height=6'        , 'terminal'],
-      \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
-      \ 'g' : [':FloatermNew lazygit'                           , 'lazygit'],
-      \ 'p' : [':FloatermNew python'                            , 'python'],
-      \ 'i' : [':FloatermNew ipython'                           , 'ipython'],
-      \ 'r' : [':RnvimrToggle'                                  , 'ranger'],
-      \ 't' : [':FloatermToggle'                                , 'toggle'],
-      \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
-      \ 'j' : [':new|te'		   					            , 'term down'],
-      \ 'l' : [':vnew|te'					                    , 'term right'],
-      \ }
 
-" nnoremap <silent> <leader>wo :TabooOpen 
-" let g:which_key_map.w.o = 'tab open'
-" nnoremap <silent> <leader>wr :TabooRename 
-" let g:which_key_map.w.r = 'tab rename'
+" Opening full on stuff
+let g:which_key_map.o = {
+      \ 'name' : '+open' ,
+      \ 'i' : [':PlugInstall'															   , 'plug install'],
+      \ 'c' : [':PlugClean'															       , 'plug clean'],
+      \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/Help|:TabooRename Help'              , 'help'],
+      \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
+      \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename ZSH' 			               , 'zsh'],
+      \ }
 
 " for python
 let g:which_key_map.p = {
@@ -115,16 +106,20 @@ let g:which_key_map.s = {
       \ 'z' : [':FZF'          , 'FZF'],
       \ }
 
-" Opening full on stuff
-let g:which_key_map.o = {
-      \ 'name' : '+open' ,
-      \ 'i' : [':PlugInstall'															   , 'plug install'],
-      \ 'c' : [':PlugClean'															       , 'plug clean'],
-      \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/Help|:TabooRename Help'              , 'help'],
-      \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
-      \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename ZSH' 			               , 'zsh'],
+" f is for floaterterm
+let g:which_key_map.t = {
+      \ 'name' : '+terminal' ,
+      \ ';' : [':FloatermNew --wintype=popup --height=6'        , 'terminal'],
+      \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
+      \ 'g' : [':FloatermNew lazygit'                           , 'lazygit'],
+      \ 'p' : [':FloatermNew python'                            , 'python'],
+      \ 'i' : [':FloatermNew ipython'                           , 'ipython'],
+      \ 'r' : [':RnvimrToggle'                                  , 'ranger'],
+      \ 't' : [':FloatermToggle'                                , 'toggle'],
+      \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
+      \ 'j' : [':new|te'		   					            , 'term down'],
+      \ 'l' : [':vnew|te'					                    , 'term right'],
       \ }
-
 
 " To do with tabs
 let g:which_key_map.w = {
@@ -138,6 +133,11 @@ let g:which_key_map.w = {
       \ 's' : [':ChooseWinSwap'                                 , 'swap win'],
       \ 't' : [':ChooseWinSwapStay'                             , 'swap stay win'],
       \ }
+
+" nnoremap <silent> <leader>wo :TabooOpen 
+" let g:which_key_map.w.o = 'tab open'
+" nnoremap <silent> <leader>wr :TabooRename 
+" let g:which_key_map.w.r = 'tab rename'
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")
