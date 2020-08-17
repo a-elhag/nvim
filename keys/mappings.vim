@@ -29,10 +29,10 @@ inoremap <A-k> <esc><C-w>K
 inoremap <A-l> <esc><C-w>L
 
 " Resize Windows
-nnoremap <silent> <Up>    :call animate#window_delta_height(10)<CR>
-nnoremap <silent> <Down>  :call animate#window_delta_height(-10)<CR>
-nnoremap <silent> <Left>  :call animate#window_delta_width(10)<CR>
-nnoremap <silent> <Right> :call animate#window_delta_width(-10)<CR>
+nnoremap <silent> <Up>    :call animate#window_delta_height(5)<CR>
+nnoremap <silent> <Down>  :call animate#window_delta_height(-5)<CR>
+nnoremap <silent> <Left>  :call animate#window_delta_width(8)<CR>
+nnoremap <silent> <Right> :call animate#window_delta_width(-8)<CR>
 
 " Better tabbing
 " vnoremap < <gv
