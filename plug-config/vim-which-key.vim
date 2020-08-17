@@ -153,17 +153,36 @@ let g:which_key_map.s = {
 " f ==> +terminal
 let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
-      \ ';' : [':FloatermNew --wintype=popup --height=6'        , 'terminal'],
-      \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
-      \ 'g' : [':FloatermNew lazygit'                           , 'lazygit'],
-      \ 'p' : [':FloatermNew python'                            , 'python'],
-      \ 'i' : [':FloatermNew ipython'                           , 'ipython'],
-      \ 'r' : [':RnvimrToggle'                                  , 'ranger'],
-      \ 't' : [':FloatermToggle'                                , 'toggle'],
-      \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
-      \ 'j' : [':new|te'		   					            , 'term down'],
-      \ 'l' : [':vnew|te'					                    , 'term right'],
+      \ ';' : [':FloatermNew --wintype=popup --height=6'						 , 'terminal'],
+      \ 'c' : [':FloatermNew cpyvke'                           					 , 'cpyvke'],
+      \ 'k' : [':FloatermKill'                                 					 , 'kill'],
+      \ 'f' : [':FloatermNew fzf'                              					 , 'fzf'],
+      \ 'g' : [':FloatermNew lazygit'                          					 , 'lazygit'],
+      \ 'i' : [':FloatermNew ipython'                          					 , 'ipython'],
+      \ 'r' : [':RnvimrToggle'                                 					 , 'ranger'],
+      \ 'n' : [':FloatermNew'                                  					 , 'new'],
+      \ 's' : [':FloatermSend'                                 					 , 'send'],
+      \ 't' : [':FloatermToggle'                               					 , 'toggle'],
+      \ 'y' : [':FloatermNew ytop'                             					 , 'ytop'],
+      \ 'j' : [':FloatermNew --wintype=normal --position=bottom --height=0.5'    , 'term down'],
+      \ 'l' : [':FloatermNew --wintype=normal --position=right --width=0.5'      , 'term right'],
       \ }
+
+" Getting around the annoying escaping
+nnoremap <A-l> <C-\><C-n>:FloatermNext<CR>
+nnoremap <A-h> <C-\><C-n>:FloatermPrev<CR>
+nnoremap <A-j> <C-\><C-n>:FloatermToggle<CR>
+nnoremap <A-k> <C-\><C-n>:FloatermKill<CR>
+
+inoremap <A-l> <C-\><C-n>:FloatermNext<CR>
+inoremap <A-h> <C-\><C-n>:FloatermPrev<CR>
+inoremap <A-j> <C-\><C-n>:FloatermToggle<CR>
+inoremap <A-k> <C-\><C-n>:FloatermKill<CR>
+
+tnoremap <A-l> <C-\><C-n>:FloatermNext<CR>
+tnoremap <A-h> <C-\><C-n>:FloatermPrev<CR>
+tnoremap <A-j> <C-\><C-n>:FloatermToggle<CR>
+tnoremap <A-k> <C-\><C-n>:FloatermKill<CR>
 
 " w ==> +windows
 let g:which_key_map.w = {

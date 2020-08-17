@@ -15,18 +15,10 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-nnoremap <A-h> <C-w>H
-nnoremap <A-j> <C-w>J
-nnoremap <A-k> <C-w>K
-nnoremap <A-l> <C-w>L
 inoremap <C-h> <esc><C-w>h
 inoremap <C-j> <esc><C-w>j
 inoremap <C-k> <esc><C-w>k
 inoremap <C-l> <esc><C-w>l
-inoremap <A-h> <esc><C-w>H
-inoremap <A-j> <esc><C-w>J
-inoremap <A-k> <esc><C-w>K
-inoremap <A-l> <esc><C-w>L
 
 " Resize Windows
 nnoremap <silent> <Up>    :call animate#window_delta_height(5)<CR>
