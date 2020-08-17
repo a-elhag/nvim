@@ -15,6 +15,7 @@ let g:onedark_termcolors=256
 syntax on
 colorscheme onedark
 
+" set fillchars+=vert:│
 
 " checks if your terminal has 24-bit color support
 if (has("termguicolors"))
