@@ -35,6 +35,10 @@ set backspace=indent,eol,start " backspace over everything in insert mode
 " Show history
 set history=500
 
+" save and restore folds when a file is closed and re-opened
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview 
+
 " Learn more about these commands
 " set hidden                              " Required to keep multiple buffers open multiple buffers
 " set conceallevel=0                      " So that I can see `` in markdown files
