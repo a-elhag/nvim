@@ -111,7 +111,9 @@ let g:which_key_map.p = {
 
 " Go to definition in new tab
 nmap <leader>pg :tab split<CR>:tabm -1<CR>:call jedi#goto()<CR>
-let g:which_key_map.p.g = 'goto'
+let g:which_key_map.p.g = 'goto new tab'
+nmap <leader>pi :call jedi#goto()<CR>
+let g:which_key_map.p.i = 'goto in' 
 
 " s ==> +search
 let g:which_key_map.s = {
