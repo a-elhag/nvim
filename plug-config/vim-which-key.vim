@@ -73,6 +73,8 @@ let g:which_key_map.b = {
 " go to buffer
 nmap <leader>bt :buffers<CR>:buffer
 let g:which_key_map.b.t = 'go to'
+nmap <leader>bd :buffers<CR>:bdelete
+let g:which_key_map.b.d = 'delete'
 
 " o ==> +open
 let g:which_key_map.o = {
