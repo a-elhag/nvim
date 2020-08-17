@@ -1,13 +1,17 @@
+" Initial Settings
 " Map leader to which_key
 nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
+
+" Register which key map
+call which_key#register('<Space>', "g:which_key_map")
 
 " Create map to add keys to
 let g:which_key_map =  {}
 " Define a separator
 let g:which_key_sep = '→'
 " default is timeoutlen=1000
-set timeoutlen=200
+set timeoutlen=100
 
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
@@ -24,7 +28,8 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " =================================================
-" EasyMotion
+
+" Space ==> Easy
 let g:which_key_map[' '] = {
       \ 'name' : '+easy' ,
       \ 'f' : ['<plug>(easymotion-prefix)f' , 'find {char} to the right'],
@@ -55,7 +60,7 @@ let g:which_key_map['q'] = [ ':q'                     , 'quit']
 nnoremap <silent> <leader>a :noh<CR>
 let g:which_key_map.a = 'noh'
 
-" Opening full on stuff
+" b ==> +buffers
 let g:which_key_map.b = {
       \ 'name' : '+buffers' ,
       \ 'q' : [':Bclose'														   , 'close'],
@@ -69,7 +74,7 @@ let g:which_key_map.b = {
 nmap <leader>bt :buffers<CR>:buffer
 let g:which_key_map.b.t = 'go to'
 
-" Opening full on stuff
+" o ==> +open
 let g:which_key_map.o = {
       \ 'name' : '+open' ,
       \ 'i' : [':PlugInstall'															   , 'plug install'],
@@ -79,7 +84,7 @@ let g:which_key_map.o = {
       \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename ZSH' 			               , 'zsh'],
       \ }
 
-" for python
+" p ==> +python
 let g:which_key_map.p = {
       \ 'name' : '+python' ,
       \ 'r' : [':Semshi rename'                       , 'rename all'],
@@ -90,7 +95,7 @@ let g:which_key_map.p = {
 nmap <leader>pg :tab split<CR>:tabm -1<CR>:call jedi#goto()<CR>
 let g:which_key_map.p.g = 'goto'
 
-" s is for search
+" s ==> +search
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
       \ '/' : [':History/'     , 'history'],
@@ -119,7 +124,7 @@ let g:which_key_map.s = {
       \ 'z' : [':FZF'          , 'FZF'],
       \ }
 
-" f is for floaterterm
+" f ==> +terminal
 let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
       \ ';' : [':FloatermNew --wintype=popup --height=6'        , 'terminal'],
@@ -134,7 +139,7 @@ let g:which_key_map.t = {
       \ 'l' : [':vnew|te'					                    , 'term right'],
       \ }
 
-" To do with tabs
+" w ==> +windows
 let g:which_key_map.w = {
       \ 'name' : '+windows' ,
       \ 'c' : [':tabclose'									    , 'tab close'],
@@ -147,10 +152,12 @@ let g:which_key_map.w = {
       \ 'w' : [':ChooseWin'                                     , 'choose win'],
       \ }
 
+" extras
 " nnoremap <silent> <leader>wo :TabooOpen 
 " let g:which_key_map.w.o = 'tab open'
 " nnoremap <silent> <leader>wr :TabooRename 
 " let g:which_key_map.w.r = 'tab rename'
 
-" Register which key map
-call which_key#register('<Space>', "g:which_key_map")
+
+" =================================================
+
