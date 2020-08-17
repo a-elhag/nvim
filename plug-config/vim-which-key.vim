@@ -52,7 +52,7 @@ let g:which_key_map[' '] = {
 " Single mappings
 let g:which_key_map['q'] = [ ':q'                     , 'quit']
 
-nnoremap <silent> <leader>a :noh <CR>
+nnoremap <silent> <leader>a :noh<CR>
 let g:which_key_map.a = 'noh'
 
 " f is for floaterterm
@@ -118,6 +118,8 @@ let g:which_key_map.s = {
 " Opening full on stuff
 let g:which_key_map.o = {
       \ 'name' : '+open' ,
+      \ 'i' : [':PlugInstall'															   , 'plug install'],
+      \ 'c' : [':PlugClean'															       , 'plug clean'],
       \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/Help|:TabooRename Help'              , 'help'],
       \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
       \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename ZSH' 			               , 'zsh'],
@@ -136,7 +138,6 @@ let g:which_key_map.w = {
       \ 's' : [':ChooseWinSwap'                                 , 'swap win'],
       \ 't' : [':ChooseWinSwapStay'                             , 'swap stay win'],
       \ }
-
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")
