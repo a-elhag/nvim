@@ -76,6 +76,24 @@ let g:which_key_map.b.t = 'go to'
 nmap <leader>bd :buffers<CR>:bdelete
 let g:which_key_map.b.d = 'delete'
 
+" c ==> +cpyvke
+let g:which_key_map.c = {
+      \ 'name' : '+cpyvke' ,
+      \ 'c' : ['<Plug>(IPython-AutoConnect)'          , 'connect'],
+      \ 'f' : ['<Plug>(IPython-RunFile)'              , 'run file'],
+      \ 'l' : ['<Plug>(IPython-RunLine)'              , 'run line'],
+      \ 's' : ['<Plug>(IPython-RunLines)'             , 'run lines'],
+      \ }
+
+nmap <leader>cr :python3 run_command("reset -f")<CR>
+let g:which_key_map.c.r = 'reset'
+" nmap <leader>pd :python3 dedent_run_this_line()<CR>
+" let g:which_key_map.p.d = 'cpyvke dedent line and run'
+" nmap <leader>pe :python3 dedent_run_these_lines()<CR>
+" let g:which_key_map.p.e = 'cpyvke dedent lines and run'
+" nmap <leader>p :python3 if update_subchannel_msgs(force=True): vim_echo("IPython shell updated",'Operator')<CR>
+" let g:which_key_map.p.g = 'cpyvke update shell'
+
 " o ==> +open
 let g:which_key_map.o = {
       \ 'name' : '+open' ,

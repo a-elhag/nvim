@@ -25,7 +25,8 @@ let g:jedi#goto_assignments_command = ',a'
 let g:rainbow_active = 1
 
 " No remap
-let g:no_plugin_maps = 1
-let g:colorizer_nomap = 1
-let g:jedi#auto_initialization = 0
-let g:bclose_no_plugin_maps = 1
+let g:no_plugin_maps = 1 "don't know
+let g:colorizer_nomap = 1 "colorizer
+let g:jedi#auto_initialization = 0 "deoplete+jedi
+let g:bclose_no_plugin_maps = 1 "bclose
+let g:ipy_perform_mappings = 1 "cpyvke
