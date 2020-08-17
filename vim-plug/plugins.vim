@@ -1,4 +1,3 @@
-"[PlugInstall]
 call plug#begin('~/.config/nvim/plugged') 
 
 " Python
@@ -25,6 +24,7 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
 " Python Error Checker 
 " Plug 'vim-syntastic/syntastic'
+
 
 " Tim Pope
 
