@@ -139,6 +139,7 @@ let g:which_key_map.w = {
       \ 'name' : '+windows' ,
       \ 'c' : [':tabclose'									    , 'tab close'],
       \ 'n' : [':tabnew'									    , 'tab new'],
+      \ 'o' : ['<C-W>o' 									    , 'full screen'],
       \ 'h' : ['<C-w>H'                                         , 'move left'],
       \ 'j' : ['<C-w>J'                                         , 'move down'],
       \ 'k' : ['<C-w>K'                                         , 'move up'],
