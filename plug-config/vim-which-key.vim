@@ -55,6 +55,19 @@ let g:which_key_map['q'] = [ ':q'                     , 'quit']
 nnoremap <silent> <leader>a :noh<CR>
 let g:which_key_map.a = 'noh'
 
+" Opening full on stuff
+let g:which_key_map.b = {
+      \ 'name' : '+buffers' ,
+      \ 'q' : [':Bclose'														   , 'close'],
+      \ 'f' : [':bfirst'														   , 'first'],
+      \ 'l' : [':blast'														       , 'last'],
+      \ 'n' : [':bnext'															   , 'next'],
+      \ 'p' : [':bprevious'														   , 'previous'],
+      \ }
+
+" go to buffer
+nmap <leader>bt :buffers<CR>:buffer
+let g:which_key_map.b.t = 'go to'
 
 " Opening full on stuff
 let g:which_key_map.o = {
@@ -124,14 +137,12 @@ let g:which_key_map.t = {
 " To do with tabs
 let g:which_key_map.w = {
       \ 'name' : '+windows' ,
-      \ 'c' : [':tabclose'									    , 'close'],
+      \ 'c' : [':tabclose'									    , 'tab close'],
       \ 'h' : ['<C-w>H'                                         , 'move left'],
       \ 'j' : ['<C-w>J'                                         , 'move down'],
       \ 'k' : ['<C-w>K'                                         , 'move up'],
       \ 'l' : ['<C-w>L'                                         , 'move right'],
       \ 'w' : [':ChooseWin'                                     , 'choose win'],
-      \ 's' : [':ChooseWinSwap'                                 , 'swap win'],
-      \ 't' : [':ChooseWinSwapStay'                             , 'swap stay win'],
       \ }
 
 " nnoremap <silent> <leader>wo :TabooOpen 
