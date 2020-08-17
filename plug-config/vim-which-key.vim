@@ -152,6 +152,7 @@ let g:which_key_map.w = {
       \ 'k' : ['<C-w>K'                                         , 'move up'],
       \ 'l' : ['<C-w>L'                                         , 'move right'],
       \ 'w' : [':ChooseWin'                                     , 'choose win'],
+      \ 's' : [':ChooseWinSwap'                                 , 'choose swap'],
       \ }
 
 " extras
