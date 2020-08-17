@@ -62,6 +62,8 @@ Plug 'kevinhwang91/rnvimr'
 Plug 'easymotion/vim-easymotion'
 " Register Viewer
 Plug 'junegunn/vim-peekaboo'
+" Close Buffer without Closing Window
+Plug 'rbgrouleff/bclose.vim'
 
 " -------------
 " Windows
@@ -71,8 +73,8 @@ Plug 'junegunn/vim-peekaboo'
 Plug 't9md/vim-choosewin'
 " Animation
 Plug 'camspiers/animate.vim'
-" Where you are
-Plug 'bignimbus/you-are-here.vim'
+" Smooth Scrolling
+Plug 'psliwka/vim-smoothie'
 
 " -------------
 " Looks
@@ -92,14 +94,17 @@ Plug 'xolox/vim-misc'
 Plug 'guns/xterm-color-table.vim'
 " HighlightedYank
 Plug 'machakann/vim-highlightedyank'
+" Color 
+Plug 'lilydjwg/colorizer'
+
+" -------------
+" Theme
+" ------------
+
 " Theme
 Plug 'kyoz/purify', { 'rtp': 'vim' } " rtp means repository to use (subdirectory)
 " Theme
 Plug 'joshdick/onedark.vim'
-" Color 
-Plug 'lilydjwg/colorizer'
-" Smooth Scrolling
-Plug 'psliwka/vim-smoothie'
 
 " ----------------
 "  Will do
