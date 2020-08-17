@@ -23,6 +23,9 @@ let g:jedi#usages_command = ',o'
 " Find assignments
 let g:jedi#goto_assignments_command = ',a'
 
-
-"Rainbow
+" Rainbow
 let g:rainbow_active = 1
+
+" No remap
+let g:colorizer_nomap = 1
+let g:jedi#auto_initialization = 0
