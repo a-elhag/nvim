@@ -48,6 +48,15 @@ augroup end
 set viewoptions=folds,cursor
 set sessionoptions=folds
 
+" setting preview height
+set previewheight=8
+au BufEnter ?* call PreviewHeightWorkAround()
+func PreviewHeightWorkAround()
+    if &previewwindow
+        exec 'setlocal winheight='.&previewheight
+    endif
+endfunc
+
 " Learn more about these commands
 " set hidden                              " Required to keep multiple buffers open multiple buffers
 " set conceallevel=0                      " So that I can see `` in markdown files
