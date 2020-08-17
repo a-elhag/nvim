@@ -46,8 +46,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/context_filetype.vim'
 " Rename Tabs 
 Plug 'gcmt/taboo.vim'
-" Smooth Scrolling
-Plug 'psliwka/vim-smoothie'
 " Rainbow parenthesises
 Plug 'luochen1990/rainbow'
 " Fuzzy Finder
@@ -58,14 +56,23 @@ Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vim-which-key'
 " Floaterm
 Plug 'voldikss/vim-floaterm'
-" Choosing windows
-Plug 't9md/vim-choosewin'
 " Ranger
 Plug 'kevinhwang91/rnvimr'
 " Easy Motion
 Plug 'easymotion/vim-easymotion'
 " Register Viewer
 Plug 'junegunn/vim-peekaboo'
+
+" -------------
+" Windows
+" ------------
+
+" Choosing windows
+Plug 't9md/vim-choosewin'
+" Animation
+Plug 'camspiers/animate.vim'
+" Where you are
+Plug 'bignimbus/you-are-here.vim'
 
 " -------------
 " Looks
@@ -91,6 +98,8 @@ Plug 'kyoz/purify', { 'rtp': 'vim' } " rtp means repository to use (subdirectory
 Plug 'joshdick/onedark.vim'
 " Color 
 Plug 'lilydjwg/colorizer'
+" Smooth Scrolling
+Plug 'psliwka/vim-smoothie'
 
 " ----------------
 "  Will do
