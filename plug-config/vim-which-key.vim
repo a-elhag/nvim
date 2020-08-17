@@ -107,13 +107,19 @@ let g:which_key_map.p = {
       \ 'name' : '+python' ,
       \ 'r' : [':Semshi rename'                       , 'rename all'],
       \ 'b' : [':RainbowToggle'                       , 'rainbow'],
+      \ 'n' : [':Semshi goto name next'               , 'goto name next'],
+      \ 'N' : [':Semshi goto name prev'               , 'goto name prev'],
+      \ 'c' : [':Semshi goto class next'              , 'goto class next'],
+      \ 'C' : [':Semshi goto class prev'              , 'goto class prev'],
+      \ 'f' : [':Semshi goto function next'           , 'goto func next'],
+      \ 'F' : [':Semshi goto function prev'           , 'goto func prev'],
       \ }
 
 " Go to definition in new tab
 nmap <leader>pg :tab split<CR>:tabm -1<CR>:call jedi#goto()<CR>
 let g:which_key_map.p.g = 'goto new tab'
-nmap <leader>pi :call jedi#goto()<CR>
-let g:which_key_map.p.i = 'goto in' 
+nmap <leader>pG :call jedi#goto()<CR>
+let g:which_key_map.p.G = 'goto declaration' 
 
 " s ==> +search
 let g:which_key_map.s = {
@@ -171,6 +177,7 @@ let g:which_key_map.w = {
       \ 'w' : [':ChooseWin'                                     , 'choose win'],
       \ 's' : [':ChooseWinSwap'                                 , 'choose swap'],
       \ 'o' : ['<C-W>o' 									    , 'full screen'],
+      \ 't' : ['<C-W>T' 									    , 'window to new tab'],
       \ 'z' : ['<C-W>z' 									    , 'close preview window'],
       \ }
 
