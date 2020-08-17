@@ -22,6 +22,9 @@ Plug 'davidhalter/jedi-vim'
 Plug 'vim-scripts/indentpython.vim'
 " Python Flake8 (<F7>)
 Plug 'nvie/vim-flake8'
+" Debugger
+Plug 'puremourning/vimspector'
+
 " Python Error Checker 
 " Plug 'vim-syntastic/syntastic'
 
