@@ -69,6 +69,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/vim-peekaboo'
 " Close Buffer without Closing Window
 Plug 'rbgrouleff/bclose.vim'
+" Undo Tree
+Plug 'mbbill/undotree'
 
 " Windows
 

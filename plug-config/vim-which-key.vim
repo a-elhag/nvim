@@ -195,6 +195,7 @@ let g:which_key_map.w = {
       \ 'l' : ['<C-w>L'                                         , 'move right'],
       \ 'w' : [':ChooseWin'                                     , 'choose win'],
       \ 's' : [':ChooseWinSwap'                                 , 'choose swap'],
+      \ 'u' : [':UndotreeToggle'                                , 'undotree'],
       \ 'o' : ['<C-W>o' 									    , 'full screen'],
       \ 't' : ['<C-W>T' 									    , 'window to new tab'],
       \ 'z' : ['<C-W>z' 									    , 'close preview window'],

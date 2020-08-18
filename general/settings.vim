@@ -6,7 +6,6 @@ set nowrap                              " Display long lines as just one line
 set encoding=utf-8                      " The encoding displayed
 set fileencoding=utf-8                  " The encoding written to file
 set pumheight=10                        " Makes popup menu smaller
-" set cmdheight=2                         " More space for displaying messages
 set ruler         			            " Show the cursor position all the time
 set iskeyword+=-                      	" treat dash separated words as a word text object"
 " set mouse=a                             " Enable your mouse
@@ -44,9 +43,19 @@ augroup AutoSaveFolds
   autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
   autocmd BufWinEnter ?* silent! loadview
 augroup end
-     
+
 set viewoptions=folds,cursor
 set sessionoptions=folds
+
+" undo
+if has("persistent_undo")
+    set undodir=$HOME/.undodir
+    set undofile
+endif    
+
+if !exists('g:undotree_WindowLayout')
+    let g:undotree_WindowLayout = 1
+endif
 
 " setting preview height
 set previewheight=8
