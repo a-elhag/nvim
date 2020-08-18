@@ -91,6 +91,9 @@ nmap <leader>cr :python3 run_command("reset -f")<CR>
 let g:which_key_map.c.r = 'reset'
 nmap <leader>cu :python3 update_subchannel_msgs(force=True, startedin_vimipython=False)<CR>
 let g:which_key_map.c.u = 'update shell'
+nmap <leader>ct ox=1;print(x)<ESC><Plug>(IPython-RunLine)
+let g:which_key_map.c.t = 'test'
+
 
 " o ==> +open
 let g:which_key_map.o = {
@@ -120,6 +123,10 @@ nmap <leader>pg :tab split<CR>:tabm -1<CR>:call jedi#goto()<CR>
 let g:which_key_map.p.g = 'goto new tab'
 nmap <leader>pG :call jedi#goto()<CR>
 let g:which_key_map.p.G = 'goto declaration' 
+nmap <leader>pa :call jedi#goto_assignments()<CR>
+let g:which_key_map.p.a = 'goto assignments' 
+nmap <leader>pd :call jedi#show_documentation()<CR>
+let g:which_key_map.p.d = 'goto docs' 
 
 " s ==> +search
 let g:which_key_map.s = {

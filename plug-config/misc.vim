@@ -20,6 +20,8 @@ let g:jedi#goto_command = ',d'
 let g:jedi#usages_command = ',o'
 " Find assignments
 let g:jedi#goto_assignments_command = ',a'
+" Stop popup window
+autocmd FileType python setlocal completeopt-=preview
 
 " Rainbow
 let g:rainbow_active = 1
