@@ -10,24 +10,20 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Python
 
-" Curses PYthon Variable and Kerne Explorer
-" in terminal ==> cpyvke | in terminal ==> cpyvke-launch-ipython
-Plug 'ipselium/cpyvke'
-Plug 'a-elhag/vim-cpyvke'
 " Semshi (Adds good highlighting and replacing)
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " Git/mercurial/others diff icons on the side of the file lines
 Plug 'mhinz/vim-signify'
+" MultiLine Indent
+Plug 'vim-scripts/indentpython.vim'
+" Python Flake8 (<F7>)
+Plug 'nvie/vim-flake8'
 " Autocomplete kinda
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " do not forget to install jedi
 " Plug 'deoplete-plugins/deoplete-jedi'
 " Going to help files
 " Plug 'davidhalter/jedi-vim'
-" MultiLine Indent
-Plug 'vim-scripts/indentpython.vim'
-" Python Flake8 (<F7>)
-Plug 'nvie/vim-flake8'
 " Debugger
 " Plug 'puremourning/vimspector'
 " Python Error Checker 
@@ -80,6 +76,8 @@ Plug 't9md/vim-choosewin'
 Plug 'camspiers/animate.vim'
 " Smooth Scrolling
 Plug 'psliwka/vim-smoothie'
+" Floating Terminal Buffers
+Plug 'Shougo/denite.nvim'
 
 " Looks
 

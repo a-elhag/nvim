@@ -84,16 +84,27 @@ let g:which_key_map.o = {
       \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/Help|:TabooRename Help'              , 'help'],
       \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
       \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename ZSH' 			               , 'zsh'],
+      \ }                                                                                               
+                                                                                                        
+" i ==> +ipython                                                                                        
+let g:which_key_map.i = {                                                                               
+      \ 'name' : '+ipython' ,                                                                           
+      \ 'l' : [':FloatermSend'                             , 'send line'],                              
+      \ 'a' : [':%FloatermSend'                             , 'send buffer'],                           
+      \ 'w' : [':FloatermSend whos'	  	              , 'whos'],
+      \ 'r' : [':FloatermSend reset -f' 	          , 'reset'],
+      \ 's' : [':Semshi rename'                       , 'rename all'],
       \ }
+
+nnoremap <silent> <leader>iL :'<,'>FloatermSend
+let g:which_key_map.i.L = 'send lines'
+nnoremap <silent> <leader>iS :FloatermSend 
+let g:which_key_map.i.S = 'send custom line'
 
 " p ==> +python
 let g:which_key_map.p = {
       \ 'name' : '+python' ,
       \ 'b' : [':RainbowToggle'                       , 'rainbow'],
-      \ 'l' : [':FloatermSend'		   	              , 'send line'],
-      \ 'a' : [':%FloatermSend'		   	              , 'send buffer'],
-      \ 'w' : [':FloatermSend whos'	  	              , 'whos'],
-      \ 'r' : [':FloatermSend reset -f' 	          , 'reset'],
       \ 's' : [':Semshi rename'                       , 'rename all'],
       \ 'n' : [':Semshi goto name next'               , 'goto name next'],
       \ 'N' : [':Semshi goto name prev'               , 'goto name prev'],
@@ -102,9 +113,6 @@ let g:which_key_map.p = {
       \ 'f' : [':Semshi goto function next'           , 'goto func next'],
       \ 'F' : [':Semshi goto function prev'           , 'goto func prev'],
       \ }
-
-nnoremap <silent> <leader>pL :'<,'>FloatermSend
-let g:which_key_map.p.L = 'send lines'
 
 " s ==> +search
 let g:which_key_map.s = {
@@ -139,11 +147,10 @@ let g:which_key_map.s = {
 let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
       \ ';' : [':FloatermNew --wintype=popup --height=8'						 , 'terminal'],
-      \ 'c' : [':FloatermNew cpyvke'                           					 , 'cpyvke'],
+      \ 'd' : [':Denite floaterm'                           					 , 'denite'],
       \ 'k' : [':FloatermKill'                                 					 , 'kill'],
       \ 'f' : [':FloatermNew fzf'                              					 , 'fzf'],
       \ 'g' : [':FloatermNew lazygit'                          					 , 'lazygit'],
-      \ 'i' : [':FloatermNew ipython'                          					 , 'ipython'],
       \ 'r' : [':RnvimrToggle'                                 					 , 'ranger'],
       \ 'n' : [':FloatermNew'                                  					 , 'new'],
       \ 't' : [':FloatermToggle'                               					 , 'toggle'],
