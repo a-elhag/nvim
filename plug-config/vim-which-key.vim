@@ -76,6 +76,45 @@ let g:which_key_map.b.t = 'go to'
 nmap <leader>bd :buffers<CR>:bdelete
 let g:which_key_map.b.d = 'delete'
 
+" c ==> +coc
+let g:which_key_map.c = {
+      \ 'name' : '+coc' ,
+      \ 'd' : ['<Plug>(coc-diagnostic-next)'									   , 'diagnostic -next'],
+      \ 'D' : ['<Plug>(coc-diagnostic-prev)'									   , 'diagnostic -prev'],
+      \ 'g' : ['<Plug>(coc-definition)'											   , 'definition'],
+      \ 't' : ['<Plug>(coc-type-definition)'									   , 'type definition'],
+      \ 'i' : ['<Plug>(coc-implementation)'			 							   , 'implementation'],
+      \ 'r' : ['<Plug>(coc-references)'											   , 'references'],
+      \ 'n' : ['<Plug>(coc-rename)'												   , 'rename symbol'],
+      \ 'm' : [':CocList marketplace'											   , 'marketplace'],
+      \ 'p' : [':CocCommand python.setInterpreter'								   , 'set python interpreter'],
+      \ }
+
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+
+" Use K to show documentation in preview window.
+nnoremap <silent> <leader>cK :call <SID>show_documentation()<CR>
+let g:which_key_map.c.K = 'show documentation'
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Formatting selected code.
+xmap <leader>cf <Plug>(coc-format-selected)
+nmap <leader>cf  <Plug>(coc-format-selected)
+let g:which_key_map.c.f = 'format selected'
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>ca  <Plug>(coc-codeaction-selected)
+nmap <leader>ca  <Plug>(coc-codeaction-selected)
+let g:which_key_map.c.a = 'code action selected'
+
 " o ==> +open
 let g:which_key_map.o = {
       \ 'name' : '+open' ,

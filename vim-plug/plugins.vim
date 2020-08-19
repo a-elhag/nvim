@@ -18,12 +18,9 @@ Plug 'mhinz/vim-signify'
 Plug 'vim-scripts/indentpython.vim'
 " Python Flake8 (<F7>)
 Plug 'nvie/vim-flake8'
-" Autocomplete kinda
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" do not forget to install jedi
-" Plug 'deoplete-plugins/deoplete-jedi'
-" Going to help files
-" Plug 'davidhalter/jedi-vim'
+" Conquer of Completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Debugger
 " Plug 'puremourning/vimspector'
 " Python Error Checker 
