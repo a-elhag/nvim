@@ -76,25 +76,6 @@ let g:which_key_map.b.t = 'go to'
 nmap <leader>bd :buffers<CR>:bdelete
 let g:which_key_map.b.d = 'delete'
 
-" c ==> +cpyvke
-let g:which_key_map.c = {
-      \ 'name' : '+cpyvke' ,
-      \ 'c' : ['<Plug>(IPython-AutoConnect)'          , 'connect'],
-      \ 'f' : ['<Plug>(IPython-RunFile)'              , 'run file'],
-      \ 'l' : ['<Plug>(IPython-RunLine)'              , 'run line'],
-      \ 's' : ['<Plug>(IPython-RunLines)'             , 'run lines'],
-      \ 'd' : ['<Plug>(IPython-RunLineAsTopLevel)'    , 'dedent run line'],
-      \ 'e' : ['<Plug>(IPython-RunLineAsTopLevels)'   , 'dedent run lines'],
-      \ }
-
-nmap <leader>cr :python3 run_command("reset -f")<CR>
-let g:which_key_map.c.r = 'reset'
-nmap <leader>cu :python3 update_subchannel_msgs(force=True, startedin_vimipython=False)<CR>
-let g:which_key_map.c.u = 'update shell'
-nmap <leader>ct ox=1;print(x)<ESC><Plug>(IPython-RunLine)
-let g:which_key_map.c.t = 'test'
-
-
 " o ==> +open
 let g:which_key_map.o = {
       \ 'name' : '+open' ,
@@ -108,8 +89,12 @@ let g:which_key_map.o = {
 " p ==> +python
 let g:which_key_map.p = {
       \ 'name' : '+python' ,
-      \ 'r' : [':Semshi rename'                       , 'rename all'],
       \ 'b' : [':RainbowToggle'                       , 'rainbow'],
+      \ 'l' : [':FloatermSend'		   	              , 'send line'],
+      \ 'a' : [':%FloatermSend'		   	              , 'send buffer'],
+      \ 'w' : [':FloatermSend whos'	  	              , 'whos'],
+      \ 'r' : [':FloatermSend reset -f' 	          , 'reset'],
+      \ 's' : [':Semshi rename'                       , 'rename all'],
       \ 'n' : [':Semshi goto name next'               , 'goto name next'],
       \ 'N' : [':Semshi goto name prev'               , 'goto name prev'],
       \ 'c' : [':Semshi goto class next'              , 'goto class next'],
@@ -118,15 +103,8 @@ let g:which_key_map.p = {
       \ 'F' : [':Semshi goto function prev'           , 'goto func prev'],
       \ }
 
-" Go to definition in new tab
-nmap <leader>pg :tab split<CR>:tabm -1<CR>:call jedi#goto()<CR>
-let g:which_key_map.p.g = 'goto new tab'
-nmap <leader>pG :call jedi#goto()<CR>
-let g:which_key_map.p.G = 'goto declaration' 
-nmap <leader>pa :call jedi#goto_assignments()<CR>
-let g:which_key_map.p.a = 'goto assignments' 
-nmap <leader>pd :call jedi#show_documentation()<CR>
-let g:which_key_map.p.d = 'goto docs' 
+nnoremap <silent> <leader>pL :'<,'>FloatermSend
+let g:which_key_map.p.L = 'send lines'
 
 " s ==> +search
 let g:which_key_map.s = {
@@ -157,10 +135,10 @@ let g:which_key_map.s = {
       \ 'z' : [':FZF'          , 'FZF'],
       \ }
 
-" f ==> +terminal
+" t ==> +terminal
 let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
-      \ ';' : [':FloatermNew --wintype=popup --height=6'						 , 'terminal'],
+      \ ';' : [':FloatermNew --wintype=popup --height=8'						 , 'terminal'],
       \ 'c' : [':FloatermNew cpyvke'                           					 , 'cpyvke'],
       \ 'k' : [':FloatermKill'                                 					 , 'kill'],
       \ 'f' : [':FloatermNew fzf'                              					 , 'fzf'],
@@ -168,7 +146,6 @@ let g:which_key_map.t = {
       \ 'i' : [':FloatermNew ipython'                          					 , 'ipython'],
       \ 'r' : [':RnvimrToggle'                                 					 , 'ranger'],
       \ 'n' : [':FloatermNew'                                  					 , 'new'],
-      \ 's' : [':FloatermSend'                                 					 , 'send'],
       \ 't' : [':FloatermToggle'                               					 , 'toggle'],
       \ 'y' : [':FloatermNew ytop'                             					 , 'ytop'],
       \ 'j' : [':FloatermNew --wintype=normal --position=bottom --height=0.5'    , 'term down'],
@@ -213,7 +190,3 @@ let g:which_key_map.w = {
 " let g:which_key_map.w.o = 'tab open'
 " nnoremap <silent> <leader>wr :TabooRename 
 " let g:which_key_map.w.r = 'tab rename'
-
-
-" =================================================
-

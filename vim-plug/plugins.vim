@@ -19,11 +19,11 @@ Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " Git/mercurial/others diff icons on the side of the file lines
 Plug 'mhinz/vim-signify'
 " Autocomplete kinda
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " do not forget to install jedi
-Plug 'deoplete-plugins/deoplete-jedi'
+" Plug 'deoplete-plugins/deoplete-jedi'
 " Going to help files
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 " MultiLine Indent
 Plug 'vim-scripts/indentpython.vim'
 " Python Flake8 (<F7>)

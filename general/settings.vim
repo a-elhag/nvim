@@ -58,7 +58,7 @@ if !exists('g:undotree_WindowLayout')
 endif
 
 " setting preview height
-set previewheight=8
+set previewheight=6
 au BufEnter ?* call PreviewHeightWorkAround()
 func PreviewHeightWorkAround()
     if &previewwindow
