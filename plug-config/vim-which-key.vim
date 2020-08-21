@@ -128,17 +128,20 @@ let g:which_key_map.o = {
 " i ==> +ipython                                                                                        
 let g:which_key_map.i = {                                                                               
       \ 'name' : '+ipython' ,                                                                           
-      \ 'l' : [':FloatermSend'                             , 'send line'],                              
+      \ 'l' : [':FloatermSend'                              , 'send line'],                              
       \ 'a' : [':%FloatermSend'                             , 'send buffer'],                           
-      \ 'w' : [':FloatermSend whos'	  	              , 'whos'],
-      \ 'r' : [':FloatermSend reset -f' 	          , 'reset'],
-      \ 's' : [':Semshi rename'                       , 'rename all'],
+      \ 'w' : [':FloatermSend whos'				            , 'whos'],
+      \ 'r' : [':FloatermSend reset -f'				        , 'reset'],
+      \ 's' : [':Semshi rename'							    , 'rename all'],
       \ }
 
-nnoremap <silent> <leader>iL :'<,'>FloatermSend
+nnoremap <silent> <leader>iL :FloatermSend<CR>
 let g:which_key_map.i.L = 'send lines'
 nnoremap <silent> <leader>iS :FloatermSend 
 let g:which_key_map.i.S = 'send custom line'
+tnoremap <silent> <F5> ipython --no-autoindent<CR>
+nnoremap <silent> <leader>io :FloatermNew --wintype=normal --position=right --width=0.5<CR>ipython --no-autoindent<CR>
+let g:which_key_map.i.o = 'open ipython'
 
 " p ==> +python
 let g:which_key_map.p = {
