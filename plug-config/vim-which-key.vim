@@ -188,34 +188,23 @@ let g:which_key_map.s = {
 " t ==> +terminal
 let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
-      \ ';' : [':FloatermNew --wintype=popup --height=8'						 , 'terminal'],
       \ 'd' : [':Denite floaterm'                           					 , 'denite'],
-      \ 'k' : [':FloatermKill'                                 					 , 'kill'],
       \ 'f' : [':FloatermNew fzf'                              					 , 'fzf'],
       \ 'g' : [':FloatermNew lazygit'                          					 , 'lazygit'],
       \ 'r' : [':RnvimrToggle'                                 					 , 'ranger'],
-      \ 'n' : [':FloatermNew'                                  					 , 'new'],
-      \ 't' : [':FloatermToggle'                               					 , 'toggle'],
       \ 'y' : [':FloatermNew ytop'                             					 , 'ytop'],
+      \ ';' : [':FloatermNew --wintype=popup --height=8'						 , 'terminal'],
       \ 'j' : [':FloatermNew --wintype=normal --position=bottom --height=0.5'    , 'term down'],
       \ 'l' : [':FloatermNew --wintype=normal --position=right --width=0.5'      , 'term right'],
+      \ 'n' : [':FloatermNew'                                  					 , 'new'],
+      \ 'k' : [':FloatermKill'                                 					 , 'kill'],
+      \ 't' : [':FloatermToggle'                               					 , 'toggle'],
+      \ 'L' : [':FloatermNext'                             					     , 'next'],
+      \ 'H' : [':FloatermPrev'                             					     , 'prev'],
       \ }
 
-" Getting around the annoying escaping
-nnoremap <A-l> <C-\><C-n>:FloatermNext<CR>
-nnoremap <A-h> <C-\><C-n>:FloatermPrev<CR>
-nnoremap <A-j> <C-\><C-n>:FloatermToggle<CR>
-nnoremap <A-k> <C-\><C-n>:FloatermKill<CR>
-
-inoremap <A-l> <C-\><C-n>:FloatermNext<CR>
-inoremap <A-h> <C-\><C-n>:FloatermPrev<CR>
-inoremap <A-j> <C-\><C-n>:FloatermToggle<CR>
-inoremap <A-k> <C-\><C-n>:FloatermKill<CR>
-
-tnoremap <A-l> <C-\><C-n>:FloatermNext<CR>
-tnoremap <A-h> <C-\><C-n>:FloatermPrev<CR>
-tnoremap <A-j> <C-\><C-n>:FloatermToggle<CR>
-tnoremap <A-k> <C-\><C-n>:FloatermKill<CR>
+nmap <leader>tc :set scrollback=15 \| sleep 100m \| set scrollback=10000<cr>
+let g:which_key_map.t.c = 'clear'
 
 " w ==> +windows
 let g:which_key_map.w = {
