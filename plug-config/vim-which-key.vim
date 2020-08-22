@@ -129,19 +129,20 @@ let g:which_key_map.o = {
 let g:which_key_map.i = {                                                                               
       \ 'name' : '+ipython' ,                                                                           
       \ 'l' : [':FloatermSend'                              , 'send line'],                              
-      \ 'a' : [':%FloatermSend'                             , 'send buffer'],                           
+      \ 'p' : [':%FloatermSend %paste'                      , 'paste'],                           
+      \ 'c' : [':FloatermSend clear'				        , 'clear'],
       \ 'w' : [':FloatermSend whos'				            , 'whos'],
       \ 'r' : [':FloatermSend reset -f'				        , 'reset'],
       \ 's' : [':Semshi rename'							    , 'rename all'],
+      \ 'y' : [':MatlabBlock'							    , 'yank matlab'],
       \ }
 
-nnoremap <silent> <leader>iL :FloatermSend<CR>
-let g:which_key_map.i.L = 'send lines'
 nnoremap <silent> <leader>iS :FloatermSend 
-let g:which_key_map.i.S = 'send custom line'
-tnoremap <silent> <F5> ipython --no-autoindent<CR>
+let g:which_key_map.i.m = 'send custom line'
 nnoremap <silent> <leader>io :FloatermNew --wintype=normal --position=right --width=0.5<CR>ipython --no-autoindent<CR>
 let g:which_key_map.i.o = 'open ipython'
+nnoremap <leader>ia gg^yGzz
+let g:which_key_map.i.a = 'yank all'
 
 " p ==> +python
 let g:which_key_map.p = {
@@ -203,7 +204,7 @@ let g:which_key_map.t = {
       \ 'H' : [':FloatermPrev'                             					     , 'prev'],
       \ }
 
-nmap <leader>tc :set scrollback=15 \| sleep 100m \| set scrollback=10000<cr>
+nmap <leader>tc :set scrollback=25 \| sleep 100m \| set scrollback=500<cr>
 let g:which_key_map.t.c = 'clear'
 
 " w ==> +windows

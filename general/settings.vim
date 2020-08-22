@@ -15,6 +15,7 @@ set t_Co=256                            " Support 256 colors
 set number                              " Line numbers
 set cursorline                          " Enable highlighting of the current line
 set clipboard=unnamedplus               " Copy paste between vim and everything else
+set inccommand=nosplit					" live subsitution
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
