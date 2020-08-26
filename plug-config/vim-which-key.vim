@@ -63,18 +63,16 @@ let g:which_key_map.a = 'noh'
 " b ==> +buffers
 let g:which_key_map.b = {
       \ 'name' : '+buffers' ,
+      \ 'c' : [':lcd %:p:h' 									    			   , 'change dir'],
       \ 'q' : [':Bclose'														   , 'close'],
-      \ 'f' : [':bfirst'														   , 'first'],
-      \ 'l' : [':blast'														       , 'last'],
-      \ 'n' : [':bnext'															   , 'next'],
-      \ 'p' : [':bprevious'														   , 'previous'],
       \ }
-
 " go to buffer
-nmap <leader>bt :buffers<CR>:buffer
+nnoremap <leader>bt :buffers<CR>:buffer
 let g:which_key_map.b.t = 'go to'
-nmap <leader>bd :buffers<CR>:bdelete
+nnoremap <leader>bd :buffers<CR>:bdelete
 let g:which_key_map.b.d = 'delete'
+nnoremap <leader>bp :pwd<CR>
+let g:which_key_map.b.p = 'print dir'
 
 " c ==> +coc
 let g:which_key_map.c = {
@@ -143,6 +141,10 @@ nnoremap <silent> <leader>io :FloatermNew --wintype=normal --position=right --wi
 let g:which_key_map.i.o = 'open ipython'
 nnoremap <leader>ia gg^yGzz
 let g:which_key_map.i.a = 'yank all'
+nnoremap <leader>id iimport ipdb; dbg1 = ipdb.set_trace  # BREAKPOINT
+let g:which_key_map.i.d = 'debug import'
+nnoremap <leader>id iimport ipdb; dbg1 = ipdb.set_trace  # BREAKPOINT
+let g:which_key_map.i.d = 'debug import'
 
 " p ==> +python
 let g:which_key_map.p = {
@@ -204,7 +206,7 @@ let g:which_key_map.t = {
       \ 'H' : [':FloatermPrev'                             					     , 'prev'],
       \ }
 
-nmap <leader>tc :set scrollback=25 \| sleep 100m \| set scrollback=500<cr>
+nmap <leader>tc :set scrollback=25 \| sleep 100m \| set scrollback=100<cr>
 let g:which_key_map.t.c = 'clear'
 
 " w ==> +windows

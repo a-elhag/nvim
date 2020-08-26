@@ -34,6 +34,7 @@ set backspace=indent,eol,start " backspace over everything in insert mode
 
 " Show history
 set history=500
+set scrollback=100
 
 "FOLDS:
 augroup AutoSaveFolds
