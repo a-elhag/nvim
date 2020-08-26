@@ -27,6 +27,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'vim-syntastic/syntastic'
 
 
+" Markdown
+Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
 " Tim Pope
 
 " Surround
