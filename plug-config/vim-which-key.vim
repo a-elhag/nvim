@@ -138,6 +138,8 @@ let g:which_key_map.i = {
 
 nnoremap <silent> <leader>iS :FloatermSend 
 let g:which_key_map.i.S = 'send custom line'
+nnoremap <silent> <leader>iv 0ywo<Esc>p:FloatermSend<CR>ddk
+let g:which_key_map.i.v = 'send variable'
 nnoremap <silent> <leader>iL :PythonUncomment<CR>:FloatermSend<CR>:PythonComment<CR>
 let g:which_key_map.i.L = 'send commented line'
 nnoremap <silent> <leader>io :FloatermNew --wintype=normal --position=right --width=0.5<CR>ipython --no-autoindent<CR>
