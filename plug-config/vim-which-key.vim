@@ -118,6 +118,7 @@ let g:which_key_map.o = {
       \ 'name' : '+open' ,
       \ 'i' : [':PlugInstall'															   , 'plug install'],
       \ 'c' : [':PlugClean'															       , 'plug clean'],
+      \ 'm' : [':MarkdownPreview'														   , 'markdown preview'],
       \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/Help|:TabooRename Help'              , 'help'],
       \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
       \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename ZSH' 			               , 'zsh'],
@@ -136,7 +137,9 @@ let g:which_key_map.i = {
       \ }
 
 nnoremap <silent> <leader>iS :FloatermSend 
-let g:which_key_map.i.m = 'send custom line'
+let g:which_key_map.i.S = 'send custom line'
+nnoremap <silent> <leader>iL :PythonUncomment<CR>:FloatermSend<CR>:PythonComment<CR>
+let g:which_key_map.i.L = 'send commented line'
 nnoremap <silent> <leader>io :FloatermNew --wintype=normal --position=right --width=0.5<CR>ipython --no-autoindent<CR>
 let g:which_key_map.i.o = 'open ipython'
 nnoremap <leader>ia gg^yGzz
@@ -151,6 +154,8 @@ let g:which_key_map.p = {
       \ 'name' : '+python' ,
       \ 'b' : [':RainbowToggle'                       , 'rainbow'],
       \ 's' : [':Semshi rename'                       , 'rename all'],
+      \ 'u' : [':PythonUncomment'						    , 'uncomment'],
+      \ 'U' : [':PythonComment'							    , 'comment'],
       \ 'n' : [':Semshi goto name next'               , 'goto name next'],
       \ 'N' : [':Semshi goto name prev'               , 'goto name prev'],
       \ 'c' : [':Semshi goto class next'              , 'goto class next'],

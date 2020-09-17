@@ -1,6 +1,10 @@
 " TextEdit might fail if hidden is not set.
 set hidden
 
+
+" Setting Python to be a virtual environment
+let g:python3_host_prog = expand('/home/linux5mon/.local/share/virtualenvs/neovim_venv-sJQEjJJA/bin/python3')
+
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup

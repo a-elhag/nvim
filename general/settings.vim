@@ -36,6 +36,8 @@ set backspace=indent,eol,start " backspace over everything in insert mode
 set history=500
 set scrollback=100
 
+let g:vim_markdown_folding_disabled = 1
+
 "FOLDS:
 augroup AutoSaveFolds
   autocmd!
