@@ -113,17 +113,6 @@ xmap <leader>ca  <Plug>(coc-codeaction-selected)
 nmap <leader>ca  <Plug>(coc-codeaction-selected)
 let g:which_key_map.c.a = 'code action selected'
 
-" o ==> +open
-let g:which_key_map.o = {
-      \ 'name' : '+open' ,
-      \ 'i' : [':PlugInstall'															   , 'plug install'],
-      \ 'c' : [':PlugClean'															       , 'plug clean'],
-      \ 'm' : [':MarkdownPreview'														   , 'markdown preview'],
-      \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/Help|:TabooRename Help'              , 'help'],
-      \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
-      \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename ZSH' 			               , 'zsh'],
-      \ }                                                                                               
-                                                                                                        
 " i ==> +ipython                                                                                        
 let g:which_key_map.i = {                                                                               
       \ 'name' : '+ipython' ,                                                                           
@@ -132,14 +121,15 @@ let g:which_key_map.i = {
       \ 'c' : [':FloatermSend clear'				        , 'clear'],
       \ 'w' : [':FloatermSend whos'				            , 'whos'],
       \ 'r' : [':FloatermSend reset -f'				        , 'reset'],
-      \ 's' : [':Semshi rename'							    , 'rename all'],
       \ 'y' : [':MatlabBlock'							    , 'yank matlab'],
       \ }
 
 nnoremap <silent> <leader>iS :FloatermSend 
 let g:which_key_map.i.S = 'send custom line'
-nnoremap <silent> <leader>iv 0ywo<Esc>p:FloatermSend<CR>ddk
+nnoremap <silent> <leader>iv 0yiwo<Esc>p:FloatermSend<CR>ddk
 let g:which_key_map.i.v = 'send variable'
+nnoremap <silent> <leader>iV 0yiwo<Esc>p
+let g:which_key_map.i.V = 'print variable'
 nnoremap <silent> <leader>iL :PythonUncomment<CR>:FloatermSend<CR>:PythonComment<CR>
 let g:which_key_map.i.L = 'send commented line'
 nnoremap <silent> <leader>io :FloatermNew --wintype=normal --position=right --width=0.5<CR>ipython --no-autoindent<CR>
@@ -150,6 +140,45 @@ nnoremap <leader>id iimport ipdb; dbg1 = ipdb.set_trace  # BREAKPOINT
 let g:which_key_map.i.d = 'debug import'
 nnoremap <leader>id iimport ipdb; dbg1 = ipdb.set_trace  # BREAKPOINT
 let g:which_key_map.i.d = 'debug import'
+
+" j ==> +juypter                                                                                        
+let g:which_key_map.j = {                                                                               
+      \ 'name' : '+jupyter' ,                                                                           
+      \ 'e' : [':JupyterSendCode " "'						, 'enter'],
+      \ 'l' : [':JupyterSendRange'				            , 'send line'],
+      \ 'r' : [':JupyterSendCode "reset -f"'		        , 'reset'],
+      \ 'm' : [':JupyterSendCode "%matplotlib inline"'		, 'matlab'],
+      \ 'w' : [':JupyterSendCode "whos"'		            , 'whos'],
+      \ 'y' : [':JupyterSendCell'						    , 'send cell'],
+      \ }
+
+nnoremap <silent> <leader>jp :JupyterSendCode "<C-r>""<CR> 
+let g:which_key_map.j.p = 'paste'
+nnoremap <silent> <leader>jc :JupyterSendCode "clear"<CR>:JupyterSendCode ""<CR>
+let g:which_key_map.j.c = 'clear'
+vnoremap <silent> <leader>jg :'<,'>JupyterSendRange<CR>
+let g:which_key_map.j.g = 'send range'
+nnoremap <silent> <leader>jd :JupyterCd %:p:h<CR>
+let g:which_key_map.j.d = 'change dir'
+nnoremap <leader>jo :JupyterConnect<CR>
+let g:which_key_map.j.o = 'connect'
+nnoremap <silent> <leader>jv 0yiw :JupyterSendCode "print(<C-r>")"<CR>
+let g:which_key_map.j.v = 'send variable'
+nnoremap <silent> <leader>jL :PythonUncomment<CR>yy:JupyterSendCode "<C-r>""<CR>:PythonComment<CR>
+let g:which_key_map.j.L = 'send commented line'
+" nnoremap <leader>id iimport ipdb; dbg1 = ipdb.set_trace  # BREAKPOINT
+" let g:which_key_map.i.d = 'debug import'
+
+" o ==> +open
+let g:which_key_map.o = {
+      \ 'name' : '+open' ,
+      \ 'i' : [':PlugInstall'															   , 'plug install'],
+      \ 'c' : [':PlugClean'															       , 'plug clean'],
+      \ 'm' : [':MarkdownPreview'														   , 'markdown preview'],
+      \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/Help|:TabooRename Help'              , 'help'],
+      \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
+      \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename ZSH' 			               , 'zsh'],
+      \ }                                                                                               
 
 " p ==> +python
 let g:which_key_map.p = {

@@ -20,6 +20,8 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
 " Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Jupyter
+Plug 'jupyter-vim/jupyter-vim'
 
 " Debugger
 " Plug 'puremourning/vimspector'
