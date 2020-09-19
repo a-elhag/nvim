@@ -144,26 +144,27 @@ let g:which_key_map.i.d = 'debug import'
 " j ==> +juypter                                                                                        
 let g:which_key_map.j = {                                                                               
       \ 'name' : '+jupyter' ,                                                                           
-      \ 'e' : [':JupyterSendCode " "'						, 'enter'],
+      \ 'a' : [':JupyterRunFile'    						, 'run file'],
+      \ 'c' : [':JupyterClear'      						, 'clear'],
+      \ 'e' : [':JupyterNewLine'    						, 'enter'],
       \ 'l' : [':JupyterSendRange'				            , 'send line'],
-      \ 'r' : [':JupyterSendCode "reset -f"'		        , 'reset'],
-      \ 'm' : [':JupyterSendCode "%matplotlib inline"'		, 'matlab'],
-      \ 'w' : [':JupyterSendCode "whos"'		            , 'whos'],
+      \ 'm' : [':JupyterMatplot'                    		, 'matlab'],
+      \ 'r' : [':JupyterReset'              		        , 'reset'],
+      \ 'w' : [':JupyterWhos'           		            , 'whos'],
+      \ 'v' : [':JupyterSendVariable'      		            , 'send variable'],
       \ 'y' : [':JupyterSendCell'						    , 'send cell'],
       \ }
 
-nnoremap <silent> <leader>jp :JupyterSendCode "<C-r>""<CR> 
-let g:which_key_map.j.p = 'paste'
-nnoremap <silent> <leader>jc :JupyterSendCode "clear"<CR>:JupyterSendCode ""<CR>
-let g:which_key_map.j.c = 'clear'
 vnoremap <silent> <leader>jg :'<,'>JupyterSendRange<CR>
 let g:which_key_map.j.g = 'send range'
+nnoremap <silent> <leader>jp :JupyterSendCode "<C-r>""<CR> 
+let g:which_key_map.j.p = 'paste'
+nnoremap <silent> <leader>jD :JupyterSendCode "%pwd"<CR>
+let g:which_key_map.j.D = 'pwd'
 nnoremap <silent> <leader>jd :JupyterCd %:p:h<CR>
 let g:which_key_map.j.d = 'change dir'
 nnoremap <leader>jo :JupyterConnect<CR>
 let g:which_key_map.j.o = 'connect'
-nnoremap <silent> <leader>jv 0yiw :JupyterSendCode "print(<C-r>")"<CR>
-let g:which_key_map.j.v = 'send variable'
 nnoremap <silent> <leader>jL :PythonUncomment<CR>yy:JupyterSendCode "<C-r>""<CR>:PythonComment<CR>
 let g:which_key_map.j.L = 'send commented line'
 " nnoremap <leader>id iimport ipdb; dbg1 = ipdb.set_trace  # BREAKPOINT
@@ -195,6 +196,10 @@ let g:which_key_map.p = {
       \ 'F' : [':Semshi goto function prev'           , 'goto func prev'],
       \ }
 
+nnoremap <silent> <leader>pv 0yiw
+let g:which_key_map.p.v = 'copy variable'
+nnoremap <silent> <leader>pV 0yiwo<Esc>pa
+let g:which_key_map.p.V = 'paste variable'
 " s ==> +search
 let g:which_key_map.s = {
       \ 'name' : '+search' ,

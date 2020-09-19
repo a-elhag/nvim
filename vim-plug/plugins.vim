@@ -21,7 +21,9 @@ Plug 'nvie/vim-flake8'
 " Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Jupyter
-Plug 'jupyter-vim/jupyter-vim'
+" Plug 'jupyter-vim/jupyter-vim'
+" Jupyter mine
+Plug 'a-elhag/jupyter-vim'
 
 " Debugger
 " Plug 'puremourning/vimspector'
