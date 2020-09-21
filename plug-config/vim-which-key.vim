@@ -124,6 +124,8 @@ let g:which_key_map.i = {
       \ 'y' : [':MatlabBlock'							    , 'yank matlab'],
       \ }
 
+nnoremap <silent> <leader>ib iimport ipdb; ipdb.set_trace()<Esc>
+let g:which_key_map.i.b = 'debug'
 nnoremap <silent> <leader>iS :FloatermSend 
 let g:which_key_map.i.S = 'send custom line'
 nnoremap <silent> <leader>iv 0yiwo<Esc>p:FloatermSend<CR>ddk
@@ -200,6 +202,7 @@ nnoremap <silent> <leader>pv 0yiw
 let g:which_key_map.p.v = 'copy variable'
 nnoremap <silent> <leader>pV 0yiwo<Esc>pa
 let g:which_key_map.p.V = 'paste variable'
+
 " s ==> +search
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
