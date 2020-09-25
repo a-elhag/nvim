@@ -113,6 +113,20 @@ xmap <leader>ca  <Plug>(coc-codeaction-selected)
 nmap <leader>ca  <Plug>(coc-codeaction-selected)
 let g:which_key_map.c.a = 'code action selected'
 
+" l ==> +languages                                                                                        
+let g:which_key_map.l = {                                                                               
+      \ 'name' : '+languages' ,                                                                           
+      \ }
+
+nnoremap <leader>lc :w <CR> :!gcc % -o %< && ./%<<CR>
+let g:which_key_map.l.c = 'compile + run'
+nnoremap <leader>lC :w <CR> :!gcc % -o %<<CR>
+let g:which_key_map.l.C = 'compile'
+nnoremap <leader>lr :!./%<<CR>
+let g:which_key_map.l.r = 'run'
+nnoremap <leader>lp :call AutoPairsToggle()<CR>
+let g:which_key_map.l.p = 'toggle auto-pairs'
+
 " i ==> +ipython                                                                                        
 let g:which_key_map.i = {                                                                               
       \ 'name' : '+ipython' ,                                                                           
@@ -178,7 +192,7 @@ let g:which_key_map.o = {
       \ 'i' : [':PlugInstall'															   , 'plug install'],
       \ 'c' : [':PlugClean'															       , 'plug clean'],
       \ 'm' : [':MarkdownPreview'														   , 'markdown preview'],
-      \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/Help|:TabooRename Help'              , 'help'],
+      \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/personal/help|:TabooRename Help'              , 'help'],
       \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
       \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename ZSH' 			               , 'zsh'],
       \ }                                                                                               

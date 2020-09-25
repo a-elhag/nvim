@@ -72,6 +72,8 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'rbgrouleff/bclose.vim'
 " Undo Tree
 Plug 'mbbill/undotree'
+" Auto close
+Plug 'jiangmiao/auto-pairs'
 
 " Windows
 
