@@ -110,8 +110,8 @@ Plug 'joshdick/onedark.vim'
 
 "  Will do
 
-" Jupyter Console
-" Plug 'jupyter-vim/jupyter-vim'
+" Table Creator
+" Plug 'dhruvasagar/vim-table-mode'
 " Class/module browser
 " Plug 'majutsushi/tagbar'
 
