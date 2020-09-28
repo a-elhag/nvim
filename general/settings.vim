@@ -17,6 +17,8 @@ set cursorline                          " Enable highlighting of the current lin
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set inccommand=nosplit					" live subsitution
 
+" set hidden
+
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
 set relativenumber      " Show relative line number

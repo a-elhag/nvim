@@ -116,14 +116,24 @@ let g:which_key_map.c.a = 'code action selected'
 " l ==> +languages                                                                                        
 let g:which_key_map.l = {                                                                               
       \ 'name' : '+languages' ,                                                                           
+      \ 'b' : [':RainbowToggle'                 , 'rainbow'],
+      \ 't' : [':vnew|te'                       , 'terminal'],
       \ }
 
-nnoremap <leader>lc :w <CR> :!gcc % -o %< && ./%<<CR>
-let g:which_key_map.l.c = 'compile + run'
-nnoremap <leader>lC :w <CR> :!gcc % -o %<<CR>
-let g:which_key_map.l.C = 'compile'
-nnoremap <leader>lr :!./%<<CR>
+nnoremap <leader>la :w <CR> :!as % -o %
+let g:which_key_map.l.a = 'assemble code'
+nnoremap <leader>lA :w <CR> :!ld %<.o -o exit
+let g:which_key_map.l.A = 'link assembly'
+nnoremap <leader>lc :w <CR> :!gcc % -o %<
+let g:which_key_map.l.c = 'compile c'
+nnoremap <leader>lC :w <CR> :!gcc % -o %< && ./%<
+let g:which_key_map.l.C = 'compile + run c'
+nnoremap <leader>lh :%!xxd
+let g:which_key_map.l.h = 'hex'
+nnoremap <leader>lr :w <CR> :!./%<
 let g:which_key_map.l.r = 'run'
+nnoremap <leader>lt :!gcc % -S
+let g:which_key_map.l.t = 'assembly'
 nnoremap <leader>lp :call AutoPairsToggle()<CR>
 let g:which_key_map.l.p = 'toggle auto-pairs'
 
@@ -200,7 +210,6 @@ let g:which_key_map.o = {
 " p ==> +python
 let g:which_key_map.p = {
       \ 'name' : '+python' ,
-      \ 'b' : [':RainbowToggle'                       , 'rainbow'],
       \ 's' : [':Semshi rename'                       , 'rename all'],
       \ 'u' : [':PythonUncomment'						    , 'uncomment'],
       \ 'U' : [':PythonComment'							    , 'comment'],
