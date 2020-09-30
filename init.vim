@@ -5,7 +5,6 @@ source $HOME/.config/nvim/themes/onedark.vim
 source $HOME/.config/nvim/my-plugs/blockselect.vim
 source $HOME/.config/nvim/my-plugs/comment.vim
 source $HOME/.config/nvim/plug-config/auto-pairs.vim
-source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/denite.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/fzf.vim

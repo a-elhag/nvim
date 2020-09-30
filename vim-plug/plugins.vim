@@ -11,24 +11,17 @@ call plug#begin('~/.config/nvim/plugged')
 " Python
 
 " Semshi (Adds good highlighting and replacing)
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-" Git/mercurial/others diff icons on the side of the file lines
+" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+" Git diff icons on the side of the file lines
 Plug 'mhinz/vim-signify'
 " MultiLine Indent
 Plug 'vim-scripts/indentpython.vim'
 " Python Flake8 (<F7>)
 Plug 'nvie/vim-flake8'
-" Conquer of Completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Jupyter
-" Plug 'jupyter-vim/jupyter-vim'
 " Jupyter mine
 Plug 'a-elhag/jupyter-vim'
-
-" Debugger
-" Plug 'puremourning/vimspector'
-" Python Error Checker 
-" Plug 'vim-syntastic/syntastic'
+" Conquer of Completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
 " Markdown
@@ -112,11 +105,13 @@ Plug 'joshdick/onedark.vim'
 
 "  Will do
 
+" Debugger
+" Plug 'puremourning/vimspector'
+" Python Error Checker 
+" Plug 'vim-syntastic/syntastic'
 " Table Creator
 " Plug 'dhruvasagar/vim-table-mode'
 " Class/module browser
 " Plug 'majutsushi/tagbar'
 
 call plug#end()
-
-

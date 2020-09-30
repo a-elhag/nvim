@@ -1,12 +1,16 @@
 {
 	"coc.preferences.formatOnSaveFiletypes": [
 		"css",
-		"markdown",
+		"markdown"
 	],
+
+	"python.envFile" : "/usr/bin/python3.8",
+
 	"coc.preferences.formatOnType": false,
 	// python config
 	"python.linting.enabled": true,
 	"python.linting.pylintEnabled": true,
+
 	"snippets.ultisnips.directories": [
 		"UltiSnips",
 		"~/.config/nvim/utils/snips"
