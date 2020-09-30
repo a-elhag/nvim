@@ -120,9 +120,9 @@ let g:which_key_map.l = {
       \ 't' : [':vnew|te'                       , 'terminal'],
       \ }
 
-nnoremap <leader>la :w <CR> :!as % -o %
+nnoremap <leader>la :w <CR> :!as % -o %<.o
 let g:which_key_map.l.a = 'assemble code'
-nnoremap <leader>lA :w <CR> :!ld %<.o -o exit
+nnoremap <leader>lA :!ld %<.o -o %<
 let g:which_key_map.l.A = 'link assembly'
 nnoremap <leader>lc :w <CR> :!gcc % -o %<
 let g:which_key_map.l.c = 'compile c'
@@ -130,7 +130,7 @@ nnoremap <leader>lC :w <CR> :!gcc % -o %< && ./%<
 let g:which_key_map.l.C = 'compile + run c'
 nnoremap <leader>lh :%!xxd
 let g:which_key_map.l.h = 'hex'
-nnoremap <leader>lr :w <CR> :!./%<
+nnoremap <leader>lr :!./%<<CR>
 let g:which_key_map.l.r = 'run'
 nnoremap <leader>lt :!gcc % -S
 let g:which_key_map.l.t = 'assembly'
