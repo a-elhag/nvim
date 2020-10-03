@@ -14,5 +14,37 @@
 	"snippets.ultisnips.directories": [
 		"UltiSnips",
 		"~/.config/nvim/utils/snips"
-	]
+  ],
+  "cSpell.enabledLanguageIds": [
+    "asciidoc",
+    "cpp",
+    "csharp",
+    "css",
+    "english",
+    "git-commit",
+    "go",
+    "handlebars",
+    "haskell",
+    "html",
+    "jade",
+    "java",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "latex",
+    "less",
+    "markdown",
+    "php",
+    "plaintext",
+    "pug",
+    "restructuredtext",
+    "rust",
+    "scala",
+    "scss",
+    "text",
+    "typescript",
+    "typescriptreact",
+    "vim",
+  ]
 }

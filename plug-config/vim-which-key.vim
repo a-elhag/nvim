@@ -79,8 +79,35 @@ let g:which_key_map.c = {
       \ 'name' : '+coc' ,
       \ 'c' : [':CocCommand'							           , 'command'],
       \ 'l' : [':CocCommand python.enableLinting'				   , 'python linting'],
+      \ 'm' : [':CocList marketplace'					           , 'market place'],
       \ 'p' : [':CocCommand python.setInterpreter'				   , 'python interpreter'],
       \ }
+
+" d ==> +debug ipython
+let g:which_key_map.d = {                                                                               
+      \ 'name' : '+debug ipython' ,                                                                           
+      \ 'a' : [':FloatermSend a'         , 'argument'],                              
+      \ 'b' : [':FloatermSend b'         , 'break'],                              
+      \ 'c' : [':FloatermSend c'         , 'continue'],                              
+      \ 'd' : [':FloatermSend d'         , 'down'],                              
+      \ 'e' : [':FloatermSend exit'      , 'exit'],                              
+      \ 'h' : [':FloatermSend h'         , 'help'],                              
+      \ 'i' : [':FloatermSend i'         , 'interact'],                              
+      \ 'l' : [':FloatermSend l'         , 'clear'],                              
+      \ 'n' : [':FloatermSend n'         , 'next'],                              
+      \ 'r' : [':FloatermSend r'         , 'restart'],                              
+      \ 'R' : [':FloatermSend R'         , 'run'],                              
+      \ 's' : [':FloatermSend s'         , 'step'],                              
+      \ 'u' : [':FloatermSend u'         , 'up'],                              
+      \ 'w' : [':FloatermSend w'         , 'where'],                              
+      \ }
+
+nnoremap <silent> <leader>dp :FloatermSend p  
+let g:which_key_map.d.p = 'print'
+nnoremap <silent> <leader>dP :FloatermSend pp 
+let g:which_key_map.d.P = 'pprint'
+nnoremap <silent> <leader>dq :FloatermSend pygame.display.quit()<CR>
+let g:which_key_map.d.q = 'pygame quit'
 
 " l ==> +languages                                                                                        
 let g:which_key_map.l = {                                                                               
@@ -109,32 +136,29 @@ let g:which_key_map.l.p = 'toggle auto-pairs'
 " i ==> +ipython                                                                                        
 let g:which_key_map.i = {                                                                               
       \ 'name' : '+ipython' ,                                                                           
-      \ 'l' : [':FloatermSend'                              , 'send line'],                              
-      \ 'p' : [':%FloatermSend %paste'                      , 'paste'],                           
-      \ 'c' : [':FloatermSend clear'				        , 'clear'],
-      \ 'w' : [':FloatermSend whos'				            , 'whos'],
-      \ 'r' : [':FloatermSend reset -f'				        , 'reset'],
-      \ 'y' : [':MatlabBlock'							    , 'yank matlab'],
+      \ 'l' : [':FloatermSend'            , 'send line'],                              
+      \ 'p' : [':%FloatermSend %paste'    , 'paste'],                           
+      \ 'c' : [':FloatermSend clear'	  , 'clear'],
+      \ 'w' : [':FloatermSend whos'		  , 'whos'],
+      \ 'r' : [':FloatermSend reset -f'	  , 'reset'],
+      \ 'y' : [':MatlabBlock'			  , 'yank matlab'],
       \ }
 
-nnoremap <silent> <leader>ib iimport ipdb; ipdb.set_trace()<Esc>
-let g:which_key_map.i.b = 'debug'
-nnoremap <silent> <leader>iS :FloatermSend 
-let g:which_key_map.i.S = 'send custom line'
+
+nnoremap <leader>ia gg^yGzz
+let g:which_key_map.i.a = 'yank all'
+nnoremap <silent> <leader>ic :FloatermSend 
+let g:which_key_map.i.c = 'send custom line'
+nnoremap <silent> <leader>id iimport ipdb; ipdb.set_trace()<Esc>
+let g:which_key_map.i.d = 'debug'
+nnoremap <silent> <leader>if :w<CR>:execute ':FloatermSend %run ' expand('%:p')<CR>
+let g:which_key_map.i.f = 'run file'
+nnoremap <silent> <leader>io :FloatermNew --wintype=normal --position=right --width=0.5<CR>ipython --no-autoindent<CR>
+let g:which_key_map.i.o = 'open ipython'
 nnoremap <silent> <leader>iv 0yiwo<Esc>p:FloatermSend<CR>ddk
 let g:which_key_map.i.v = 'send variable'
 nnoremap <silent> <leader>iV 0yiwo<Esc>p
 let g:which_key_map.i.V = 'print variable'
-nnoremap <silent> <leader>iL :PythonUncomment<CR>:FloatermSend<CR>:PythonComment<CR>
-let g:which_key_map.i.L = 'send commented line'
-nnoremap <silent> <leader>io :FloatermNew --wintype=normal --position=right --width=0.5<CR>ipython --no-autoindent<CR>
-let g:which_key_map.i.o = 'open ipython'
-nnoremap <leader>ia gg^yGzz
-let g:which_key_map.i.a = 'yank all'
-nnoremap <leader>id iimport ipdb; dbg1 = ipdb.set_trace  # BREAKPOINT
-let g:which_key_map.i.d = 'debug import'
-nnoremap <leader>id iimport ipdb; dbg1 = ipdb.set_trace  # BREAKPOINT
-let g:which_key_map.i.d = 'debug import'
 
 " j ==> +juypter                                                                                        
 let g:which_key_map.j = {                                                                               
@@ -171,25 +195,27 @@ let g:which_key_map.o = {
       \ 'i' : [':PlugInstall'															   , 'plug install'],
       \ 'c' : [':PlugClean'															       , 'plug clean'],
       \ 'm' : [':MarkdownPreview'														   , 'markdown preview'],
-      \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/personal/help|:TabooRename Help'              , 'help'],
+      \ 's' : [':so %'														               , 'source'],
+      \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/personal/help|:TabooRename Help'     , 'help'],
       \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
-      \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename ZSH' 			               , 'zsh'],
+      \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename zsh' 			               , 'zsh'],
+      \ 'V' : [':tabnew|e ~/.config/nvim/plug-config/vim-which-key.vim |:lcd %:p:h|:TabooRename which-key'                          , 'which-key'],
       \ }                                                                                               
 
 " p ==> +python
 let g:which_key_map.p = {
       \ 'name' : '+python' ,
       \ 's' : [':Semshi rename'                       , 'rename all'],
-      \ 'u' : [':PythonUncomment'						    , 'uncomment'],
-      \ 'U' : [':PythonComment'							    , 'comment'],
+      \ 'u' : [':PythonUncomment'				      , 'uncomment'],
+      \ 'c' : [':PythonComment'					      , 'comment'],
       \ 'n' : [':Semshi goto name next'               , 'goto name next'],
       \ 'N' : [':Semshi goto name prev'               , 'goto name prev'],
-      \ 'c' : [':Semshi goto class next'              , 'goto class next'],
-      \ 'C' : [':Semshi goto class prev'              , 'goto class prev'],
       \ 'f' : [':Semshi goto function next'           , 'goto func next'],
       \ 'F' : [':Semshi goto function prev'           , 'goto func prev'],
       \ }
 
+nnoremap <silent> <leader>pr :w !python3<CR>
+let g:which_key_map.p.r = 'run python'
 nnoremap <silent> <leader>pv 0yiw
 let g:which_key_map.p.v = 'copy variable'
 nnoremap <silent> <leader>pV 0yiwo<Esc>pa

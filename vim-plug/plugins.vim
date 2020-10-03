@@ -11,7 +11,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Python
 
 " Semshi (Adds good highlighting and replacing)
-" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " Git diff icons on the side of the file lines
 Plug 'mhinz/vim-signify'
 " MultiLine Indent
@@ -22,6 +22,8 @@ Plug 'nvie/vim-flake8'
 Plug 'a-elhag/jupyter-vim'
 " Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Syntax
+Plug 'vim-python/python-syntax'
 
 
 " Markdown
