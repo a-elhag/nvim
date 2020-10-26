@@ -32,26 +32,26 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 " Space ==> Easy
 let g:which_key_map[' '] = {
       \ 'name' : '+easy' ,
-      \ 'f' : ['<plug>(easymotion-prefix)f' , 'find {char} to the right'],
-      \ 'F' : ['<plug>(easymotion-prefix)F' , 'find {char} to the left'],
-      \ 't' : ['<plug>(easymotion-prefix)t' , 'till before the {char} to the right'],
-      \ 'T' : ['<plug>(easymotion-prefix)T' , 'till after the {char} to the left'],
-      \ 'w' : ['<plug>(easymotion-prefix)w' , 'beginning of word forward'],
-      \ 'W' : ['<plug>(easymotion-prefix)W' , 'beginning of WORD forward'],
-      \ 'b' : ['<plug>(easymotion-prefix)b' , 'beginning of word backward'],
-      \ 'B' : ['<plug>(easymotion-prefix)B' , 'beginning of WORD backward'],
-      \ 'e' : ['<plug>(easymotion-prefix)e' , 'end of word forward'],
-      \ 'E' : ['<plug>(easymotion-prefix)E' , 'end of WORD forward'],
+      \ 'f' : ['<plug>(easymotion-prefix)f' , ''],
+      \ 'F' : ['<plug>(easymotion-prefix)F' , ''],
+      \ 't' : ['<plug>(easymotion-prefix)t' , ''],
+      \ 'T' : ['<plug>(easymotion-prefix)T' , ''],
+      \ 'w' : ['<plug>(easymotion-prefix)w' , ''],
+      \ 'W' : ['<plug>(easymotion-prefix)W' , ''],
+      \ 'b' : ['<plug>(easymotion-prefix)b' , ''],
+      \ 'B' : ['<plug>(easymotion-prefix)B' , ''],
+      \ 'e' : ['<plug>(easymotion-prefix)e' , ''],
+      \ 'E' : ['<plug>(easymotion-prefix)E' , ''],
       \ 'g' : {
         \ 'name' : '+Backwards ' ,
         \ 'e' : ['<plug>(easymotion-prefix)ge' , 'end of word backward'],
         \ 'E' : ['<plug>(easymotion-prefix)gE' , 'end of WORD backward'],
         \ },
-      \ 'j' : ['<plug>(easymotion-prefix)j' , 'line downward'],
-      \ 'k' : ['<plug>(easymotion-prefix)k' , 'line upward'],
-      \ 'n' : ['<plug>(easymotion-prefix)n' , 'jump to latest "/" or "?" forward'],
-      \ 'N' : ['<plug>(easymotion-prefix)N' , 'jump to latest "/" or "?" backward.'],
-      \ 's' : ['<plug>(easymotion-prefix)s' , 'find(search) {char} forward and backward.'],
+      \ 'j' : ['<plug>(easymotion-prefix)j' , ''],
+      \ 'k' : ['<plug>(easymotion-prefix)k' , ''],
+      \ 'n' : ['<plug>(easymotion-prefix)n' , ''],
+      \ 'N' : ['<plug>(easymotion-prefix)N' , ''],
+      \ 's' : ['<plug>(easymotion-prefix)s' , 'search'],
       \ }
 
 " Single mappings
@@ -83,7 +83,7 @@ let g:which_key_map.c = {
       \ 'p' : [':CocCommand python.setInterpreter'				   , 'python interpreter'],
       \ }
 
-" d ==> +debug ipython
+" d ==> +debug
 let g:which_key_map.d = {                                                                               
       \ 'name' : '+debug ipython' ,                                                                           
       \ 'a' : [':FloatermSend a'         , 'argument'],                              
@@ -94,6 +94,7 @@ let g:which_key_map.d = {
       \ 'h' : [':FloatermSend h'         , 'help'],                              
       \ 'i' : [':FloatermSend i'         , 'interact'],                              
       \ 'l' : [':FloatermSend l'         , 'clear'],                              
+      \ 'm' : [':FloatermSend %debug'    , 'post-mortem'],                              
       \ 'n' : [':FloatermSend n'         , 'next'],                              
       \ 'r' : [':FloatermSend r'         , 'restart'],                              
       \ 'R' : [':FloatermSend R'         , 'run'],                              
@@ -136,25 +137,25 @@ let g:which_key_map.l.p = 'toggle auto-pairs'
 " i ==> +ipython                                                                                        
 let g:which_key_map.i = {                                                                               
       \ 'name' : '+ipython' ,                                                                           
-      \ 'l' : [':FloatermSend'            , 'send line'],                              
-      \ 'p' : [':%FloatermSend %paste'    , 'paste'],                           
       \ 'c' : [':FloatermSend clear'	  , 'clear'],
-      \ 'w' : [':FloatermSend whos'		  , 'whos'],
+      \ 'l' : [':FloatermSend'            , 'send line'],                              
+      \ 'm' : [':MatlabBlock'			  , 'yank matlab'],
+      \ 'p' : [':%FloatermSend %paste'    , 'paste'],                           
       \ 'r' : [':FloatermSend reset -f'	  , 'reset'],
-      \ 'y' : [':MatlabBlock'			  , 'yank matlab'],
+      \ 'w' : [':FloatermSend whos'		  , 'whos'],
       \ }
 
 
 nnoremap <leader>ia gg^yGzz
 let g:which_key_map.i.a = 'yank all'
-nnoremap <silent> <leader>ic :FloatermSend 
-let g:which_key_map.i.c = 'send custom line'
 nnoremap <silent> <leader>id iimport ipdb; ipdb.set_trace()<Esc>
 let g:which_key_map.i.d = 'debug'
 nnoremap <silent> <leader>if :w<CR>:execute ':FloatermSend %run ' expand('%:p')<CR>
 let g:which_key_map.i.f = 'run file'
 nnoremap <silent> <leader>io :FloatermNew --wintype=normal --position=right --width=0.5<CR>ipython --no-autoindent<CR>
 let g:which_key_map.i.o = 'open ipython'
+nnoremap <silent> <leader>is :FloatermSend 
+let g:which_key_map.i.s = 'send custom line'
 nnoremap <silent> <leader>iv 0yiwo<Esc>p:FloatermSend<CR>ddk
 let g:which_key_map.i.v = 'send variable'
 nnoremap <silent> <leader>iV 0yiwo<Esc>p
@@ -194,6 +195,7 @@ let g:which_key_map.o = {
       \ 'name' : '+open' ,
       \ 'i' : [':PlugInstall'															   , 'plug install'],
       \ 'c' : [':PlugClean'															       , 'plug clean'],
+      \ 'd' : [':cd %:p:h'															       , 'change directory'],
       \ 'm' : [':MarkdownPreview'														   , 'markdown preview'],
       \ 's' : [':so %'														               , 'source'],
       \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/personal/help|:TabooRename Help'     , 'help'],
@@ -201,6 +203,9 @@ let g:which_key_map.o = {
       \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename zsh' 			               , 'zsh'],
       \ 'V' : [':tabnew|e ~/.config/nvim/plug-config/vim-which-key.vim |:lcd %:p:h|:TabooRename which-key'                          , 'which-key'],
       \ }                                                                                               
+
+nnoremap <silent> <leader>op :pwd<CR>
+let g:which_key_map.o.p = 'pwd'
 
 " p ==> +python
 let g:which_key_map.p = {
