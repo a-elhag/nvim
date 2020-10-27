@@ -110,30 +110,6 @@ let g:which_key_map.d.P = 'pprint'
 nnoremap <silent> <leader>dq :FloatermSend pygame.display.quit()<CR>
 let g:which_key_map.d.q = 'pygame quit'
 
-" l ==> +languages                                                                                        
-let g:which_key_map.l = {                                                                               
-      \ 'name' : '+languages' ,                                                                           
-      \ 'b' : [':RainbowToggle'                 , 'rainbow'],
-      \ 't' : [':vnew|te'                       , 'terminal'],
-      \ }
-
-nnoremap <leader>la :w <CR> :!as % -o %<.o
-let g:which_key_map.l.a = 'assemble code'
-nnoremap <leader>lA :!ld %<.o -o %<
-let g:which_key_map.l.A = 'link assembly'
-nnoremap <leader>lc :w <CR> :!gcc % -o %<
-let g:which_key_map.l.c = 'compile c'
-nnoremap <leader>lC :w <CR> :!gcc % -o %< && ./%<
-let g:which_key_map.l.C = 'compile + run c'
-nnoremap <leader>lh :%!xxd
-let g:which_key_map.l.h = 'hex'
-nnoremap <leader>lr :!./%<<CR>
-let g:which_key_map.l.r = 'run'
-nnoremap <leader>lt :!gcc % -S
-let g:which_key_map.l.t = 'assembly'
-nnoremap <leader>lp :call AutoPairsToggle()<CR>
-let g:which_key_map.l.p = 'toggle auto-pairs'
-
 " i ==> +ipython                                                                                        
 let g:which_key_map.i = {                                                                               
       \ 'name' : '+ipython' ,                                                                           
@@ -187,25 +163,43 @@ nnoremap <leader>jo :JupyterConnect<CR>
 let g:which_key_map.j.o = 'connect'
 nnoremap <silent> <leader>jL :PythonUncomment<CR>yy:JupyterSendCode "<C-r>""<CR>:PythonComment<CR>
 let g:which_key_map.j.L = 'send commented line'
-" nnoremap <leader>id iimport ipdb; dbg1 = ipdb.set_trace  # BREAKPOINT
-" let g:which_key_map.i.d = 'debug import'
+
+" l ==> +languages                                                                                        
+let g:which_key_map.l = {                                                                               
+      \ 'name' : '+languages' ,                                                                           
+      \ 'b' : [':RainbowToggle'                 , 'rainbow'],
+      \ 't' : [':vnew|te'                       , 'terminal'],
+      \ }
+
+nnoremap <leader>la :w <CR> :!as % -o %<.o
+let g:which_key_map.l.a = 'assemble code'
+nnoremap <leader>lA :!ld %<.o -o %<
+let g:which_key_map.l.A = 'link assembly'
+nnoremap <leader>lc :w <CR> :!gcc % -o %<
+let g:which_key_map.l.c = 'compile c'
+nnoremap <leader>lC :w <CR> :!gcc % -o %< && ./%<
+let g:which_key_map.l.C = 'compile + run c'
+nnoremap <leader>lh :%!xxd
+let g:which_key_map.l.h = 'hex'
+nnoremap <leader>lr :!./%<<CR>
+let g:which_key_map.l.r = 'run'
+nnoremap <leader>lt :!gcc % -S
+let g:which_key_map.l.t = 'assembly'
+nnoremap <leader>lp :call AutoPairsToggle()<CR>
+let g:which_key_map.l.p = 'toggle auto-pairs'
 
 " o ==> +open
 let g:which_key_map.o = {
       \ 'name' : '+open' ,
       \ 'i' : [':PlugInstall'															   , 'plug install'],
       \ 'c' : [':PlugClean'															       , 'plug clean'],
-      \ 'd' : [':cd %:p:h'															       , 'change directory'],
       \ 'm' : [':MarkdownPreview'														   , 'markdown preview'],
-      \ 's' : [':so %'														               , 'source'],
       \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/personal/help|:TabooRename Help'     , 'help'],
+      \ 's' : [':so %'						                                               , 'source'],
       \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
       \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename zsh' 			               , 'zsh'],
       \ 'V' : [':tabnew|e ~/.config/nvim/plug-config/vim-which-key.vim |:lcd %:p:h|:TabooRename which-key'                          , 'which-key'],
       \ }                                                                                               
-
-nnoremap <silent> <leader>op :pwd<CR>
-let g:which_key_map.o.p = 'pwd'
 
 " p ==> +python
 let g:which_key_map.p = {
@@ -292,6 +286,23 @@ let g:which_key_map.w = {
       \ 't' : ['<C-W>T' 									    , 'window to new tab'],
       \ 'z' : ['<C-W>z' 									    , 'close preview window'],
       \ }
+
+" z ==> +zsh                                                                                        
+let g:which_key_map.z = {
+      \ 'name' : '+zsh' ,
+      \ 'D' : [':cd %:p:h'							       , 'cwd'],
+      \ }                                                                                               
+
+nnoremap <silent> <leader>zd :pwd<CR>
+let g:which_key_map.z.d = 'pwd'
+nnoremap <silent> <leader>zp :echo $PATH<CR>
+let g:which_key_map.z.p = '$PATH L1'
+nnoremap <silent> <leader>zP :!echo $PATH<CR>
+let g:which_key_map.z.P = '$PATH L2'
+nnoremap <silent> <leader>zl :echo $SHLVL<CR>
+let g:which_key_map.z.l = '$SHLVL L1'
+nnoremap <silent> <leader>zL :!echo $SHLVL<CR>
+let g:which_key_map.z.L = '$SHLVL L2'
 
 " extras
 " nnoremap <silent> <leader>wo :TabooOpen 

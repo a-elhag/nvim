@@ -19,16 +19,16 @@ Plug 'vim-scripts/indentpython.vim'
 " Python Flake8 (<F7>)
 Plug 'nvie/vim-flake8'
 " Jupyter mine
-Plug 'a-elhag/jupyter-vim'
+" Plug 'a-elhag/jupyter-vim'
 " Conquer of Completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Syntax
 Plug 'vim-python/python-syntax'
 
 
 " Markdown
-Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+" Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
+" Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 " Tim Pope
 
