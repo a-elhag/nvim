@@ -25,10 +25,9 @@ Plug 'nvie/vim-flake8'
 " Syntax
 Plug 'vim-python/python-syntax'
 
-
 " Markdown
-" Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
-" Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 " Tim Pope
 
