@@ -116,7 +116,7 @@ let g:which_key_map.i = {
       \ 'c' : [':FloatermSend clear'	  , 'clear'],
       \ 'l' : [':FloatermSend'            , 'send line'],                              
       \ 'm' : [':MatlabBlock'			  , 'yank matlab'],
-      \ 'p' : [':%FloatermSend %paste'    , 'paste'],                           
+      \ 'p' : [':FloatermSend paste'      , 'paste'],                           
       \ 'r' : [':FloatermSend reset -f'	  , 'reset'],
       \ 'w' : [':FloatermSend whos'		  , 'whos'],
       \ }
@@ -126,7 +126,7 @@ nnoremap <leader>ia gg^yGzz
 let g:which_key_map.i.a = 'yank all'
 nnoremap <silent> <leader>id iimport ipdb; ipdb.set_trace()<Esc>
 let g:which_key_map.i.d = 'debug'
-nnoremap <silent> <leader>if :w<CR>:execute ':FloatermSend %run ' expand('%:p')<CR>
+nnoremap <silent> <leader>if :w<CR>:execute ':FloatermSend run' expand('%:p')<CR>
 let g:which_key_map.i.f = 'run file'
 nnoremap <silent> <leader>io :FloatermNew --wintype=normal --position=right --width=0.5<CR>ipython --no-autoindent<CR>
 let g:which_key_map.i.o = 'open ipython'
@@ -193,14 +193,17 @@ let g:which_key_map.o = {
       \ 'name' : '+open' ,
       \ 'i' : [':PlugInstall'															   , 'plug install'],
       \ 'c' : [':PlugClean'															       , 'plug clean'],
+      \ 'j' : [':!jupytext --to=ipynb --from=md:myst --update --output ./dc-myst.ipynb ./dc-myst.md', 'jupytext ipynb'],
+      \ 'J' : [':!jupytext dc-myst.md --set-kernel - --execute'                            , 'jupytext execute'],
       \ 'm' : [':MarkdownPreview'														   , 'md preview'],
       \ 'M' : [':MarkdownPreviewStop'												       , 'md stop'],
       \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/personal/help|:TabooRename Help'     , 'help'],
       \ 's' : [':so %'						                                               , 'source'],
       \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
       \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename zsh' 			               , 'zsh'],
-      \ 'V' : [':tabnew|e ~/.config/nvim/plug-config/vim-which-key.vim |:lcd %:p:h|:TabooRename which-key'                          , 'which-key'],
+      \ 'V' : [':tabnew|e ~/.config/nvim/plug-config/vim-which-key.vim |:lcd %:p:h|:TabooRename which-key'       , 'which-key'],
       \ }                                                                                               
+
 
 " p ==> +python
 let g:which_key_map.p = {

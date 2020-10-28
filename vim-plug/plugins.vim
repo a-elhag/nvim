@@ -19,7 +19,7 @@ Plug 'vim-scripts/indentpython.vim'
 " Python Flake8 (<F7>)
 Plug 'nvie/vim-flake8'
 " Jupyter mine
-" Plug 'a-elhag/jupyter-vim'
+Plug 'a-elhag/jupyter-vim'
 " Conquer of Completion
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Syntax
