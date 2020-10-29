@@ -110,6 +110,15 @@ let g:which_key_map.d.P = 'pprint'
 nnoremap <silent> <leader>dq :FloatermSend pygame.display.quit()<CR>
 let g:which_key_map.d.q = 'pygame quit'
 
+" g ==> +git
+let g:which_key_map.g = {
+      \ 'name' : '+git',
+      \ 's' : [':!git status'         , 'status'],                              
+      \ }
+
+nnoremap <silent> <leader>gs :!git status<CR>
+let g:which_key_map.g.s = 'status'
+
 " i ==> +ipython                                                                                        
 let g:which_key_map.i = {                                                                               
       \ 'name' : '+ipython' ,                                                                           
