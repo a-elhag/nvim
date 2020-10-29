@@ -204,7 +204,6 @@ let g:which_key_map.o = {
       \ 'V' : [':tabnew|e ~/.config/nvim/plug-config/vim-which-key.vim |:lcd %:p:h|:TabooRename which-key'       , 'which-key'],
       \ }                                                                                               
 
-
 " p ==> +python
 let g:which_key_map.p = {
       \ 'name' : '+python' ,
@@ -297,6 +296,8 @@ let g:which_key_map.z = {
       \ 'D' : [':cd %:p:h'							       , 'cwd'],
       \ }                                                                                               
 
+nnoremap <silent> <leader>zv :which python<CR>
+let g:which_key_map.z.v = 'venv'
 nnoremap <silent> <leader>zd :pwd<CR>
 let g:which_key_map.z.d = 'pwd'
 nnoremap <silent> <leader>zp :echo $PATH<CR>
