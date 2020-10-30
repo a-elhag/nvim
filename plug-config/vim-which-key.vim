@@ -123,6 +123,9 @@ let g:which_key_map.g.s = 'status'
 let g:which_key_map.i = {                                                                               
       \ 'name' : '+ipython' ,                                                                           
       \ 'c' : [':FloatermSend clear'	  , 'clear'],
+      \ 'd' : [':FloatermSend cd %:h'	  , 'cd'],
+      \ 'D' : [':FloatermSend pwd'   	  , 'pwd'],
+      \ 'o' : [':call IpythonOpen()'   	  , 'open'],
       \ 'l' : [':FloatermSend'            , 'send line'],                              
       \ 'm' : [':MatlabBlock'			  , 'yank matlab'],
       \ 'p' : [':FloatermSend paste'      , 'paste'],                           
@@ -133,18 +136,27 @@ let g:which_key_map.i = {
 
 nnoremap <leader>ia gg^yGzz
 let g:which_key_map.i.a = 'yank all'
-nnoremap <silent> <leader>id iimport ipdb; ipdb.set_trace()<Esc>
-let g:which_key_map.i.d = 'debug'
+nnoremap <silent> <leader>ig iimport ipdb; ipdb.set_trace()<Esc>
+let g:which_key_map.i.g = 'debug'
 nnoremap <silent> <leader>if :w<CR>:execute ':FloatermSend run' expand('%:p')<CR>
 let g:which_key_map.i.f = 'run file'
-nnoremap <silent> <leader>io :FloatermNew --wintype=normal --position=right --width=0.5<CR>ipython --no-autoindent<CR>
-let g:which_key_map.i.o = 'open ipython'
 nnoremap <silent> <leader>is :FloatermSend 
 let g:which_key_map.i.s = 'send custom line'
 nnoremap <silent> <leader>iv 0yiwo<Esc>p:FloatermSend<CR>ddk
 let g:which_key_map.i.v = 'send variable'
 nnoremap <silent> <leader>iV 0yiwo<Esc>p
 let g:which_key_map.i.V = 'print variable'
+nnoremap <silent> <leader>iW :FloatermSend whos 
+let g:which_key_map.i.W = 'Whos'
+
+function! IpythonOpen()
+	FloatermNew --wintype=normal --position=right --width=0.5
+	normal h
+	normal 
+	FloatermSend (cd %:p:h ; ipython --no-autoindent)
+	" brackets necessary above, runs a minishell
+	normal 
+endfunction
 
 " j ==> +juypter                                                                                        
 let g:which_key_map.j = {                                                                               
