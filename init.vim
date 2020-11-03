@@ -3,13 +3,12 @@ source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/themes/onedark.vim
 source $HOME/.config/nvim/my-plugs/blockselect.vim
-source $HOME/.config/nvim/my-plugs/comment.vim
 source $HOME/.config/nvim/plug-config/auto-pairs.vim
-source $HOME/.config/nvim/plug-config/denite.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/jupyter-vim.vim
 source $HOME/.config/nvim/plug-config/misc.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
+source $HOME/.config/nvim/plug-config/semshi.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/vim-which-key.vim

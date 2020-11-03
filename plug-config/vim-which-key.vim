@@ -153,9 +153,9 @@ function! IpythonOpen()
 	FloatermNew --wintype=normal --position=right --width=0.5
 	normal h
 	normal 
-	FloatermSend (cd %:p:h ; ipython --no-autoindent)
+	FloatermSend (cd %:p:h ; ipython --no-autoindent; clear)
 	" brackets necessary above, runs a minishell
-	normal 
+	call feedkeys("\<Esc>")
 endfunction
 
 " j ==> +juypter                                                                                        
@@ -216,14 +216,20 @@ let g:which_key_map.o = {
       \ 'c' : [':PlugClean'															       , 'plug clean'],
       \ 'j' : [':!jupytext --to=ipynb --from=md:myst --update --output ./dc-myst.ipynb ./dc-myst.md', 'jupytext ipynb'],
       \ 'J' : [':!jupytext dc-myst.md --set-kernel - --execute'                            , 'jupytext execute'],
+      \ 'h' : [':tabnew|:lcd ~/Documents/help|:TabooRename Help'                           , 'help'],
       \ 'm' : [':MarkdownPreview'														   , 'md preview'],
       \ 'M' : [':MarkdownPreviewStop'												       , 'md stop'],
-      \ 'h' : [':tabnew|:lcd /home/linux5mon/Projects/personal/help|:TabooRename Help'     , 'help'],
       \ 's' : [':so %'						                                               , 'source'],
       \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
+      \ 'x' : [':XtermColorTable'                                                          , 'xterm'],
       \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename zsh' 			               , 'zsh'],
       \ 'V' : [':tabnew|e ~/.config/nvim/plug-config/vim-which-key.vim |:lcd %:p:h|:TabooRename which-key'       , 'which-key'],
       \ }                                                                                               
+
+nnoremap <silent> <leader>op :!sphinx-build -b html source build<CR>
+let g:which_key_map.o.p = 'sphinx noshow'
+nnoremap <leader>oP :FloatermNew --wintype=floating<CR>sphinx-build -b html source build<CR>
+let g:which_key_map.o.P = 'sphinx show'
 
 " p ==> +python
 let g:which_key_map.p = {
@@ -276,7 +282,6 @@ let g:which_key_map.s = {
 " t ==> +terminal
 let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
-      \ 'd' : [':Denite floaterm'                           					 , 'denite'],
       \ 'f' : [':FloatermNew fzf'                              					 , 'fzf'],
       \ 'g' : [':FloatermNew lazygit'                          					 , 'lazygit'],
       \ 'r' : [':RnvimrToggle'                                 					 , 'ranger'],

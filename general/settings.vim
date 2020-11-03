@@ -8,7 +8,7 @@ set fileencoding=utf-8                  " The encoding written to file
 set pumheight=10                        " Makes popup menu smaller
 set ruler         			            " Show the cursor position all the time
 set iskeyword+=-                      	" treat dash separated words as a word text object"
-" set mouse=a                             " Enable your mouse
+set mouse=a                             " Enable your mouse
 set splitbelow                          " Horizontal splits will automatically be below
 set splitright                          " Vertical splits will automatically be to the right
 set t_Co=256                            " Support 256 colors
@@ -16,10 +16,6 @@ set number                              " Line numbers
 set cursorline                          " Enable highlighting of the current line
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set inccommand=nosplit					" live subsitution
-
-" set hidden
-
-au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
 set relativenumber      " Show relative line number
 set inccommand=nosplit " Live Substitution
@@ -84,7 +80,6 @@ endfunc
 " set showtabline=2                       " Always show tabs
 " set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 " set formatoptions-=cro                  " Stop newline continution of comments
-"set autochdir                           " Your working directory will always be the same as your working directory
 
 
 " You can't stop me

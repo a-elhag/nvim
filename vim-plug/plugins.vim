@@ -9,7 +9,6 @@ endif
 call plug#begin('~/.config/nvim/plugged') 
 
 " Python
-
 " Semshi (Adds good highlighting and replacing)
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " Git diff icons on the side of the file lines
@@ -30,16 +29,12 @@ Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 " Tim Pope
-
 " Surround
 Plug 'tpope/vim-surround'
 " Git command line
 Plug 'tpope/vim-fugitive'
-" Replace <q> </q> to ' ', with simple key presses
-" Plug 'tpope/vim-surround'
 
 " Misc
-
 " Better language packs
 Plug 'sheerun/vim-polyglot'
 " Completion from other opened files
@@ -64,21 +59,12 @@ Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/vim-peekaboo'
 " Close Buffer without Closing Window
 Plug 'rbgrouleff/bclose.vim'
-" Undo Tree
-Plug 'mbbill/undotree'
-" Auto close
-Plug 'jiangmiao/auto-pairs'
 
 " Windows
-
 " Choosing windows
 Plug 't9md/vim-choosewin'
-" Animation
-Plug 'camspiers/animate.vim'
 " Smooth Scrolling
 Plug 'psliwka/vim-smoothie'
-" Floating Terminal Buffers
-Plug 'Shougo/denite.nvim'
 
 " Looks
 
@@ -87,10 +73,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Powerline
 Plug 'Lokaltog/powerline'
-" A lot of colors
-Plug 'rafi/awesome-vim-colorschemes'
-" Color Scheme Switcher <F8> <Shift-F8>
-Plug 'xolox/vim-colorscheme-switcher'
+" Look further for this
 Plug 'xolox/vim-misc'
 " Show Color Table :XtermColorTable
 Plug 'guns/xterm-color-table.vim'
@@ -100,8 +83,6 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'lilydjwg/colorizer'
 
 " Theme
-
-Plug 'kyoz/purify', { 'rtp': 'vim' } " rtp means repository to use (subdirectory)
 Plug 'joshdick/onedark.vim'
 
 "  Will do
