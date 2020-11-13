@@ -79,6 +79,7 @@ let g:which_key_map.b.p = 'print dir'
 " c ==> +coc
 let g:which_key_map.c = {
       \ 'name' : '+coc' ,
+      \ 'a' : [':CocAction'	                                       , 'action'],
       \ 'c' : [':CocCommand'							           , 'command'],
       \ 'g' : [':CocConfig'  							           , 'config'],
       \ 'm' : [':CocList marketplace'					           , 'market place'],
@@ -215,7 +216,7 @@ let g:which_key_map.o = {
       \ 'name' : '+open' ,
       \ 'i' : [':PlugInstall'															   , 'plug install'],
       \ 'c' : [':PlugClean'															       , 'plug clean'],
-      \ 'j' : [':!jupytext --to=ipynb --from=md:myst --update --output ./dc-myst.ipynb ./dc-myst.md', 'jupytext ipynb'],
+      \ 'j' : [':call TerminalJupytext()'											       , 'jupytext'],
       \ 'J' : [':!jupytext dc-myst.md --set-kernel - --execute'                            , 'jupytext execute'],
       \ 'h' : [':tabnew|:lcd ~/Documents/help|:TabooRename Help'                           , 'help'],
       \ 'm' : [':MarkdownPreview'														   , 'md preview'],
@@ -231,6 +232,23 @@ nnoremap <silent> <leader>op :!sphinx-build -b html source build<CR>
 let g:which_key_map.o.p = 'sphinx noshow'
 nnoremap <leader>oP :FloatermNew --wintype=floating<CR>sphinx-build -b html source build<CR>
 let g:which_key_map.o.P = 'sphinx show'
+
+function! TerminalJupytext() abort
+  FloatermNew --wintype=normal --position=bottom --height=0.01
+  wincmd J | resize 1
+  call animate#window_percent_height(0.40)
+
+  normal k
+  normal 
+  FloatermSend (jupytext %:p --execute --to ipynb -o -| 
+			  \ jupyter nbconvert --to html --stdin --output example.html)
+  " Send window to bottom and start with small height
+  " Animate height to 66%
+  call feedkeys("\<Esc>")
+  normal k
+  normal k
+
+endfunction
 
 " p ==> +python
 let g:which_key_map.p = {
