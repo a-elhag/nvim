@@ -8,7 +8,7 @@ set fileencoding=utf-8                  " The encoding written to file
 set pumheight=10                        " Makes popup menu smaller
 set ruler         			            " Show the cursor position all the time
 set iskeyword+=-                      	" treat dash separated words as a word text object"
-set mouse=a                             " Enable your mouse
+set mouse-=a                             " Enable your mouse
 set splitbelow                          " Horizontal splits will automatically be below
 set splitright                          " Vertical splits will automatically be to the right
 set t_Co=256                            " Support 256 colors

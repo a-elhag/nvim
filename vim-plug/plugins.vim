@@ -20,7 +20,7 @@ Plug 'nvie/vim-flake8'
 " Jupyter mine
 Plug 'a-elhag/jupyter-vim'
 " Conquer of Completion
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Syntax
 Plug 'vim-python/python-syntax'
 
@@ -59,6 +59,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/vim-peekaboo'
 " Close Buffer without Closing Window
 Plug 'rbgrouleff/bclose.vim'
+" Animate windows
+Plug 'camspiers/animate.vim'
 
 " Windows
 " Choosing windows

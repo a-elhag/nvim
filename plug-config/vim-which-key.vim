@@ -63,6 +63,8 @@ let g:which_key_map.a = 'noh'
 " b ==> +buffers
 let g:which_key_map.b = {
       \ 'name' : '+buffers' ,
+      \ 'p' : [':bprevious' 									    			   , 'previous'],
+      \ 'n' : [':bnext' 									        			   , 'next'],
       \ 'c' : [':lcd %:p:h' 									    			   , 'change dir'],
       \ 'q' : [':Bclose'														   , 'close'],
       \ }
@@ -78,9 +80,8 @@ let g:which_key_map.b.p = 'print dir'
 let g:which_key_map.c = {
       \ 'name' : '+coc' ,
       \ 'c' : [':CocCommand'							           , 'command'],
-      \ 'l' : [':CocCommand python.enableLinting'				   , 'python linting'],
+      \ 'g' : [':CocConfig'  							           , 'config'],
       \ 'm' : [':CocList marketplace'					           , 'market place'],
-      \ 'p' : [':CocCommand python.setInterpreter'				   , 'python interpreter'],
       \ }
 
 " d ==> +debug
@@ -123,7 +124,7 @@ let g:which_key_map.g.s = 'status'
 let g:which_key_map.i = {                                                                               
       \ 'name' : '+ipython' ,                                                                           
       \ 'c' : [':FloatermSend clear'	  , 'clear'],
-      \ 'd' : [':FloatermSend cd %:h'	  , 'cd'],
+      \ 'd' : [':FloatermSend cd %:p:h'	  , 'cd'],
       \ 'D' : [':FloatermSend pwd'   	  , 'pwd'],
       \ 'o' : [':call IpythonOpen()'   	  , 'open'],
       \ 'l' : [':FloatermSend'            , 'send line'],                              
@@ -144,7 +145,7 @@ nnoremap <silent> <leader>is :FloatermSend
 let g:which_key_map.i.s = 'send custom line'
 nnoremap <silent> <leader>iv 0yiwo<Esc>p:FloatermSend<CR>ddk
 let g:which_key_map.i.v = 'send variable'
-nnoremap <silent> <leader>iV 0yiwo<Esc>p
+nnoremap <silent> <leader>iV 0yiwo<Esc>pa
 let g:which_key_map.i.V = 'print variable'
 nnoremap <silent> <leader>iW :FloatermSend whos 
 let g:which_key_map.i.W = 'Whos'
@@ -234,6 +235,7 @@ let g:which_key_map.o.P = 'sphinx show'
 " p ==> +python
 let g:which_key_map.p = {
       \ 'name' : '+python' ,
+      \ 't' : [':Semshi toggle'                       , 'semshi toggle'],
       \ 's' : [':Semshi rename'                       , 'rename all'],
       \ 'u' : [':PythonUncomment'				      , 'uncomment'],
       \ 'c' : [':PythonComment'					      , 'comment'],
