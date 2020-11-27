@@ -191,33 +191,33 @@ let g:which_key_map.j.L = 'send commented line'
 let g:which_key_map.l = {                                                                               
       \ 'name' : '+languages' ,                                                                           
       \ 'b' : [':RainbowToggle'                 , 'rainbow'],
-      \ 't' : [':vnew|te'                       , 'terminal'],
+      \ 'c' : [':FloatermSend gcc -o %:r %'     , 'complile'],
+      \ 'r' : [':FloatermSend ./%:r'            , 'run'],
       \ }
 
 nnoremap <leader>la :w <CR> :!as % -o %<.o
 let g:which_key_map.l.a = 'assemble code'
 nnoremap <leader>lA :!ld %<.o -o %<
 let g:which_key_map.l.A = 'link assembly'
-nnoremap <leader>lc :w <CR> :!gcc % -o %<
-let g:which_key_map.l.c = 'compile c'
 nnoremap <leader>lC :w <CR> :!gcc % -o %< && ./%<
 let g:which_key_map.l.C = 'compile + run c'
 nnoremap <leader>lh :%!xxd
 let g:which_key_map.l.h = 'hex'
-nnoremap <leader>lr :!./%<<CR>
-let g:which_key_map.l.r = 'run'
+nnoremap <leader>lr :FloatermSend ./%<
+let g:which_key_map.l.R = 'run'
 nnoremap <leader>lt :!gcc % -S
 let g:which_key_map.l.t = 'assembly'
 nnoremap <leader>lp :call AutoPairsToggle()<CR>
 let g:which_key_map.l.p = 'toggle auto-pairs'
+" nnoremap <leader>lc :w <CR> :!gcc -o %< % <CR>
+" let g:which_key_map.l.c = 'compile c'
 
 " o ==> +open
 let g:which_key_map.o = {
       \ 'name' : '+open' ,
       \ 'i' : [':PlugInstall'															   , 'plug install'],
       \ 'c' : [':PlugClean'															       , 'plug clean'],
-      \ 'j' : [':call TerminalJupytext()'											       , 'jupytext'],
-      \ 'J' : [':!jupytext dc-myst.md --set-kernel - --execute'                            , 'jupytext execute'],
+      \ 'j' : [':call TeJupytextHTML()'											           , 'jupytext html'],
       \ 'h' : [':tabnew|:lcd ~/Documents/help|:TabooRename Help'                           , 'help'],
       \ 'm' : [':MarkdownPreview'														   , 'md preview'],
       \ 'M' : [':MarkdownPreviewStop'												       , 'md stop'],
@@ -233,7 +233,7 @@ let g:which_key_map.o.p = 'sphinx noshow'
 nnoremap <leader>oP :FloatermNew --wintype=floating<CR>sphinx-build -b html source build<CR>
 let g:which_key_map.o.P = 'sphinx show'
 
-function! TerminalJupytext() abort
+function! TeJupytextHTML() abort
   FloatermNew --wintype=normal --position=bottom --height=0.01
   wincmd J | resize 1
   call animate#window_percent_height(0.40)
@@ -241,7 +241,7 @@ function! TerminalJupytext() abort
   normal k
   normal 
   FloatermSend (jupytext %:p --execute --to ipynb -o -| 
-			  \ jupyter nbconvert --to html --stdin --output example.html)
+			  \ jupyter nbconvert --to html --stdin --output %:r)
   " Send window to bottom and start with small height
   " Animate height to 66%
   call feedkeys("\<Esc>")

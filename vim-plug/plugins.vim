@@ -23,6 +23,11 @@ Plug 'a-elhag/jupyter-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Syntax
 Plug 'vim-python/python-syntax'
+" Jupytext
+Plug 'goerz/jupytext.vim'
+
+" Other Languages
+Plug 'jiangmiao/auto-pairs'
 
 " Markdown
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
@@ -60,7 +65,7 @@ Plug 'junegunn/vim-peekaboo'
 " Close Buffer without Closing Window
 Plug 'rbgrouleff/bclose.vim'
 " Animate windows
-Plug 'camspiers/animate.vim'
+" Plug 'camspiers/animate.vim'
 
 " Windows
 " Choosing windows
