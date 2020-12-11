@@ -20,6 +20,12 @@ inoremap <C-h> <esc><C-w>h
 inoremap <C-j> <esc><C-w>j
 inoremap <C-k> <esc><C-w>k
 inoremap <C-l> <esc><C-w>l
+    
+" Adding a line
+map <Enter> o<ESC>
+" map <S-Enter> O<ESC>
+
+
 
 " Better tabbing
 " vnoremap < <gv

@@ -60,8 +60,6 @@ Plug 'voldikss/vim-floaterm'
 Plug 'kevinhwang91/rnvimr'
 " Easy Motion
 Plug 'easymotion/vim-easymotion'
-" Register Viewer
-Plug 'junegunn/vim-peekaboo'
 " Close Buffer without Closing Window
 Plug 'rbgrouleff/bclose.vim'
 " Animate windows

@@ -124,7 +124,6 @@ let g:which_key_map.g.s = 'status'
 " i ==> +ipython                                                                                        
 let g:which_key_map.i = {                                                                               
       \ 'name' : '+ipython' ,                                                                           
-      \ 'c' : [':FloatermSend clear'	  , 'clear'],
       \ 'd' : [':FloatermSend cd %:p:h'	  , 'cd'],
       \ 'D' : [':FloatermSend pwd'   	  , 'pwd'],
       \ 'o' : [':call IpythonOpen()'   	  , 'open'],
@@ -142,8 +141,6 @@ nnoremap <silent> <leader>ig iimport ipdb; ipdb.set_trace()<Esc>
 let g:which_key_map.i.g = 'debug'
 nnoremap <silent> <leader>if :w<CR>:execute ':FloatermSend run' expand('%:p')<CR>
 let g:which_key_map.i.f = 'run file'
-nnoremap <silent> <leader>is :FloatermSend 
-let g:which_key_map.i.s = 'send custom line'
 nnoremap <silent> <leader>iv 0yiwo<Esc>p:FloatermSend<CR>ddk
 let g:which_key_map.i.v = 'send variable'
 nnoremap <silent> <leader>iV 0yiwo<Esc>pa
@@ -191,24 +188,36 @@ let g:which_key_map.j.L = 'send commented line'
 let g:which_key_map.l = {                                                                               
       \ 'name' : '+languages' ,                                                                           
       \ 'b' : [':RainbowToggle'                 , 'rainbow'],
-      \ 'c' : [':FloatermSend gcc -o %:r %'     , 'complile'],
-      \ 'r' : [':FloatermSend ./%:r'            , 'run'],
+      \ 'c' : [':FloatermSend clear'            , 'clear'],
+      \ 'f' : [':FloatermSend ./%:r'            , 'file'],
+      \ 'p' : [':FloatermSend pytest'            , 'pytest'],
       \ }
 
-nnoremap <leader>la :w <CR> :!as % -o %<.o
-let g:which_key_map.l.a = 'assemble code'
-nnoremap <leader>lA :!ld %<.o -o %<
-let g:which_key_map.l.A = 'link assembly'
-nnoremap <leader>lC :w <CR> :!gcc % -o %< && ./%<
-let g:which_key_map.l.C = 'compile + run c'
-nnoremap <leader>lh :%!xxd
-let g:which_key_map.l.h = 'hex'
-nnoremap <leader>lr :FloatermSend ./%<
-let g:which_key_map.l.R = 'run'
-nnoremap <leader>lt :!gcc % -S
-let g:which_key_map.l.t = 'assembly'
-nnoremap <leader>lp :call AutoPairsToggle()<CR>
-let g:which_key_map.l.p = 'toggle auto-pairs'
+nnoremap <leader>lg :w <CR>:FloatermSend mygcc % -o %:r<CR>
+let g:which_key_map.l.g = 'compile'
+nnoremap <leader>lt :FloatermSend python3 setup.py install<CR>:FloatermSend python3 test.py<CR>
+let g:which_key_map.l.t = 'temp'
+nnoremap <leader>li :FloatermSend python setup.py build_ext -i -j 6<CR>
+let g:which_key_map.l.i = 'install'
+nnoremap <leader>lF :FloatermSend ./%:r 
+let g:which_key_map.l.F = 'file no send'
+nnoremap <silent> <leader>ls :FloatermSend 
+let g:which_key_map.l.s = 'send custom line'
+
+" nnoremap <leader>la :w <CR> :!as % -o %<.o
+" let g:which_key_map.l.a = 'assemble code'
+" nnoremap <leader>lA :!ld %<.o -o %<
+" let g:which_key_map.l.A = 'link assembly'
+" nnoremap <leader>lC :w <CR> :!gcc % -o %< && ./%<
+" let g:which_key_map.l.C = 'compile + run c'
+" nnoremap <leader>lh :%!xxd
+" let g:which_key_map.l.h = 'hex'
+" nnoremap <leader>lr :FloatermSend ./%<
+" let g:which_key_map.l.R = 'run'
+" nnoremap <leader>lt :!gcc % -S
+" let g:which_key_map.l.t = 'assembly'
+" nnoremap <leader>lp :call AutoPairsToggle()<CR>
+" let g:which_key_map.l.p = 'toggle auto-pairs'
 " nnoremap <leader>lc :w <CR> :!gcc -o %< % <CR>
 " let g:which_key_map.l.c = 'compile c'
 
@@ -308,7 +317,7 @@ let g:which_key_map.t = {
       \ 'y' : [':FloatermNew ytop'                             					 , 'ytop'],
       \ ';' : [':FloatermNew --wintype=popup --height=8'						 , 'terminal'],
       \ 'j' : [':FloatermNew --wintype=normal --position=bottom --height=0.5'    , 'term down'],
-      \ 'l' : [':FloatermNew --wintype=normal --position=right --width=0.5'      , 'term right'],
+      \ 'l' : [':call TerminalOpen()'                                            , 'term right'],
       \ 'n' : [':FloatermNew'                                  					 , 'new'],
       \ 'k' : [':FloatermKill'                                 					 , 'kill'],
       \ 't' : [':FloatermToggle'                               					 , 'toggle'],
@@ -318,6 +327,16 @@ let g:which_key_map.t = {
 
 nmap <leader>tc :set scrollback=25 \| sleep 100m \| set scrollback=100<cr>
 let g:which_key_map.t.c = 'clear'
+
+function! TerminalOpen()
+	cd %:p:h
+	FloatermNew --wintype=normal --position=right --width=0.5
+	normal h
+	normal 
+	FloatermSend (cd %:p:h ;clear)
+	" brackets necessary above, runs a minishell
+	call feedkeys("\<Esc>")
+endfunction
 
 " w ==> +windows
 let g:which_key_map.w = {
