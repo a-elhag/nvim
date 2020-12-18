@@ -60,22 +60,6 @@ let g:which_key_map['q'] = [ ':q'                     , 'quit']
 nnoremap <silent> <leader>a :noh<CR>
 let g:which_key_map.a = 'noh'
 
-" b ==> +buffers
-let g:which_key_map.b = {
-      \ 'name' : '+buffers' ,
-      \ 'p' : [':bprevious' 									    			   , 'previous'],
-      \ 'n' : [':bnext' 									        			   , 'next'],
-      \ 'c' : [':lcd %:p:h' 									    			   , 'change dir'],
-      \ 'q' : [':Bclose'														   , 'close'],
-      \ }
-" go to buffer
-nnoremap <leader>bt :buffers<CR>:buffer
-let g:which_key_map.b.t = 'go to'
-nnoremap <leader>bd :buffers<CR>:bdelete
-let g:which_key_map.b.d = 'delete'
-nnoremap <leader>bp :pwd<CR>
-let g:which_key_map.b.p = 'print dir'
-
 " c ==> +coc
 let g:which_key_map.c = {
       \ 'name' : '+coc' ,
@@ -111,15 +95,6 @@ nnoremap <silent> <leader>dP :FloatermSend pp
 let g:which_key_map.d.P = 'pprint'
 nnoremap <silent> <leader>dq :FloatermSend pygame.display.quit()<CR>
 let g:which_key_map.d.q = 'pygame quit'
-
-" g ==> +git
-let g:which_key_map.g = {
-      \ 'name' : '+git',
-      \ 's' : [':!git status'         , 'status'],                              
-      \ }
-
-nnoremap <silent> <leader>gs :!git status<CR>
-let g:which_key_map.g.s = 'status'
 
 " i ==> +ipython                                                                                        
 let g:which_key_map.i = {                                                                               
@@ -157,6 +132,7 @@ function! IpythonOpen()
 	call feedkeys("\<Esc>")
 endfunction
 
+
 " j ==> +juypter                                                                                        
 let g:which_key_map.j = {                                                                               
       \ 'name' : '+jupyter' ,                                                                           
@@ -193,54 +169,46 @@ let g:which_key_map.l = {
       \ 'p' : [':FloatermSend pytest'            , 'pytest'],
       \ }
 
-nnoremap <leader>lg :w <CR>:FloatermSend mygcc % -o %:r<CR>
+nnoremap <leader>lg :w <CR>:FloatermSend mygcc -Wall % -o %:r<CR>
 let g:which_key_map.l.g = 'compile'
-nnoremap <leader>lt :FloatermSend python3 setup.py install<CR>:FloatermSend python3 test.py<CR>
-let g:which_key_map.l.t = 'temp'
-nnoremap <leader>li :FloatermSend python setup.py build_ext -i -j 6<CR>
-let g:which_key_map.l.i = 'install'
 nnoremap <leader>lF :FloatermSend ./%:r 
 let g:which_key_map.l.F = 'file no send'
 nnoremap <silent> <leader>ls :FloatermSend 
 let g:which_key_map.l.s = 'send custom line'
 
-" nnoremap <leader>la :w <CR> :!as % -o %<.o
-" let g:which_key_map.l.a = 'assemble code'
-" nnoremap <leader>lA :!ld %<.o -o %<
-" let g:which_key_map.l.A = 'link assembly'
-" nnoremap <leader>lC :w <CR> :!gcc % -o %< && ./%<
-" let g:which_key_map.l.C = 'compile + run c'
-" nnoremap <leader>lh :%!xxd
-" let g:which_key_map.l.h = 'hex'
-" nnoremap <leader>lr :FloatermSend ./%<
-" let g:which_key_map.l.R = 'run'
-" nnoremap <leader>lt :!gcc % -S
-" let g:which_key_map.l.t = 'assembly'
-" nnoremap <leader>lp :call AutoPairsToggle()<CR>
-" let g:which_key_map.l.p = 'toggle auto-pairs'
-" nnoremap <leader>lc :w <CR> :!gcc -o %< % <CR>
-" let g:which_key_map.l.c = 'compile c'
+
+" n ==> +nerdtree
+let g:which_key_map.n = {
+      \ 'name' : 'nerdtree',
+      \ 'c' : [':NERDTreeCWD'                 , 'cwd'],
+      \ 'f' : [':NERDTreeFocus'               , 'focus'],
+      \ 'o' : [':NERDTree'                    , 'open'],
+      \ 'q' : [':NERDTreeClose'               , 'close'],
+      \ 'r' : [':NERDTreeRefreshRoot'         , 'refresh'],
+      \ 't' : [':NERDTreeToggle'              , 'toggle'],
+      \ 'v' : [':NERDTreeVCS'                 , 'vcs'],
+      \ }
+
+
+" nnoremap <silent> <leader>pV 0yiwo<Esc>pa
+" let g:which_key_map.p.V = 'paste variable'
 
 " o ==> +open
+"
 let g:which_key_map.o = {
       \ 'name' : '+open' ,
       \ 'i' : [':PlugInstall'															   , 'plug install'],
       \ 'c' : [':PlugClean'															       , 'plug clean'],
       \ 'j' : [':call TeJupytextHTML()'											           , 'jupytext html'],
       \ 'h' : [':tabnew|:lcd ~/Documents/help|:TabooRename Help'                           , 'help'],
+      \ 'H' : [':checkhealth provider'                                                     , 'health'],
       \ 'm' : [':MarkdownPreview'														   , 'md preview'],
       \ 'M' : [':MarkdownPreviewStop'												       , 'md stop'],
       \ 's' : [':so %'						                                               , 'source'],
       \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
       \ 'x' : [':XtermColorTable'                                                          , 'xterm'],
-      \ 'z' : [':tabnew|e ~/.zshrc|:lcd %:p:h|:TabooRename zsh' 			               , 'zsh'],
       \ 'V' : [':tabnew|e ~/.config/nvim/plug-config/vim-which-key.vim |:lcd %:p:h|:TabooRename which-key'       , 'which-key'],
       \ }                                                                                               
-
-nnoremap <silent> <leader>op :!sphinx-build -b html source build<CR>
-let g:which_key_map.o.p = 'sphinx noshow'
-nnoremap <leader>oP :FloatermNew --wintype=floating<CR>sphinx-build -b html source build<CR>
-let g:which_key_map.o.P = 'sphinx show'
 
 function! TeJupytextHTML() abort
   FloatermNew --wintype=normal --position=bottom --height=0.01

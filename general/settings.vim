@@ -35,7 +35,7 @@ set history=500
 set scrollback=100
 
 let g:vim_markdown_folding_disabled = 1
-let g:python3_host_prog = '/home/pyroubuntu/Documents/venv_global/bin/python3'
+let g:python3_host_prog = '~/Documents/venv/global/bin/python3'
 
 
 "FOLDS:
