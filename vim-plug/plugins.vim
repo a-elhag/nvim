@@ -10,7 +10,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Python
 " Semshi (Adds good highlighting and replacing)
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " Git diff icons on the side of the file lines
 Plug 'mhinz/vim-signify'
 " MultiLine Indent
@@ -20,11 +20,11 @@ Plug 'nvie/vim-flake8'
 " Jupyter mine
 " Plug 'a-elhag/jupyter-vim'
 " Conquer of Completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Syntax
-Plug 'vim-python/python-syntax'
+" Plug 'vim-python/python-syntax'
 " Jupytext
-Plug 'goerz/jupytext.vim'
+" Plug 'goerz/jupytext.vim'
 
 " Other Languages
 Plug 'jiangmiao/auto-pairs'
@@ -42,15 +42,13 @@ Plug 'tpope/vim-fugitive'
 " Misc
 " Better language packs
 Plug 'sheerun/vim-polyglot'
-" Completion from other opened files
-Plug 'Shougo/context_filetype.vim'
 " Rename Tabs 
 Plug 'gcmt/taboo.vim'
 " Rainbow parenthesises
 Plug 'luochen1990/rainbow'
 " Fuzzy Finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
 " Plug 'airblade/vim-rooter'
 " EMACS (shh)
 Plug 'liuchengxu/vim-which-key'
@@ -61,11 +59,7 @@ Plug 'kevinhwang91/rnvimr'
 " Easy Motion
 Plug 'easymotion/vim-easymotion'
 " Close Buffer without Closing Window
-Plug 'rbgrouleff/bclose.vim'
-" Animate windows
-" Plug 'camspiers/animate.vim'
-" Nerdtree
-Plug 'preservim/nerdtree'
+" Plug 'rbgrouleff/bclose.vim'
 
 " Windows
 " Choosing windows

@@ -60,6 +60,16 @@ let g:which_key_map['q'] = [ ':q'                     , 'quit']
 nnoremap <silent> <leader>a :noh<CR>
 let g:which_key_map.a = 'noh'
 
+let g:which_key_map.b = {
+      \ 'name' : '+buffers' ,
+      \ 'f' : [':buffers'                                   , 'buffers'],
+      \ }
+
+nnoremap <leader>bb :buffers<cr>
+let g:which_key_map.b.b = 'buffers'
+nnoremap <silent> <leader>bd :%bd\|e#\|bd#<cr>\|'"
+let g:which_key_map.b.d = 'delete all except this'
+
 " c ==> +coc
 let g:which_key_map.c = {
       \ 'name' : '+coc' ,
@@ -132,6 +142,12 @@ function! IpythonOpen()
 	call feedkeys("\<Esc>")
 endfunction
 
+" function! MatplotlibShow()
+" 	plt.show(block=False)
+" 	plt.pause(0.001)
+" 	input("Hit [enter] to end\n")
+" 	plt.close('all')
+" endfunction
 
 " j ==> +juypter                                                                                        
 let g:which_key_map.j = {                                                                               
@@ -163,18 +179,20 @@ let g:which_key_map.j.L = 'send commented line'
 " l ==> +languages                                                                                        
 let g:which_key_map.l = {                                                                               
       \ 'name' : '+languages' ,                                                                           
-      \ 'b' : [':RainbowToggle'                 , 'rainbow'],
       \ 'c' : [':FloatermSend clear'            , 'clear'],
+      \ 'l' : [':!pdflatex %'                   , 'pdflatex'],
       \ 'f' : [':FloatermSend ./%:r'            , 'file'],
-      \ 'p' : [':FloatermSend pytest'            , 'pytest'],
+      \ 'p' : [':FloatermSend pytest'           , 'pytest'],
       \ }
 
 nnoremap <leader>lg :w <CR>:FloatermSend mygcc -Wall % -o %:r<CR>
 let g:which_key_map.l.g = 'compile'
-nnoremap <leader>lF :FloatermSend ./%:r 
-let g:which_key_map.l.F = 'file no send'
 nnoremap <silent> <leader>ls :FloatermSend 
 let g:which_key_map.l.s = 'send custom line'
+nnoremap <leader>lb :w <CR>:FloatermSend gcc -Wall -g % -o %:r64<CR>
+let g:which_key_map.l.b = '64 bit'
+nnoremap <leader>lB :w <CR>:FloatermSend gcc -Wall -g -m32 % -o %:r32<CR>
+let g:which_key_map.l.B = '32 bit'
 
 
 " n ==> +nerdtree
@@ -246,6 +264,8 @@ nnoremap <silent> <leader>pv 0yiw
 let g:which_key_map.p.v = 'copy variable'
 nnoremap <silent> <leader>pV 0yiwo<Esc>pa
 let g:which_key_map.p.V = 'paste variable'
+nnoremap <silent> <leader>pt :!pytest<CR>
+let g:which_key_map.p.t = 'pytest'
 
 " s ==> +search
 let g:which_key_map.s = {
@@ -279,13 +299,13 @@ let g:which_key_map.s = {
 " t ==> +terminal
 let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
+      \ 'b' : [':FloatermNew btm'                                                , 'btm'],
       \ 'f' : [':FloatermNew fzf'                              					 , 'fzf'],
       \ 'g' : [':FloatermNew lazygit'                          					 , 'lazygit'],
-      \ 'r' : [':RnvimrToggle'                                 					 , 'ranger'],
-      \ 'y' : [':FloatermNew ytop'                             					 , 'ytop'],
-      \ ';' : [':FloatermNew --wintype=popup --height=8'						 , 'terminal'],
-      \ 'j' : [':FloatermNew --wintype=normal --position=bottom --height=0.5'    , 'term down'],
-      \ 'l' : [':call TerminalOpen()'                                            , 'term right'],
+      \ 'r' : [':FloatermNew ranger'                          					 , 'ranger'],
+      \ 'R' : [':RnvimrToggle'                              					 , 'rnvmir'],
+      \ 'l' : [':call TerminalOpenRight()'                                       , 'term right'],
+      \ 'j' : [':call TerminalOpenDown()'                                        , 'term down'],
       \ 'n' : [':FloatermNew'                                  					 , 'new'],
       \ 'k' : [':FloatermKill'                                 					 , 'kill'],
       \ 't' : [':FloatermToggle'                               					 , 'toggle'],
@@ -293,13 +313,25 @@ let g:which_key_map.t = {
       \ 'H' : [':FloatermPrev'                             					     , 'prev'],
       \ }
 
+"      \ ';' : [':FloatermNew --wintype=popup --height=8'						 , 'terminal'],
+"
 nmap <leader>tc :set scrollback=25 \| sleep 100m \| set scrollback=100<cr>
 let g:which_key_map.t.c = 'clear'
 
-function! TerminalOpen()
+function! TerminalOpenRight()
 	cd %:p:h
 	FloatermNew --wintype=normal --position=right --width=0.5
 	normal h
+	normal 
+	FloatermSend (cd %:p:h ;clear)
+	" brackets necessary above, runs a minishell
+	call feedkeys("\<Esc>")
+endfunction
+
+function! TerminalOpenDown()
+	cd %:p:h
+	FloatermNew --wintype=normal --position=down --height=0.25
+	normal k
 	normal 
 	FloatermSend (cd %:p:h ;clear)
 	" brackets necessary above, runs a minishell
