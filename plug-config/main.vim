@@ -1,4 +1,3 @@
-source $HOME/.config/nvim/plug-config/auto-pairs.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/jupyter-vim.vim

@@ -1,4 +1,4 @@
-" auto-install vim-plug
+" Auto-install vim-plug
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -8,64 +8,13 @@ endif
 
 call plug#begin('~/.config/nvim/plugged') 
 
-" Python
-" Semshi (Adds good highlighting and replacing)
-" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+
+" Git Plugins
+
 " Git diff icons on the side of the file lines
 Plug 'mhinz/vim-signify'
-" MultiLine Indent
-Plug 'vim-scripts/indentpython.vim'
-" Python Flake8 (<F7>)
-Plug 'nvie/vim-flake8'
-" Jupyter mine
-" Plug 'a-elhag/jupyter-vim'
-" Conquer of Completion
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Syntax
-" Plug 'vim-python/python-syntax'
-" Jupytext
-" Plug 'goerz/jupytext.vim'
-
-" Other Languages
-Plug 'jiangmiao/auto-pairs'
-
-" Markdown
-Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-
-" Tim Pope
-" Surround
-Plug 'tpope/vim-surround'
 " Git command line
 Plug 'tpope/vim-fugitive'
-
-" Misc
-" Better language packs
-Plug 'sheerun/vim-polyglot'
-" Rename Tabs 
-Plug 'gcmt/taboo.vim'
-" Rainbow parenthesises
-Plug 'luochen1990/rainbow'
-" Fuzzy Finder
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'junegunn/fzf.vim'
-" Plug 'airblade/vim-rooter'
-" EMACS (shh)
-Plug 'liuchengxu/vim-which-key'
-" Floaterm
-Plug 'voldikss/vim-floaterm'
-" Ranger
-Plug 'kevinhwang91/rnvimr'
-" Easy Motion
-Plug 'easymotion/vim-easymotion'
-" Close Buffer without Closing Window
-" Plug 'rbgrouleff/bclose.vim'
-
-" Windows
-" Choosing windows
-Plug 't9md/vim-choosewin'
-" Smooth Scrolling
-Plug 'psliwka/vim-smoothie'
 
 " Looks
 
@@ -74,27 +23,73 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Powerline
 Plug 'Lokaltog/powerline'
-" Look further for this
-Plug 'xolox/vim-misc'
-" Show Color Table :XtermColorTable
-Plug 'guns/xterm-color-table.vim'
-" HighlightedYank
-Plug 'machakann/vim-highlightedyank'
 " Color 
 Plug 'lilydjwg/colorizer'
-
 " Theme
 Plug 'joshdick/onedark.vim'
+
+" Markdown Plugins
+
+Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
+" Misc
+" Rename Tabs 
+Plug 'gcmt/taboo.vim'
+" Rainbow parenthesises
+Plug 'luochen1990/rainbow'
+" Ranger
+Plug 'kevinhwang91/rnvimr'
+" Choosing windows
+Plug 't9md/vim-choosewin'
+" Easy Motion
+Plug 'easymotion/vim-easymotion'
+" Floaterm
+Plug 'voldikss/vim-floaterm'
+" HighlightedYank
+Plug 'machakann/vim-highlightedyank'
+" Better language packs
+Plug 'sheerun/vim-polyglot'
+" Smooth Scrolling
+Plug 'psliwka/vim-smoothie'
+" EMACS (shh)
+Plug 'liuchengxu/vim-which-key'
+" Show Color Table :XtermColorTable
+Plug 'guns/xterm-color-table.vim'
+
+" Python
+" Semshi (Adds good highlighting and replacing)
+" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+" MultiLine Indent
+Plug 'vim-scripts/indentpython.vim'
+" Python Flake8 (<F7>)
+Plug 'nvie/vim-flake8'
+" Jupyter mine
+" Plug 'a-elhag/jupyter-vim'
+" Syntax
+" Plug 'vim-python/python-syntax'
+" Jupytext
+" Plug 'goerz/jupytext.vim'
 
 "  Will do
 
 " Debugger
 " Plug 'puremourning/vimspector'
+
 " Python Error Checker 
 " Plug 'vim-syntastic/syntastic'
+
 " Table Creator
 " Plug 'dhruvasagar/vim-table-mode'
+
 " Class/module browser
 " Plug 'majutsushi/tagbar'
+
+" Surround
+" Plug 'tpope/vim-surround'
+
+" Fuzzy Finder
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
 
 call plug#end()
