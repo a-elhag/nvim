@@ -201,7 +201,7 @@ let g:which_key_map.o = {
       \ 'i' : [':PlugInstall'															   , 'plug install'],
       \ 'c' : [':PlugClean'															       , 'plug clean'],
       \ 'j' : [':call TeJupytextHTML()'											           , 'jupytext html'],
-      \ 'h' : [':tabnew|:lcd ~/Documents/help|:TabooRename Help'                           , 'help'],
+      \ 'h' : [':tabnew|:lcd ~/Documents/etc/help|:TabooRename Help'                           , 'help'],
       \ 'H' : [':checkhealth provider'                                                     , 'health'],
       \ 'm' : [':MarkdownPreview'														   , 'md preview'],
       \ 'M' : [':MarkdownPreviewStop'												       , 'md stop'],
