@@ -2,13 +2,8 @@ source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/themes/onedark.vim
-source $HOME/.config/nvim/my-plugs/asm.vim
-source $HOME/.config/nvim/my-plugs/blockselect.vim
-source $HOME/.config/nvim/plug-config/auto-pairs.vim
-source $HOME/.config/nvim/plug-config/floaterm.vim
-source $HOME/.config/nvim/plug-config/fzf.vim
-source $HOME/.config/nvim/plug-config/jupyter-vim.vim
-source $HOME/.config/nvim/plug-config/misc.vim
-source $HOME/.config/nvim/plug-config/markdown.vim
-source $HOME/.config/nvim/plug-config/rnvimr.vim
-source $HOME/.config/nvim/plug-config/vim-which-key.vim
+
+source $HOME/.config/nvim/plug-my/main.vim
+source $HOME/.config/nvim/plug-config/main.vim
+
+source $HOME/.config/nvim/vim-which-key/vim-which-key.vim

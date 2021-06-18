@@ -194,25 +194,8 @@ let g:which_key_map.l.b = '64 bit'
 nnoremap <leader>lB :w <CR>:FloatermSend gcc -Wall -g -m32 % -o %:r32<CR>
 let g:which_key_map.l.B = '32 bit'
 
-
-" n ==> +nerdtree
-let g:which_key_map.n = {
-      \ 'name' : 'nerdtree',
-      \ 'c' : [':NERDTreeCWD'                 , 'cwd'],
-      \ 'f' : [':NERDTreeFocus'               , 'focus'],
-      \ 'o' : [':NERDTree'                    , 'open'],
-      \ 'q' : [':NERDTreeClose'               , 'close'],
-      \ 'r' : [':NERDTreeRefreshRoot'         , 'refresh'],
-      \ 't' : [':NERDTreeToggle'              , 'toggle'],
-      \ 'v' : [':NERDTreeVCS'                 , 'vcs'],
-      \ }
-
-
-" nnoremap <silent> <leader>pV 0yiwo<Esc>pa
-" let g:which_key_map.p.V = 'paste variable'
-
 " o ==> +open
-"
+
 let g:which_key_map.o = {
       \ 'name' : '+open' ,
       \ 'i' : [':PlugInstall'															   , 'plug install'],
