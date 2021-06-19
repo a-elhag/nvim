@@ -60,24 +60,16 @@ let g:which_key_map['q'] = [ ':q'                     , 'quit']
 nnoremap <silent> <leader>a :noh<CR>
 let g:which_key_map.a = 'noh'
 
+" b ==> +buffers
 let g:which_key_map.b = {
       \ 'name' : '+buffers' ,
       \ 'f' : [':buffers'                                   , 'buffers'],
       \ }
 
-nnoremap <leader>bb :buffers<cr>
+nnoremap <leader>bb :ls<cr>:b 
 let g:which_key_map.b.b = 'buffers'
 nnoremap <silent> <leader>bd :%bd\|e#\|bd#<cr>\|'"
 let g:which_key_map.b.d = 'delete all except this'
-
-" c ==> +coc
-let g:which_key_map.c = {
-      \ 'name' : '+coc' ,
-      \ 'a' : [':CocAction'	                                       , 'action'],
-      \ 'c' : [':CocCommand'							           , 'command'],
-      \ 'g' : [':CocConfig'  							           , 'config'],
-      \ 'm' : [':CocList marketplace'					           , 'market place'],
-      \ }
 
 " d ==> +debug
 let g:which_key_map.d = {                                                                               
