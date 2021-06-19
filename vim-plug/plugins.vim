@@ -21,9 +21,7 @@ Plug 'tpope/vim-fugitive'
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Powerline
-Plug 'Lokaltog/powerline'
-" Color 
+" Colorize any text in rgb format (#00cd90)
 Plug 'lilydjwg/colorizer'
 " Theme
 Plug 'joshdick/onedark.vim'

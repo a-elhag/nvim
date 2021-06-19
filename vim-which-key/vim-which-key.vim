@@ -63,7 +63,9 @@ let g:which_key_map.a = 'noh'
 " b ==> +buffers
 let g:which_key_map.b = {
       \ 'name' : '+buffers' ,
-      \ 'f' : [':buffers'                                   , 'buffers'],
+      \ 'd' : [':bdelete'                                 , 'delete'],
+      \ 'n' : [':bnext'                                   , 'next'],
+      \ 'p' : [':bprev'                                   , 'prev'],
       \ }
 
 nnoremap <leader>bb :ls<cr>:b 
