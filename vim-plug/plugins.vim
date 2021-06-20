@@ -8,7 +8,6 @@ endif
 
 call plug#begin('~/.config/nvim/plugged') 
 
-
 " Git Plugins
 
 " Git diff icons on the side of the file lines
@@ -16,8 +15,7 @@ Plug 'mhinz/vim-signify'
 " Git command line
 Plug 'tpope/vim-fugitive'
 
-" Looks
-
+" => Looks
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -26,7 +24,7 @@ Plug 'lilydjwg/colorizer'
 " Theme
 Plug 'joshdick/onedark.vim'
 
-" Markdown Plugins
+" => Markdown Plugins
 
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
@@ -53,7 +51,7 @@ Plug 'liuchengxu/vim-which-key'
 " Show Color Table :XtermColorTable
 Plug 'guns/xterm-color-table.vim'
 
-" Python
+" => Python
 " MultiLine Indent
 Plug 'vim-scripts/indentpython.vim'
 
@@ -64,23 +62,11 @@ Plug 'vim-scripts/indentpython.vim'
 " Jupytext
 " Plug 'goerz/jupytext.vim'
 
-" => Python AutoCompletion
-" This is required for the whole shebangabang to go down
-Plug 'roxma/nvim-yarp' " 
-
-" The actual plugin
-Plug 'ncm2/ncm2'
-
-" Won't see anything without these
-Plug 'ncm2/ncm2-bufword' " => Autocomplete for previously written
-Plug 'ncm2/ncm2-path'    " => Autocomplete for path
-Plug 'ncm2/ncm2-jedi'    " => AUtocomplete for python
-
-" Terminal
+" => Terminal
 " Floaterm
 Plug 'voldikss/vim-floaterm'
 
-"  Will do
+"  => Will do
 
 " Debugger
 " Plug 'puremourning/vimspector'

@@ -4,7 +4,6 @@ source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/jupyter-vim.vim
 source $HOME/.config/nvim/plug-config/misc.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
-source $HOME/.config/nvim/plug-config/ncm2.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/vim-easymotion.vim
 source $HOME/.config/nvim/plug-config/vim-sendtowindow.vim
