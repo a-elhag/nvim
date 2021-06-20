@@ -69,8 +69,8 @@ let g:which_key_map.b = {
 
 nnoremap <silent> <leader>ba :%bd\|e#\|bd#<cr>\|'"
 let g:which_key_map.b.a = 'd all'
-nnoremap <leader>bb :ls<cr>:b 
-let g:which_key_map.b.b = 'buffers'
+nnoremap <leader>bg :ls<cr>:b 
+let g:which_key_map.b.g = 'go to'
 nnoremap <leader>bd :ls<cr>:bdelete 
 let g:which_key_map.b.d = 'delete'
 
@@ -190,12 +190,10 @@ nnoremap <leader>lB :w <CR>:FloatermSend gcc -Wall -g -m32 % -o %:r32<CR>
 let g:which_key_map.l.B = '32 bit'
 
 " o ==> +open
-
 let g:which_key_map.o = {
       \ 'name' : '+open' ,
       \ 'i' : [':PlugInstall'															   , 'plug install'],
       \ 'c' : [':PlugClean'															       , 'plug clean'],
-      \ 'j' : [':call TeJupytextHTML()'											           , 'jupytext html'],
       \ 'h' : [':tabnew|:lcd ~/Documents/etc/help|:TabooRename Help'                           , 'help'],
       \ 'H' : [':checkhealth provider'                                                     , 'health'],
       \ 'm' : [':MarkdownPreview'														   , 'md preview'],
@@ -205,23 +203,6 @@ let g:which_key_map.o = {
       \ 'x' : [':XtermColorTable'                                                          , 'xterm'],
       \ 'V' : [':tabnew|e ~/.config/nvim/plug-config/vim-which-key.vim |:lcd %:p:h|:TabooRename which-key'       , 'which-key'],
       \ }                                                                                               
-
-function! TeJupytextHTML() abort
-  FloatermNew --wintype=normal --position=bottom --height=0.01
-  wincmd J | resize 1
-  call animate#window_percent_height(0.40)
-
-  normal k
-  normal 
-  FloatermSend (jupytext %:p --execute --to ipynb -o -| 
-			  \ jupyter nbconvert --to html --stdin --output %:r)
-  " Send window to bottom and start with small height
-  " Animate height to 66%
-  call feedkeys("\<Esc>")
-  normal k
-  normal k
-
-endfunction
 
 " p ==> +python
 let g:which_key_map.p = {
@@ -245,35 +226,6 @@ let g:which_key_map.p.V = 'paste variable'
 nnoremap <silent> <leader>pt :!pytest<CR>
 let g:which_key_map.p.t = 'pytest'
 
-" s ==> +search
-let g:which_key_map.s = {
-      \ 'name' : '+search' ,
-      \ '/' : [':History/'     , 'history'],
-      \ ';' : [':Commands'     , 'commands'],
-      \ 'a' : [':Ag'           , 'text Ag'],
-      \ 'B' : [':BLines'       , 'current buffer'],
-      \ 'b' : [':Buffers'      , 'open buffers'],
-      \ 'c' : [':Commits'      , 'commits'],
-      \ 'C' : [':BCommits'     , 'buffer commits'],
-      \ 'f' : [':Files'        , 'files'],
-      \ 'g' : [':GFiles'       , 'git files'],
-      \ 'G' : [':GFiles?'      , 'modified git files'],
-      \ 'h' : [':History'      , 'file history'],
-      \ 'H' : [':History:'     , 'command history'],
-      \ 'l' : [':Lines'        , 'lines'] ,
-      \ 'm' : [':Marks'        , 'marks'] ,
-      \ 'M' : [':Maps'         , 'normal maps'] ,
-      \ 'p' : [':Helptags'     , 'help tags'] ,
-      \ 'P' : [':Tags'         , 'project tags'],
-      \ 's' : [':Snippets'     , 'snippets'],
-      \ 'S' : [':Colors'       , 'color schemes'],
-      \ 't' : [':Rg'           , 'text Rg'],
-      \ 'T' : [':BTags'        , 'buffer tags'],
-      \ 'w' : [':Windows'      , 'search windows'],
-      \ 'y' : [':Filetypes'    , 'file types'],
-      \ 'z' : [':FZF'          , 'FZF'],
-      \ }
-
 " t ==> +terminal
 let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
@@ -291,8 +243,6 @@ let g:which_key_map.t = {
       \ 'H' : [':FloatermPrev'                             					     , 'prev'],
       \ }
 
-"      \ ';' : [':FloatermNew --wintype=popup --height=8'						 , 'terminal'],
-"
 nmap <leader>tc :set scrollback=25 \| sleep 100m \| set scrollback=100<cr>
 let g:which_key_map.t.c = 'clear'
 
@@ -317,6 +267,7 @@ function! TerminalOpenDown()
 endfunction
 
 " w ==> +windows
+
 let g:which_key_map.w = {
       \ 'name' : '+windows' ,
       \ 'c' : [':tabclose'									    , 'tab close'],
