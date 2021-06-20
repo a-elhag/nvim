@@ -11,7 +11,7 @@ let g:which_key_map =  {}
 " Define a separator
 let g:which_key_sep = '→'
 " default is timeoutlen=1000
-set timeoutlen=100
+set timeoutlen=200
 
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
@@ -28,31 +28,6 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " =================================================
-
-" Space ==> Easy
-let g:which_key_map[' '] = {
-      \ 'name' : '+easy' ,
-      \ 'f' : ['<plug>(easymotion-prefix)f' , ''],
-      \ 'F' : ['<plug>(easymotion-prefix)F' , ''],
-      \ 't' : ['<plug>(easymotion-prefix)t' , ''],
-      \ 'T' : ['<plug>(easymotion-prefix)T' , ''],
-      \ 'w' : ['<plug>(easymotion-prefix)w' , ''],
-      \ 'W' : ['<plug>(easymotion-prefix)W' , ''],
-      \ 'b' : ['<plug>(easymotion-prefix)b' , ''],
-      \ 'B' : ['<plug>(easymotion-prefix)B' , ''],
-      \ 'e' : ['<plug>(easymotion-prefix)e' , ''],
-      \ 'E' : ['<plug>(easymotion-prefix)E' , ''],
-      \ 'g' : {
-        \ 'name' : '+Backwards ' ,
-        \ 'e' : ['<plug>(easymotion-prefix)ge' , 'end of word backward'],
-        \ 'E' : ['<plug>(easymotion-prefix)gE' , 'end of WORD backward'],
-        \ },
-      \ 'j' : ['<plug>(easymotion-prefix)j' , ''],
-      \ 'k' : ['<plug>(easymotion-prefix)k' , ''],
-      \ 'n' : ['<plug>(easymotion-prefix)n' , ''],
-      \ 'N' : ['<plug>(easymotion-prefix)N' , ''],
-      \ 's' : ['<plug>(easymotion-prefix)s' , 'search'],
-      \ }
 
 " Single mappings
 let g:which_key_map['q'] = [ ':q'                     , 'quit']
