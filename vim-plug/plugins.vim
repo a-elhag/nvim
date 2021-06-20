@@ -42,8 +42,6 @@ Plug 'kevinhwang91/rnvimr'
 Plug 't9md/vim-choosewin'
 " Easy Motion
 Plug 'easymotion/vim-easymotion'
-" Floaterm
-Plug 'voldikss/vim-floaterm'
 " HighlightedYank
 Plug 'machakann/vim-highlightedyank'
 " Better language packs
@@ -56,18 +54,31 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'guns/xterm-color-table.vim'
 
 " Python
-" Semshi (Adds good highlighting and replacing)
-" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " MultiLine Indent
 Plug 'vim-scripts/indentpython.vim'
-" Python Flake8 (<F7>)
-Plug 'nvie/vim-flake8'
+
 " Jupyter mine
 " Plug 'a-elhag/jupyter-vim'
 " Syntax
 " Plug 'vim-python/python-syntax'
 " Jupytext
 " Plug 'goerz/jupytext.vim'
+
+" => Python AutoCompletion
+" This is required for the whole shebangabang to go down
+Plug 'roxma/nvim-yarp' " 
+
+" The actual plugin
+Plug 'ncm2/ncm2'
+
+" Won't see anything without these
+Plug 'ncm2/ncm2-bufword' " => Autocomplete for previously written
+Plug 'ncm2/ncm2-path'    " => Autocomplete for path
+Plug 'ncm2/ncm2-jedi'    " => AUtocomplete for python
+
+" Terminal
+" Floaterm
+Plug 'voldikss/vim-floaterm'
 
 "  Will do
 

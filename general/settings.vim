@@ -17,8 +17,8 @@ set cursorline                          " Enable highlighting of the current lin
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set inccommand=nosplit					" live subsitution
 
-set relativenumber      " Show relative line number
 set inccommand=nosplit " Live Substitution
+set relativenumber      " Show relative line number
 
 " Disable annoying beeping
 set noerrorbells

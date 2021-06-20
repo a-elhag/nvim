@@ -242,7 +242,6 @@ function! TerminalOpenDown()
 endfunction
 
 " w ==> +windows
-
 let g:which_key_map.w = {
       \ 'name' : '+windows' ,
       \ 'c' : [':tabclose'									    , 'tab close'],
