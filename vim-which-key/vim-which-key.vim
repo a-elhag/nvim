@@ -63,15 +63,16 @@ let g:which_key_map.a = 'noh'
 " b ==> +buffers
 let g:which_key_map.b = {
       \ 'name' : '+buffers' ,
-      \ 'd' : [':bdelete'                                 , 'delete'],
       \ 'n' : [':bnext'                                   , 'next'],
       \ 'p' : [':bprev'                                   , 'prev'],
       \ }
 
+nnoremap <silent> <leader>ba :%bd\|e#\|bd#<cr>\|'"
+let g:which_key_map.b.a = 'd all'
 nnoremap <leader>bb :ls<cr>:b 
 let g:which_key_map.b.b = 'buffers'
-nnoremap <silent> <leader>bd :%bd\|e#\|bd#<cr>\|'"
-let g:which_key_map.b.d = 'delete all except this'
+nnoremap <leader>bd :ls<cr>:bdelete 
+let g:which_key_map.b.d = 'delete'
 
 " d ==> +debug
 let g:which_key_map.d = {                                                                               
