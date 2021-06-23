@@ -76,6 +76,13 @@ let g:which_key_map.d.P = 'pprint'
 nnoremap <silent> <leader>dq :FloatermSend pygame.display.quit()<CR>
 let g:which_key_map.d.q = 'pygame quit'
 
+" g ==> +git
+let g:which_key_map.g = {
+      \ 'name' : '+git' ,
+      \ 'c' : [':tabnew|e ~/.gitconfig|:TabooRename GitConfig'         , 'config'],
+      \ 'l' : [':Git log'                                              , 'log'],
+      \ }
+
 " i ==> +ipython                                                                                        
 let g:which_key_map.i = {                                                                               
       \ 'name' : '+ipython' ,                                                                           
