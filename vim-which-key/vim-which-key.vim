@@ -79,8 +79,11 @@ let g:which_key_map.d.q = 'pygame quit'
 " g ==> +git
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
+      \ 'b' : [':Git blame'                                            , 'blame'],
       \ 'c' : [':tabnew|e ~/.gitconfig|:TabooRename GitConfig'         , 'config'],
       \ 'l' : [':Git log'                                              , 'log'],
+      \ 'p' : [':Git push'                                             , 'push'],
+      \ 's' : [':Gstatus'                                              , 'status'],
       \ }
 
 " i ==> +ipython                                                                                        
