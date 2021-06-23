@@ -82,10 +82,13 @@ let g:which_key_map.g = {
       \ 'b' : [':Git blame'                                            , 'blame'],
       \ 'c' : [':tabnew|e ~/.gitconfig|:TabooRename GitConfig'         , 'config'],
       \ 'l' : [':Git log'                                              , 'log'],
+      \ 'm' : [':MerginalToggle'                                       , 'merginal'],
       \ 'p' : [':Git push'                                             , 'push'],
+      \ 'P' : [':Git -c push.default=current push'                     , 'Push'],
       \ 's' : [':Gstatus'                                              , 'status'],
       \ }
 
+" Only in merginal
 " i ==> +ipython                                                                                        
 let g:which_key_map.i = {                                                                               
       \ 'name' : '+ipython' ,                                                                           
