@@ -9,11 +9,12 @@ endif
 call plug#begin('~/.config/nvim/plugged') 
 
 " Git Plugins
-
 " Git diff icons on the side of the file lines
 Plug 'mhinz/vim-signify'
 " Git command line
 Plug 'tpope/vim-fugitive'
+" Git merginal
+Plug 'idanarye/vim-merginal'
 
 " => Looks
 " Airline
@@ -25,7 +26,6 @@ Plug 'lilydjwg/colorizer'
 Plug 'joshdick/onedark.vim'
 
 " => Markdown Plugins
-
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
@@ -54,7 +54,6 @@ Plug 'guns/xterm-color-table.vim'
 " => Python
 " MultiLine Indent
 Plug 'vim-scripts/indentpython.vim'
-
 " Jupyter mine
 " Plug 'a-elhag/jupyter-vim'
 " Syntax
@@ -66,7 +65,7 @@ Plug 'vim-scripts/indentpython.vim'
 " Floaterm
 Plug 'voldikss/vim-floaterm'
 
-"  => Will do
+" => Will do
 
 " Debugger
 " Plug 'puremourning/vimspector'
