@@ -1,4 +1,4 @@
-" Initial Settings
+" ==> Initial Settings
 " Map leader to which_key
 nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
@@ -27,9 +27,7 @@ autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
-" =================================================
-
-" Single mappings
+" ==> Single mappings
 let g:which_key_map['q'] = [ ':q'                     , 'quit']
 
 nnoremap <silent> <leader>a :noh<CR>
@@ -88,7 +86,6 @@ let g:which_key_map.g = {
       \ 's' : [':Gstatus'                                              , 'status'],
       \ }
 
-" Only in merginal
 " i ==> +ipython                                                                                        
 let g:which_key_map.i = {                                                                               
       \ 'name' : '+ipython' ,                                                                           
@@ -182,7 +179,8 @@ let g:which_key_map.o = {
       \ 'name' : '+open' ,
       \ 'i' : [':PlugInstall'															   , 'plug install'],
       \ 'c' : [':PlugClean'															       , 'plug clean'],
-      \ 'h' : [':tabnew|:lcd ~/Documents/etc/help|:TabooRename Help'                           , 'help'],
+      \ 'f' : [':call FoldQuickly()'											           , 'fold'],
+      \ 'h' : [':tabnew|:lcd ~/Documents/etc/help|:TabooRename Help'                       , 'help'],
       \ 'H' : [':checkhealth provider'                                                     , 'health'],
       \ 'm' : [':MarkdownPreview'														   , 'md preview'],
       \ 'M' : [':MarkdownPreviewStop'												       , 'md stop'],
@@ -290,7 +288,7 @@ let g:which_key_map.z.l = '$SHLVL L1'
 nnoremap <silent> <leader>zL :!echo $SHLVL<CR>
 let g:which_key_map.z.L = '$SHLVL L2'
 
-" extras
+" ==> extras
 " nnoremap <silent> <leader>wo :TabooOpen 
 " let g:which_key_map.w.o = 'tab open'
 " nnoremap <silent> <leader>wr :TabooRename 
