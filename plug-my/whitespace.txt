@@ -1,0 +1,47 @@
+From: https://vi.stackexchange.com/questions/454/whats-the-simplest-way-to-strip-trailing-whitespace-from-all-lines-in-a-file/456#456
+
+###
+The "simplest" way is to just use :substitute:
+
+	`:%s/\s\+$//e`
+* :%s to run :substitute over the range %, which is the entire buffer.
+* \s to match all whitespace characters.
+* \+ to match 1 or more of them.
+* $ to anchor at the end of the line.
+* The e flag to not give an error if there is no match (i.e. the file is already without trailing whitespace).
+
+However, this is probably not the "best" way as it causes two side-effects:
+
+1. it moves the cursor to the last match;
+2. it adds the command to the history and search history;
+3. it resets the last search term.
+
+You can fix both items by turning this into a function:
+
+```
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+```
+
+And then use it like:
+
+`:call TrimWhitespace()`
+The winsaveview() will save the current "view", which includes the cursor position, folds, jumps, etc. The winrestview() at the end will restore this from the saved variable.
+The :keeppatterns prevents the \s\+$ pattern from being added to the search history.
+The last-used search term is automatically restored after leaving a function, so we don't have to do anything else for this.
+Since this is somewhat annoying to type :call all the time, you can define a command:
+
+`command! TrimWhitespace call TrimWhitespace()`
+Which can be be used without the :call:
+
+`:TrimWhitespace`
+And you can of course bind it to a key:
+
+`:noremap <Leader>w :call TrimWhitespace()<CR>`
+Some people like to automatically do this before they write a file to disk, like so:
+
+`autocmd BufWritePre * :call TrimWhitespace()`
+I don't like it, as some formats require trailing whitespace (such as Markdown), and on some other occasions you even want trailing whitespace in your code (such as formatting an email, and using the --<Space> marker to indicate the start of a signature).

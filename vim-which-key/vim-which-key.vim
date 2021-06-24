@@ -186,6 +186,7 @@ let g:which_key_map.o = {
       \ 'M' : [':MarkdownPreviewStop'												       , 'md stop'],
       \ 's' : [':so %'						                                               , 'source'],
       \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
+      \ 'w' : [':TrimWhitespace'                                                           , 'whitespace'],
       \ 'x' : [':XtermColorTable'                                                          , 'xterm'],
       \ 'V' : [':tabnew|e ~/.config/nvim/plug-config/vim-which-key.vim |:lcd %:p:h|:TabooRename which-key'       , 'which-key'],
       \ }                                                                                               
