@@ -79,20 +79,21 @@ let g:which_key_map.d.q = 'pygame quit'
 
 " g ==> +git
 let g:which_key_map.g = {
-      \ 'name' : '+git' ,
-      \ 'b' : [':Git blame'                                            , 'blame'],
-      \ 'c' : [':tabnew|e ~/.gitconfig|:TabooRename GitConfig'         , 'config'],
-      \ 'D' : [':Gcd'                                                  , 'Gcd'],
+      \ 'name' : '+git',
+      \ 'b' : [':Git blame',                                    'blame'],
+      \ 'c' : [':tabnew|e ~/.gitconfig|:TabooRename GitConfig', 'config'],
       \ 'd' : {
-        \ 'name' : '+diff ' ,
-        \ 'd' : [':Git diff' , 'unstaged'],
-        \ 's' : [':Git diff --staged' , 'staged'],
+        \ 'name' : '+diff ',
+        \ 'd' : [':Git diff',                                   'unstaged'],
+        \ 's' : [':Git diff --staged',                          'staged'],
         \ },
-      \ 'l' : [':Git log'                                              , 'log'],
-      \ 'm' : [':MerginalToggle'                                       , 'merginal'],
-      \ 'p' : [':Git push'                                             , 'push'],
-      \ 'P' : [':Git -c push.default=current push'                     , 'Push'],
-      \ 's' : [':Gstatus'                                              , 'status'],
+      \ 'D' : [':Gcd',                                          'Gcd'],
+      \ 'l' : [':Git log',                                      'log'],
+      \ 'm' : [':MerginalToggle',                               'merginal'],
+      \ 'p' : [':Git push',                                     'push'],
+      \ 'P' : [':Git -c push.default=current push',             'Push'],
+      \ 's' : [':Gstatus',                                      'status'],
+      \ 'v' : [':GV',                                           'commit browser'],
       \ }
 
 " i ==> +ipython                                                                                        
