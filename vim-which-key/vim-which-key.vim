@@ -80,6 +80,7 @@ let g:which_key_map.d.q = 'pygame quit'
 " g ==> +git
 let g:which_key_map.g = {
       \ 'name' : '+git',
+      \ 'a' : [':Git add .',                                    'add'],
       \ 'b' : [':Git blame',                                    'blame'],
       \ 'c' : [':tabnew|e ~/.gitconfig|:TabooRename GitConfig', 'config'],
       \ 'd' : {
@@ -92,6 +93,7 @@ let g:which_key_map.g = {
       \ 'm' : [':MerginalToggle',                               'merginal'],
       \ 'p' : [':Git push',                                     'push'],
       \ 'P' : [':Git -c push.default=current push',             'Push'],
+      \ 'r' : [':Git restore --staged .',                         'restore'],
       \ 's' : [':Gstatus',                                      'status'],
       \ 'v' : [':GV',                                           'commit browser'],
       \ }

@@ -25,18 +25,19 @@ Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 " ==> Misc
-Plug 'easymotion/vim-easymotion'     " Easy Motion
+Plug 'easymotion/vim-easymotion'          " Easy Motion
 Plug 'haya14busa/vim-easyoperator-phrase' " More easy motion
-Plug 'gcmt/taboo.vim'                " Rename Tabs
-Plug 'guns/xterm-color-table.vim'    " Show Color Table :XtermColorTable
-Plug 'junegunn/vim-easy-align'       " Aligning
-Plug 'kevinhwang91/rnvimr'           " Ranger
-Plug 'liuchengxu/vim-which-key'      " EMACS (shh)
-Plug 'luochen1990/rainbow'           " Rainbow parenthesises
-Plug 'machakann/vim-highlightedyank' " HighlightedYank
-Plug 'psliwka/vim-smoothie'          " Smooth Scrolling
-Plug 'sheerun/vim-polyglot'          " Better language packs
-Plug 't9md/vim-choosewin'            " Choosing windows
+Plug 'junegunn/vim-peekaboo'              " See the register
+Plug 'gcmt/taboo.vim'                     " Rename Tabs
+Plug 'guns/xterm-color-table.vim'         " Show Color Table :XtermColorTable
+Plug 'junegunn/vim-easy-align'            " Aligning
+Plug 'kevinhwang91/rnvimr'                " Ranger
+Plug 'liuchengxu/vim-which-key'           " EMACS (shh)
+Plug 'luochen1990/rainbow'                " Rainbow parenthesises
+Plug 'machakann/vim-highlightedyank'      " HighlightedYank
+Plug 'psliwka/vim-smoothie'               " Smooth Scrolling
+Plug 'sheerun/vim-polyglot'               " Better language packs
+Plug 't9md/vim-choosewin'                 " Choosing windows
 
 " ==> Python
 Plug 'vim-scripts/indentpython.vim' " MultiLine Indent
