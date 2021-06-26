@@ -1,4 +1,4 @@
-" Auto-install vim-plug
+" ==> Auto-install vim-plug
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -8,7 +8,7 @@ endif
 
 call plug#begin('~/.config/nvim/plugged') 
 
-" Git Plugins
+" ==> Git Plugins
 " Git diff icons on the side of the file lines
 Plug 'mhinz/vim-signify'
 " Git command line
@@ -16,7 +16,7 @@ Plug 'tpope/vim-fugitive'
 " Git merginal
 Plug 'idanarye/vim-merginal'
 
-" => Looks
+" ==> Looks
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -25,11 +25,11 @@ Plug 'lilydjwg/colorizer'
 " Theme
 Plug 'joshdick/onedark.vim'
 
-" => Markdown Plugins
+" ==> Markdown Plugins
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
-" Misc
+" ==> Misc
 " Rename Tabs 
 Plug 'gcmt/taboo.vim'
 " Rainbow parenthesises
@@ -51,7 +51,7 @@ Plug 'liuchengxu/vim-which-key'
 " Show Color Table :XtermColorTable
 Plug 'guns/xterm-color-table.vim'
 
-" => Python
+" ==> Python
 " MultiLine Indent
 Plug 'vim-scripts/indentpython.vim'
 " Jupyter mine
@@ -61,11 +61,11 @@ Plug 'vim-scripts/indentpython.vim'
 " Jupytext
 " Plug 'goerz/jupytext.vim'
 
-" => Terminal
+" ==> Terminal
 " Floaterm
 Plug 'voldikss/vim-floaterm'
 
-" => Will do
+" ==> Will do
 
 " Debugger
 " Plug 'puremourning/vimspector'
