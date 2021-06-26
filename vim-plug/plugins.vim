@@ -26,6 +26,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 " ==> Misc
 Plug 'easymotion/vim-easymotion'     " Easy Motion
+Plug 'haya14busa/vim-easyoperator-phrase' " More easy motion
 Plug 'gcmt/taboo.vim'                " Rename Tabs
 Plug 'guns/xterm-color-table.vim'    " Show Color Table :XtermColorTable
 Plug 'junegunn/vim-easy-align'       " Aligning
