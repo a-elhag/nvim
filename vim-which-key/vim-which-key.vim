@@ -46,6 +46,8 @@ nnoremap <leader>bg :ls<cr>:b
 let g:which_key_map.b.g = 'go to'
 nnoremap <leader>bd :ls<cr>:bdelete 
 let g:which_key_map.b.d = 'delete'
+nnoremap <leader>bv :ls<cr>:b 
+let g:which_key_map.b.v = 'go to'
 
 " d ==> +debug
 let g:which_key_map.d = {                                                                               
@@ -179,6 +181,7 @@ let g:which_key_map.l.B = '32 bit'
 " o ==> +open
 let g:which_key_map.o = {
       \ 'name' : '+open' ,
+      \ 'a' : [':EasyAlign'															   , 'align'],
       \ 'i' : [':PlugInstall'															   , 'plug install'],
       \ 'c' : [':PlugClean'															       , 'plug clean'],
       \ 'f' : [':call FoldQuickly()'											           , 'fold'],
@@ -192,6 +195,11 @@ let g:which_key_map.o = {
       \ 'x' : [':XtermColorTable'                                                          , 'xterm'],
       \ 'V' : [':tabnew|e ~/.config/nvim/plug-config/vim-which-key.vim |:lcd %:p:h|:TabooRename which-key'       , 'which-key'],
       \ }                                                                                               
+
+xmap <silent> <leader>oa <Plug>(EasyAlign)
+let g:which_key_map.o.a = 'align'
+nmap <silent> <leader>oa <Plug>(EasyAlign)
+let g:which_key_map.o.a = 'align'
 
 " p ==> +python
 let g:which_key_map.p = {
