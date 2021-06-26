@@ -9,9 +9,10 @@ endif
 call plug#begin('~/.config/nvim/plugged') 
 
 " ==> Git Plugins
+Plug 'idanarye/vim-merginal' " Git merginal
+Plug 'junegunn/gv.vim'       " Git commit browser
 Plug 'mhinz/vim-signify'     " Git diff icons on the side of the file lines
 Plug 'tpope/vim-fugitive'    " Git command line
-Plug 'idanarye/vim-merginal' " Git merginal
 
 " ==> Looks
 Plug 'joshdick/onedark.vim' " Theme
