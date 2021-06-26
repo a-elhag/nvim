@@ -234,6 +234,15 @@ let g:which_key_map.p.V = 'paste variable'
 nnoremap <silent> <leader>pt :!pytest<CR>
 let g:which_key_map.p.t = 'pytest'
 
+" r ==> +resize
+let g:which_key_map.r = {
+      \ 'name' : '+resize ',
+      \ 'k' : ['<C-w>3-',   'k'],
+      \ 'j' : ['<C-w>3+',   'j'],
+      \ 'l' : ['<C-w>5>',    'l'],
+      \ 'h' : ['<C-w>5<',    'h'],
+      \ }
+
 " t ==> +terminal
 let g:which_key_map.t = {
       \ 'name' : '+terminal',
