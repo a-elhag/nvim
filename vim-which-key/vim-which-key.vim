@@ -28,7 +28,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " ==> Single mappings
-let g:which_key_map['q'] = [ ':q'                     , 'quit']
+let g:which_key_map['q'] = [ ':q', 'quit']
 
 nnoremap <silent> <leader>a :noh<CR>
 let g:which_key_map.a = 'noh'
@@ -36,8 +36,8 @@ let g:which_key_map.a = 'noh'
 " b ==> +buffers
 let g:which_key_map.b = {
       \ 'name' : '+buffers' ,
-      \ 'n' : [':bnext'                                   , 'next'],
-      \ 'p' : [':bprev'                                   , 'prev'],
+      \ 'n' : [':bnext', 'next'],
+      \ 'p' : [':bprev', 'prev'],
       \ }
 
 nnoremap <silent> <leader>ba :%bd\|e#\|bd#<cr>\|'"
@@ -51,22 +51,22 @@ let g:which_key_map.b.v = 'go to'
 
 " d ==> +debug
 let g:which_key_map.d = {                                                                               
-      \ 'name' : '+debug ipython' ,                                                                           
-      \ 'a' : [':FloatermSend a'         , 'argument'],                              
-      \ 'b' : [':FloatermSend b'         , 'break'],                              
-      \ 'c' : [':FloatermSend c'         , 'continue'],                              
-      \ 'd' : [':FloatermSend d'         , 'down'],                              
-      \ 'e' : [':FloatermSend exit'      , 'exit'],                              
-      \ 'h' : [':FloatermSend h'         , 'help'],                              
-      \ 'i' : [':FloatermSend i'         , 'interact'],                              
-      \ 'l' : [':FloatermSend l'         , 'clear'],                              
-      \ 'm' : [':FloatermSend %debug'    , 'post-mortem'],                              
-      \ 'n' : [':FloatermSend n'         , 'next'],                              
-      \ 'r' : [':FloatermSend r'         , 'restart'],                              
-      \ 'R' : [':FloatermSend R'         , 'run'],                              
-      \ 's' : [':FloatermSend s'         , 'step'],                              
-      \ 'u' : [':FloatermSend u'         , 'up'],                              
-      \ 'w' : [':FloatermSend w'         , 'where'],                              
+      \ 'name' : '+debug ipython',
+      \ 'a' : [':FloatermSend a',      'argument'],
+      \ 'b' : [':FloatermSend b',      'break'],
+      \ 'c' : [':FloatermSend c',      'continue'],
+      \ 'd' : [':FloatermSend d',      'down'],
+      \ 'e' : [':FloatermSend exit',   'exit'],
+      \ 'h' : [':FloatermSend h',      'help'],
+      \ 'i' : [':FloatermSend i',      'interact'],
+      \ 'l' : [':FloatermSend l',      'clear'],
+      \ 'm' : [':FloatermSend %debug', 'post-mortem'],
+      \ 'n' : [':FloatermSend n',      'next'],
+      \ 'r' : [':FloatermSend r',      'restart'],
+      \ 'R' : [':FloatermSend R',      'run'],
+      \ 's' : [':FloatermSend s',      'step'],
+      \ 'u' : [':FloatermSend u',      'up'],
+      \ 'w' : [':FloatermSend w',      'where'],
       \ }
 
 nnoremap <silent> <leader>dp :FloatermSend p  
@@ -92,15 +92,15 @@ let g:which_key_map.g = {
 
 " i ==> +ipython                                                                                        
 let g:which_key_map.i = {                                                                               
-      \ 'name' : '+ipython' ,                                                                           
-      \ 'd' : [':FloatermSend cd %:p:h'	  , 'cd'],
-      \ 'D' : [':FloatermSend pwd'   	  , 'pwd'],
-      \ 'o' : [':call IpythonOpen()'   	  , 'open'],
-      \ 'l' : [':FloatermSend'            , 'send line'],                              
-      \ 'm' : [':MatlabBlock'			  , 'yank matlab'],
-      \ 'p' : [':FloatermSend paste'      , 'paste'],                           
-      \ 'r' : [':FloatermSend reset -f'	  , 'reset'],
-      \ 'w' : [':FloatermSend whos'		  , 'whos'],
+      \ 'name' : '+ipython',
+      \ 'd' : [':FloatermSend cd %:p:h', 'cd'],
+      \ 'D' : [':FloatermSend pwd',      'pwd'],
+      \ 'o' : [':call IpythonOpen()',    'open'],
+      \ 'l' : [':FloatermSend',          'send line'],
+      \ 'm' : [':MatlabBlock',           'yank matlab'],
+      \ 'p' : [':FloatermSend paste',    'paste'],
+      \ 'r' : [':FloatermSend reset -f', 'reset'],
+      \ 'w' : [':FloatermSend whos',     'whos'],
       \ }
 
 
@@ -135,16 +135,16 @@ endfunction
 
 " j ==> +juypter                                                                                        
 let g:which_key_map.j = {                                                                               
-      \ 'name' : '+jupyter' ,                                                                           
-      \ 'a' : [':JupyterRunFile'    						, 'run file'],
-      \ 'c' : [':JupyterClear'      						, 'clear'],
-      \ 'e' : [':JupyterNewLine'    						, 'enter'],
-      \ 'l' : [':JupyterSendRange'				            , 'send line'],
-      \ 'm' : [':JupyterMatplot'                    		, 'matlab'],
-      \ 'r' : [':JupyterReset'              		        , 'reset'],
-      \ 'w' : [':JupyterWhos'           		            , 'whos'],
-      \ 'v' : [':JupyterSendVariable'      		            , 'send variable'],
-      \ 'y' : [':JupyterSendCell'						    , 'send cell'],
+      \ 'name' : '+jupyter',
+      \ 'a' : [':JupyterRunFile',      'run file'],
+      \ 'c' : [':JupyterClear',        'clear'],
+      \ 'e' : [':JupyterNewLine',      'enter'],
+      \ 'l' : [':JupyterSendRange',    'send line'],
+      \ 'm' : [':JupyterMatplot',      'matlab'],
+      \ 'r' : [':JupyterReset',        'reset'],
+      \ 'w' : [':JupyterWhos',         'whos'],
+      \ 'v' : [':JupyterSendVariable', 'send variable'],
+      \ 'y' : [':JupyterSendCell',     'send cell'],
       \ }
 
 vnoremap <silent> <leader>jg :'<,'>JupyterSendRange<CR>
@@ -162,11 +162,11 @@ let g:which_key_map.j.L = 'send commented line'
 
 " l ==> +languages                                                                                        
 let g:which_key_map.l = {                                                                               
-      \ 'name' : '+languages' ,                                                                           
-      \ 'c' : [':FloatermSend clear'            , 'clear'],
-      \ 'l' : [':!pdflatex %'                   , 'pdflatex'],
-      \ 'f' : [':FloatermSend ./%:r'            , 'file'],
-      \ 'p' : [':FloatermSend pytest'           , 'pytest'],
+      \ 'name' : '+languages',
+      \ 'c' : [':FloatermSend clear',  'clear'],
+      \ 'l' : [':!pdflatex %',         'pdflatex'],
+      \ 'f' : [':FloatermSend ./%:r',  'file'],
+      \ 'p' : [':FloatermSend pytest', 'pytest'],
       \ }
 
 nnoremap <leader>lg :w <CR>:FloatermSend mygcc -Wall % -o %:r<CR>
@@ -180,20 +180,20 @@ let g:which_key_map.l.B = '32 bit'
 
 " o ==> +open
 let g:which_key_map.o = {
-      \ 'name' : '+open' ,
-      \ 'a' : [':EasyAlign'															   , 'align'],
-      \ 'i' : [':PlugInstall'															   , 'plug install'],
-      \ 'c' : [':PlugClean'															       , 'plug clean'],
-      \ 'f' : [':call FoldQuickly()'											           , 'fold'],
-      \ 'h' : [':tabnew|:lcd ~/Documents/etc/help|:TabooRename Help'                       , 'help'],
-      \ 'H' : [':checkhealth provider'                                                     , 'health'],
-      \ 'm' : [':MarkdownPreview'														   , 'md preview'],
-      \ 'M' : [':MarkdownPreviewStop'												       , 'md stop'],
-      \ 's' : [':so %'						                                               , 'source'],
-      \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC'                          , 'vimrc'],
-      \ 'w' : [':TrimWhitespace'                                                           , 'whitespace'],
-      \ 'x' : [':XtermColorTable'                                                          , 'xterm'],
-      \ 'V' : [':tabnew|e ~/.config/nvim/plug-config/vim-which-key.vim |:lcd %:p:h|:TabooRename which-key'       , 'which-key'],
+      \ 'name' : '+open',
+      \ 'a' : [':EasyAlign',                                                                                'align'],
+      \ 'i' : [':PlugInstall',                                                                              'plug install'],
+      \ 'c' : [':PlugClean',                                                                                'plug clean'],
+      \ 'f' : [':call FoldQuickly()',                                                                       'fold'],
+      \ 'h' : [':tabnew|:lcd ~/Documents/etc/help|:TabooRename Help',                                       'help'],
+      \ 'H' : [':checkhealth provider',                                                                     'health'],
+      \ 'm' : [':MarkdownPreview',                                                                          'md preview'],
+      \ 'M' : [':MarkdownPreviewStop',                                                                      'md stop'],
+      \ 's' : [':so %',                                                                                     'source'],
+      \ 'v' : [':tabnew|e $MYVIMRC|:lcd %:p:h|:TabooRename VIMRC',                                          'vimrc'],
+      \ 'w' : [':TrimWhitespace',                                                                           'whitespace'],
+      \ 'x' : [':XtermColorTable',                                                                          'xterm'],
+      \ 'V' : [':tabnew|e ~/.config/nvim/plug-config/vim-which-key.vim |:lcd %:p:h|:TabooRename which-key', 'which-key'],
       \ }                                                                                               
 
 xmap <silent> <leader>oa <Plug>(EasyAlign)
@@ -203,15 +203,15 @@ let g:which_key_map.o.a = 'align'
 
 " p ==> +python
 let g:which_key_map.p = {
-      \ 'name' : '+python' ,
-      \ 't' : [':Semshi toggle'                       , 'semshi toggle'],
-      \ 's' : [':Semshi rename'                       , 'rename all'],
-      \ 'u' : [':PythonUncomment'				      , 'uncomment'],
-      \ 'c' : [':PythonComment'					      , 'comment'],
-      \ 'n' : [':Semshi goto name next'               , 'goto name next'],
-      \ 'N' : [':Semshi goto name prev'               , 'goto name prev'],
-      \ 'f' : [':Semshi goto function next'           , 'goto func next'],
-      \ 'F' : [':Semshi goto function prev'           , 'goto func prev'],
+      \ 'name' : '+python',
+      \ 't' : [':Semshi toggle',             'semshi toggle'],
+      \ 's' : [':Semshi rename',             'rename all'],
+      \ 'u' : [':PythonUncomment',           'uncomment'],
+      \ 'c' : [':PythonComment',             'comment'],
+      \ 'n' : [':Semshi goto name next',     'goto name next'],
+      \ 'N' : [':Semshi goto name prev',     'goto name prev'],
+      \ 'f' : [':Semshi goto function next', 'goto func next'],
+      \ 'F' : [':Semshi goto function prev', 'goto func prev'],
       \ }
 
 nnoremap <silent> <leader>pr :w !python3<CR>
@@ -225,19 +225,19 @@ let g:which_key_map.p.t = 'pytest'
 
 " t ==> +terminal
 let g:which_key_map.t = {
-      \ 'name' : '+terminal' ,
-      \ 'b' : [':FloatermNew btm'                                                , 'btm'],
-      \ 'f' : [':FloatermNew fzf'                              					 , 'fzf'],
-      \ 'g' : [':FloatermNew lazygit'                          					 , 'lazygit'],
-      \ 'r' : [':FloatermNew ranger'                          					 , 'ranger'],
-      \ 'R' : [':RnvimrToggle'                              					 , 'rnvmir'],
-      \ 'l' : [':call TerminalOpenRight()'                                       , 'term right'],
-      \ 'j' : [':call TerminalOpenDown()'                                        , 'term down'],
-      \ 'n' : [':FloatermNew'                                  					 , 'new'],
-      \ 'k' : [':FloatermKill'                                 					 , 'kill'],
-      \ 't' : [':FloatermToggle'                               					 , 'toggle'],
-      \ 'L' : [':FloatermNext'                             					     , 'next'],
-      \ 'H' : [':FloatermPrev'                             					     , 'prev'],
+      \ 'name' : '+terminal',
+      \ 'b' : [':FloatermNew btm',          'btm'],
+      \ 'f' : [':FloatermNew fzf',          'fzf'],
+      \ 'g' : [':FloatermNew lazygit',      'lazygit'],
+      \ 'r' : [':FloatermNew ranger',       'ranger'],
+      \ 'R' : [':RnvimrToggle',             'rnvmir'],
+      \ 'l' : [':call TerminalOpenRight()', 'term right'],
+      \ 'j' : [':call TerminalOpenDown()',  'term down'],
+      \ 'n' : [':FloatermNew',              'new'],
+      \ 'k' : [':FloatermKill',             'kill'],
+      \ 't' : [':FloatermToggle',           'toggle'],
+      \ 'L' : [':FloatermNext',             'next'],
+      \ 'H' : [':FloatermPrev',             'prev'],
       \ }
 
 nmap <leader>tc :set scrollback=25 \| sleep 100m \| set scrollback=100<cr>
@@ -282,8 +282,8 @@ let g:which_key_map.w = {
 
 " z ==> +zsh                                                                                        
 let g:which_key_map.z = {
-      \ 'name' : '+zsh' ,
-      \ 'D' : [':cd %:p:h'							       , 'cwd'],
+      \ 'name' : '+zsh',
+      \ 'D' : [':cd %:p:h', 'cwd'],
       \ }                                                                                               
 
 nnoremap <silent> <leader>zv :which python<CR>
