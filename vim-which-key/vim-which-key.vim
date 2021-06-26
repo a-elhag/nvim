@@ -36,9 +36,11 @@ let g:which_key_map.a = 'noh'
 " b ==> +buffers
 let g:which_key_map.b = {
       \ 'name' : '+buffers',
+      \ 'c' : [':tabclose',  'tab close'],
       \ 'l' : [':b#',        'last'],
       \ 'n' : [':bnext',     'next'],
       \ 'p' : [':bprev',     'prev'],
+      \ 't' : [':tabnew',    'tab new'],
       \ }
 
 nnoremap <silent> <leader>ba :%bd\|e#\|bd#<cr>\|'"
@@ -82,13 +84,14 @@ let g:which_key_map.g = {
       \ 'name' : '+git',
       \ 'a' : [':Git add .',                                    'add'],
       \ 'b' : [':Git blame',                                    'blame'],
-      \ 'c' : [':tabnew|e ~/.gitconfig|:TabooRename GitConfig', 'config'],
+      \ 'c' : [':Git commit',                                   'commit'],
       \ 'd' : {
         \ 'name' : '+diff ',
         \ 'd' : [':Git diff',                                   'unstaged'],
         \ 's' : [':Git diff --staged',                          'staged'],
         \ },
       \ 'D' : [':Gcd',                                          'Gcd'],
+      \ 'g' : [':tabnew|e ~/.gitconfig|:TabooRename GitConfig', 'config'],
       \ 'l' : [':Git log',                                      'log'],
       \ 'm' : [':MerginalToggle',                               'merginal'],
       \ 'p' : [':Git push',                                     'push'],
@@ -236,16 +239,15 @@ let g:which_key_map.t = {
       \ 'name' : '+terminal',
       \ 'b' : [':FloatermNew btm',          'btm'],
       \ 'f' : [':FloatermNew fzf',          'fzf'],
-      \ 'g' : [':FloatermNew lazygit',      'lazygit'],
+      \ 'H' : [':FloatermPrev',             'prev'],
+      \ 'j' : [':call TerminalOpenDown()',  'term down'],
+      \ 'k' : [':FloatermKill',             'kill'],
+      \ 'l' : [':call TerminalOpenRight()', 'term right'],
+      \ 'L' : [':FloatermNext',             'next'],
+      \ 'n' : [':FloatermNew',              'new'],
       \ 'r' : [':FloatermNew ranger',       'ranger'],
       \ 'R' : [':RnvimrToggle',             'rnvmir'],
-      \ 'l' : [':call TerminalOpenRight()', 'term right'],
-      \ 'j' : [':call TerminalOpenDown()',  'term down'],
-      \ 'n' : [':FloatermNew',              'new'],
-      \ 'k' : [':FloatermKill',             'kill'],
       \ 't' : [':FloatermToggle',           'toggle'],
-      \ 'L' : [':FloatermNext',             'next'],
-      \ 'H' : [':FloatermPrev',             'prev'],
       \ }
 
 nmap <leader>tc :set scrollback=25 \| sleep 100m \| set scrollback=100<cr>
@@ -271,21 +273,29 @@ function! TerminalOpenDown()
 	call feedkeys("\<Esc>")
 endfunction
 
+" u ==> +undo
+let g:which_key_map.u = {
+      \ 'name' : '+undo',
+      \ 'e' : [':earlier 1f',      'earlier'],
+      \ 'f' : [':UndotreeFocus',   'focus'],
+      \ 'l' : [':later 1f',        'later'],
+      \ 'n' : ['g+',               'next'],
+      \ 'p' : ['g-',               'previous'],
+      \ 't' : [':UndotreeToggle',  'toggle'],
+      \ }
+
 " w ==> +windows
 let g:which_key_map.w = {
-      \ 'name' : '+windows' ,
-      \ 'c' : [':tabclose'									    , 'tab close'],
-      \ 'n' : [':tabnew'									    , 'tab new'],
-      \ 'h' : ['<C-w>H'                                         , 'move left'],
-      \ 'j' : ['<C-w>J'                                         , 'move down'],
-      \ 'k' : ['<C-w>K'                                         , 'move up'],
-      \ 'l' : ['<C-w>L'                                         , 'move right'],
-      \ 'w' : [':ChooseWin'                                     , 'choose win'],
-      \ 's' : [':ChooseWinSwap'                                 , 'choose swap'],
-      \ 'u' : [':UndotreeToggle'                                , 'undotree'],
-      \ 'o' : ['<C-W>o' 									    , 'full screen'],
-      \ 't' : ['<C-W>T' 									    , 'window to new tab'],
-      \ 'z' : ['<C-W>z' 									    , 'close preview window'],
+      \ 'name' : '+windows',
+      \ 'f' : [':tab split',      'full screen'],
+      \ 'h' : ['<C-w>H',          'move left'],
+      \ 'j' : ['<C-w>J',          'move down'],
+      \ 'k' : ['<C-w>K',          'move up'],
+      \ 'l' : ['<C-w>L',          'move right'],
+      \ 's' : [':ChooseWinSwap',  'choose swap'],
+      \ 't' : ['<C-W>T',          'window to new tab'],
+      \ 'w' : [':ChooseWin',      'choose win'],
+      \ 'z' : ['<C-W>z',          'close preview window'],
       \ }
 
 " z ==> +zsh                                                                                        

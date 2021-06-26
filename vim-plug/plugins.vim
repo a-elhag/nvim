@@ -35,6 +35,7 @@ Plug 'kevinhwang91/rnvimr'                " Ranger
 Plug 'liuchengxu/vim-which-key'           " EMACS (shh)
 Plug 'luochen1990/rainbow'                " Rainbow parenthesises
 Plug 'machakann/vim-highlightedyank'      " HighlightedYank
+Plug 'mbbill/undotree'                    " Exposes vims undo tree
 Plug 'psliwka/vim-smoothie'               " Smooth Scrolling
 Plug 'sheerun/vim-polyglot'               " Better language packs
 Plug 't9md/vim-choosewin'                 " Choosing windows

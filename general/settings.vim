@@ -24,6 +24,9 @@ set relativenumber      " Show relative line number
 set noerrorbells
 set belloff=all
 
+" Treat all numerals as decimal (<C-a>, <C-x) in insert mode moment)
+set nrformats=
+
 " standard
 set tabstop=4
 set softtabstop=4
