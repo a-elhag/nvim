@@ -82,8 +82,12 @@ let g:which_key_map.g = {
       \ 'name' : '+git' ,
       \ 'b' : [':Git blame'                                            , 'blame'],
       \ 'c' : [':tabnew|e ~/.gitconfig|:TabooRename GitConfig'         , 'config'],
-      \ 'd' : [':G diff'                                               , 'diff'],
       \ 'D' : [':Gcd'                                                  , 'Gcd'],
+      \ 'd' : {
+        \ 'name' : '+diff ' ,
+        \ 'd' : [':Git diff' , 'unstaged'],
+        \ 's' : [':Git diff --staged' , 'staged'],
+        \ },
       \ 'l' : [':Git log'                                              , 'log'],
       \ 'm' : [':MerginalToggle'                                       , 'merginal'],
       \ 'p' : [':Git push'                                             , 'push'],
