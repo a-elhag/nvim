@@ -13,6 +13,7 @@ Plug 'idanarye/vim-merginal' " Git merginal
 Plug 'junegunn/gv.vim'       " Git commit browser
 Plug 'mhinz/vim-signify'     " Git diff icons on the side of the file lines
 Plug 'tpope/vim-fugitive'    " Git command line
+Plug 'tpope/vim-rhubarb'     " Go to github
 
 " ==> Looks
 Plug 'joshdick/onedark.vim' " Theme

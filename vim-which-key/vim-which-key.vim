@@ -92,6 +92,7 @@ let g:which_key_map.g = {
         \ },
       \ 'D' : [':Gcd',                                          'Gcd'],
       \ 'g' : [':tabnew|e ~/.gitconfig|:TabooRename GitConfig', 'config'],
+      \ 'h' : [':GBrowse',                                      'github'],
       \ 'l' : [':Git log',                                      'log'],
       \ 'm' : [':MerginalToggle',                               'merginal'],
       \ 'p' : [':Git push',                                     'push'],
