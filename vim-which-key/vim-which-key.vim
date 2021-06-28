@@ -216,14 +216,14 @@ let g:which_key_map.o.a = 'align'
 " p ==> +python
 let g:which_key_map.p = {
       \ 'name' : '+python',
-      \ 't' : [':Semshi toggle',             'semshi toggle'],
-      \ 's' : [':Semshi rename',             'rename all'],
-      \ 'u' : [':PythonUncomment',           'uncomment'],
-      \ 'c' : [':PythonComment',             'comment'],
-      \ 'n' : [':Semshi goto name next',     'goto name next'],
-      \ 'N' : [':Semshi goto name prev',     'goto name prev'],
-      \ 'f' : [':Semshi goto function next', 'goto func next'],
-      \ 'F' : [':Semshi goto function prev', 'goto func prev'],
+      \ 'd' : [':ALEDisable',         'enable'],
+      \ 'e' : [':ALEEnable',          'disable'],
+      \ 'f' : [':ALEFix',             'fix'],
+      \ 'i' : [':ALEInfo',            'info'],
+      \ 'l' : [':e ~/.config/flake8', 'flake8'],
+      \ 'n' : [':ALENext',            'next'],
+      \ 'p' : [':ALEPrevious',        'prev'],
+      \ 'R' : [':ALEReset',           'reset'],
       \ }
 
 nnoremap <silent> <leader>pr :w !python3<CR>
@@ -232,8 +232,6 @@ nnoremap <silent> <leader>pv 0yiw
 let g:which_key_map.p.v = 'copy variable'
 nnoremap <silent> <leader>pV 0yiwo<Esc>pa
 let g:which_key_map.p.V = 'paste variable'
-nnoremap <silent> <leader>pt :!pytest<CR>
-let g:which_key_map.p.t = 'pytest'
 
 " r ==> +resize
 let g:which_key_map.r = {
@@ -258,6 +256,7 @@ let g:which_key_map.t = {
       \ 'r' : [':FloatermNew ranger',       'ranger'],
       \ 'R' : [':RnvimrToggle',             'rnvmir'],
       \ 't' : [':FloatermToggle',           'toggle'],
+      \ 'v' : [':vnew | te',                'vnew'],
       \ }
 
 nmap <leader>tc :set scrollback=25 \| sleep 100m \| set scrollback=100<cr>

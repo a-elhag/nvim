@@ -1,3 +1,4 @@
+source $HOME/.config/nvim/plug-config/ale.vim
 source $HOME/.config/nvim/plug-config/airline.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/fzf.vim

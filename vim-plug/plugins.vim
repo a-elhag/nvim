@@ -43,6 +43,7 @@ Plug 't9md/vim-choosewin'                 " Choosing windows
 
 " ==> Python
 Plug 'vim-scripts/indentpython.vim' " MultiLine Indent
+Plug 'dense-analysis/ale'           " ALE
 " Plug 'a-elhag/jupyter-vim'        " Jupyter mine
 " Plug 'goerz/jupytext.vim'         " Jupytext
 " Plug 'vim-python/python-syntax'   " Syntax
