@@ -58,6 +58,7 @@ Plug 'voldikss/vim-floaterm' " Floaterm
 " Plug 'junegunn/fzf.vim'
 " Plug 'majutsushi/tagbar'                            " Class/module browser
 " Plug 'puremourning/vimspector'                      " Debugger
+" Plug 'tpope/vim-commentary'                         " Commenting
 " Plug 'tpope/vim-surround'                           " Surround
 " Plug 'vim-syntastic/syntastic'                      " Python Error Checker
 
