@@ -56,16 +56,23 @@ let g:which_key_map.b.v = 'go to'
 let g:which_key_map.f = {
       \ 'name' : '+fzf',
       \ 'b' : [':Buffers',  'buffers'],
-      \ 'f' : [':Files',        'files'],
-      \ 'g' : [':GFiles',     'gfiles'],
-      \ 's' : [':GFiles?',     'gstatus'],
-      \ 'c' : [':Colors',     'colors'],
+      \ 'c' : [':Commits',  'commits'],
+      \ 'C' : [':BCommits', 'bcommits'],
+      \ 'f' : [':Files',    'files'],
+      \ 'g' : [':GFiles',   'gfiles'],
+      \ 'G' : [':GFiles?',  'gstatus'],
+      \ 'h' : [':History:', 'command'],
+      \ 'H' : [':Helptags:', 'helptags'],
+      \ 'L' : [':BLines',   'blines'],
       \ 'l' : [':Lines',    'lines'],
-      \ 'h' : [':BLines',    'blines'],
+      \ 'm' : [':Marks',    'marks'],
+      \ 'p' : [':Maps',    'maps'],
+      \ 's' : [':History/', 'search'],
+      \ 'T' : [':Btags',    'btags'],
+      \ 't' : [':Tags',     'tags'],
+      \ 'w' : [':Windows',  'windows'],
       \ }
 
-nnoremap <silent> <leader>ba :%bd\|e#\|bd#<cr>\|'"
-let g:which_key_map.b.a = 'd all'
 
 " d ==> +debug
 let g:which_key_map.d = {                                                                               
@@ -325,21 +332,12 @@ let g:which_key_map.w = {
 " z ==> +zsh                                                                                        
 let g:which_key_map.z = {
       \ 'name' : '+zsh',
-      \ 'D' : [':cd %:p:h', 'cwd'],
+      \ 'c' : [':cd %:p:h', 'cwd'],
+      \ 'l' : [':lcd',      'lcd'],
       \ }                                                                                               
 
-nnoremap <silent> <leader>zv :which python<CR>
-let g:which_key_map.z.v = 'venv'
 nnoremap <silent> <leader>zd :pwd<CR>
 let g:which_key_map.z.d = 'pwd'
-nnoremap <silent> <leader>zp :echo $PATH<CR>
-let g:which_key_map.z.p = '$PATH L1'
-nnoremap <silent> <leader>zP :!echo $PATH<CR>
-let g:which_key_map.z.P = '$PATH L2'
-nnoremap <silent> <leader>zl :echo $SHLVL<CR>
-let g:which_key_map.z.l = '$SHLVL L1'
-nnoremap <silent> <leader>zL :!echo $SHLVL<CR>
-let g:which_key_map.z.L = '$SHLVL L2'
 
 " ==> extras
 " nnoremap <silent> <leader>wo :TabooOpen 
