@@ -10,7 +10,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 " ==> Git Plugins
 Plug 'idanarye/vim-merginal' " Git merginal
-Plug 'junegunn/gv.vim'       " Git commit browser
 Plug 'mhinz/vim-signify'     " Git diff icons on the side of the file lines
 Plug 'tpope/vim-fugitive'    " Git command line
 Plug 'tpope/vim-rhubarb'     " Go to github
@@ -25,10 +24,15 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
+" ==> Junegunn
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/gv.vim'       " Git commit browser
+Plug 'junegunn/vim-peekaboo'              " See the register
+
 " ==> Misc
 Plug 'easymotion/vim-easymotion'          " Easy Motion
 Plug 'haya14busa/vim-easyoperator-phrase' " More easy motion
-Plug 'junegunn/vim-peekaboo'              " See the register
 Plug 'gcmt/taboo.vim'                     " Rename Tabs
 Plug 'guns/xterm-color-table.vim'         " Show Color Table :XtermColorTable
 Plug 'junegunn/vim-easy-align'            " Aligning

@@ -52,6 +52,21 @@ let g:which_key_map.b.d = 'delete'
 nnoremap <leader>bv :ls<cr>:b 
 let g:which_key_map.b.v = 'go to'
 
+" f ==> +fzf
+let g:which_key_map.f = {
+      \ 'name' : '+fzf',
+      \ 'b' : [':Buffers',  'buffers'],
+      \ 'f' : [':Files',        'files'],
+      \ 'g' : [':GFiles',     'gfiles'],
+      \ 's' : [':GFiles?',     'gstatus'],
+      \ 'c' : [':Colors',     'colors'],
+      \ 'l' : [':Lines',    'lines'],
+      \ 'h' : [':BLines',    'blines'],
+      \ }
+
+nnoremap <silent> <leader>ba :%bd\|e#\|bd#<cr>\|'"
+let g:which_key_map.b.a = 'd all'
+
 " d ==> +debug
 let g:which_key_map.d = {                                                                               
       \ 'name' : '+debug ipython',
