@@ -54,6 +54,7 @@ Plug 'dense-analysis/ale'           " ALE
 
 " ==> Terminal
 Plug 'voldikss/vim-floaterm' " Floaterm
+Plug 'mcchrish/nnn.vim'      " NNN
 
 " ==> Will do
 
